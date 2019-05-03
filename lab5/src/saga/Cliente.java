@@ -13,8 +13,34 @@ public class Cliente {
         this.localizacao = local;
     }
 
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getLocalizacao() {
+        return localizacao;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setLocalizacao(String localizacao) {
+        this.localizacao = localizacao;
+    }
+
     @Override
     public String toString() {
         return String.format("%s - %s - %s", this.nome, this.localizacao, this.email);
     }
+
+
 }

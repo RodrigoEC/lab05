@@ -12,6 +12,10 @@ public class ControlaClientes {
         avalia = new Avaliador();
     }
 
+    public HashMap<String, Cliente> getClientes() {
+        return clientes;
+    }
+
     public String cadastraCliente(String cpf, String nome, String email, String local) {
         avalia.avaliar(cpf);
         avalia.avaliar(nome);
@@ -38,6 +42,7 @@ public class ControlaClientes {
         for (Cliente cliente : this.clientes.values()) {
             if (contador == 0) {
                 stringSaida += cliente.toString();
+                contador += 1;
             } else {
                 stringSaida += " | " + cliente.toString();
             }
@@ -45,5 +50,26 @@ public class ControlaClientes {
         return stringSaida;
     }
 
+    public void editarNome(String cpf, String novoNome) {
+        avalia.avaliar(cpf);
+        avalia.avaliar(novoNome);
+        clientes.get(cpf).setNome(novoNome);
+    }
 
+    public void editarEmail(String cpf, String novoEmail) {
+        avalia.avaliar(cpf);
+        avalia.avaliar(novoEmail);
+        clientes.get(cpf).setEmail(novoEmail);
+    }
+
+    public void editarLocal(String cpf, String novoLocal) {
+        avalia.avaliar(cpf);
+        avalia.avaliar(novoLocal);
+        clientes.get(cpf).setLocalizacao(novoLocal);
+    }
+
+    public void removeCliente(String cpf) {
+        avalia.avaliar(cpf);
+        clientes.remove(cpf);
+    }
 }

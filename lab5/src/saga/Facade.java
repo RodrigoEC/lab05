@@ -19,4 +19,23 @@ public class Facade {
     public String dadosTodosClientes() {
         return controlaClientes.dadosTodosClientes();
     }
+
+    public void editarNome(String cpf, String novoNome) {
+        controlaClientes.editarNome(cpf, novoNome);
+    }
+
+    public void editarEmail(String cpf, String novoEmail) {
+        controlaClientes.editarEmail(cpf, novoEmail);
+    }
+
+    public void editarLocal(String cpf, String novoLocal) {
+        controlaClientes.editarLocal(cpf, novoLocal);
+    }
+
+    public void removeCliente(String cpf) {
+        controlaClientes.removeCliente(cpf);
+    }
+
+    
+
 }

@@ -1,4 +1,6 @@
-package saga;
+package saga.controlFornecedores;
+
+import saga.Avaliador;
 
 import java.util.HashMap;
 
@@ -57,5 +59,17 @@ public class ControllerFornecedores {
         } else {
             throw new NullPointerException("KEY INEXISTENTE");
         }
+    }
+
+    public void addProduto(String nome, String preco, String nomeProduto, String descricao) {
+        avalia.avaliar(nome);
+        avalia.avaliar(preco);
+        avalia.avaliar(nomeProduto);
+        avalia.avaliar(descricao);
+        if (mapaFornecedores.containsKey(nome)) {
+            mapaFornecedores.get(nome).addProduto(preco, nomeProduto, descricao);
+        }
+        throw  new NullPointerException("KEY INEXISTENTE");
+
     }
 }

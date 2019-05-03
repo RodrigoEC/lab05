@@ -1,4 +1,4 @@
-package saga;
+package saga.controlClientes;
 
 public class Cliente {
     private String cpf;

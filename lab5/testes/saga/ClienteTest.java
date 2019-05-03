@@ -2,6 +2,7 @@ package saga;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import saga.controlClientes.Cliente;
 
 import static org.junit.jupiter.api.Assertions.*;
 

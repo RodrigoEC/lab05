@@ -1,5 +1,8 @@
 package saga;
 
+import saga.controlClientes.ControllerClientes;
+import saga.controlFornecedores.ControllerFornecedores;
+
 public class Facade {
     private ControllerClientes controlaClientes;
     private ControllerFornecedores controlaFornecedores;
@@ -59,6 +62,10 @@ public class Facade {
 
     public void removeFornecedor(String nome) {
         controlaFornecedores.removeFornecedor(nome);
+    }
+
+    public void addProduto(String nome, String preco, String nomeProduto, String descricao) {
+        controlaFornecedores.addProduto(nome, preco, nomeProduto, descricao);
     }
 
 

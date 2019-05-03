@@ -1,5 +1,6 @@
 package saga;
 
+import saga.controlFornecedores.ControllerFornecedores;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -162,4 +163,60 @@ class ControllerFornecedoresTest {
         }
     }
 
+    @Test
+    void testAddProdutoPadrao() {
+        controller.addProduto("padaria", "3,00", "tapioca", "tapioca boaaaa");
+        assertTrue(controller.getMapaFornecedores().get("padaria").getMapaProdutos().containsKey("tapiocatapioca boaaaa"));
+    }
+
+    @Test
+    void testAddProdutoFornecedorInexistente() {
+        try {
+            controller.addProduto("paria", "3,00", "tapioca", "tapioca boaaaa");
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+        }
+    }
+
+    @Test
+    void testAddProdutoParametrosInexistente() {
+        try {
+            controller.addProduto("paria", "3,00", "tapioca", "");
+            fail("ERA PRA DAR RUIM");
+        } catch (IllegalArgumentException iae) {
+        }
+
+        try {
+            controller.addProduto("paria", "3,00", " ", "tapioca boaaaa");
+            fail("ERA PRA DAR RUIM");
+        } catch (IllegalArgumentException iae) {
+        }
+
+        try {
+            controller.addProduto("paria", "   ", "tapioca", "tapioca boaaaa");
+            fail("ERA PRA DAR RUIM");
+        } catch (IllegalArgumentException iae) {
+        }
+    }
+
+    @Test
+    void testAddProdutoParametrosNulos() {
+        try {
+            controller.addProduto("paria", null, "tapioca", "tapioca boaaaa");
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+        }
+
+        try {
+            controller.addProduto("paria", "3,00", null, "tapioca boaaaa");
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+        }
+
+        try {
+            controller.addProduto("paria", "3,00", "tapioca", null);
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+        }
+    }
 }

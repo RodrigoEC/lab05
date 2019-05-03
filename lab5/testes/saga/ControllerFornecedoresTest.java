@@ -20,8 +20,77 @@ class ControllerFornecedoresTest {
     }
 
     @Test
+    void testCadastraFornecedorComParametroInvalido() {
+        try {
+
+            controller.cadastraFornecedor("", "padaria@gmail.com", "4002-8922");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
+
+        try {
+
+            controller.cadastraFornecedor("padaria", "  ", "4002-8922");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
+
+        try {
+
+            controller.cadastraFornecedor("padaria", "padaria@gmail.com", "   ");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
+
+    }
+
+    @Test
+    void tesCadastraFornecedorComParametroNulo() {
+        try {
+
+            controller.cadastraFornecedor(null, "padaria@gmail.com", "4002-8922");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
+
+        try {
+
+            controller.cadastraFornecedor("padaria", null, "4002-8922");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
+
+        try {
+
+            controller.cadastraFornecedor("padaria", "padaria@gmail.com", null);
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
+
+    }
+
+
+    @Test
     void testDadosFornecedor() {
         assertEquals("padaria - padaria@gmail.com - 4002-8922", controller.dadosFornecedor("padaria"));
+    }
+
+    @Test
+    void testDadosFornecedorInvalido() {
+        try {
+            controller.dadosFornecedor("  ");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
+    }
+
+    @Test
+    void testDadosFornecedorNulo() {
+        try {
+            controller.dadosFornecedor(null);
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
     }
 
     @Test
@@ -43,8 +112,54 @@ class ControllerFornecedoresTest {
     }
 
     @Test
+    void testEditaEmailNomeInexistente() {
+        try {
+            controller.editaEmail("vacas loucas", " edefef");
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+        }
+    }
+
+    @Test
+    void testEditaEmailNomeNulo() {
+        try {
+            controller.editaEmail(null, "cmcmcm");
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+        }
+    }
+
+    @Test
+    void testEditaEmaiNovoEmailnvalido() {
+        try {
+            controller.editaEmail("padaria",  " ");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
+    }
+
+    @Test
+    void testEditaEmailNovoEmailNulo() {
+        try {
+            controller.editaEmail("padaria" ,null);
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+        }
+    }
+
+    @Test
     void testRemoveFornecedor() {
         controller.removeFornecedor("padaria");
         assertTrue(!controller.getMapaFornecedores().containsKey("padaria"));
     }
+
+    @Test
+    void testRemoveFornecedorKeyInexistente() {
+        try {
+            controller.removeFornecedor("cabeloPreto");
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+        }
+    }
+
 }

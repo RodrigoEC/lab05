@@ -31,6 +31,7 @@ public class ControllerClientes {
     }
 
     public String dadosCliente(String cpf) {
+        avalia.avaliar(cpf);
         return clientes.get(cpf).toString();
 
     }

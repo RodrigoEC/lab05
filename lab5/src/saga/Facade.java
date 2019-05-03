@@ -13,6 +13,7 @@ public class Facade {
     }
 
     public String dadosCliente(String cpf) {
+        avalia.avaliar(cpf);
         return controlaClientes.dadosCliente(cpf);
     }
 
@@ -21,21 +22,28 @@ public class Facade {
     }
 
     public void editarNome(String cpf, String novoNome) {
+        avalia.avaliar(cpf);
+        avalia.avaliar(novoNome);
         controlaClientes.editarNome(cpf, novoNome);
     }
 
     public void editarEmail(String cpf, String novoEmail) {
+        avalia.avaliar(cpf);
+        avalia.avaliar(novoEmail);
         controlaClientes.editarEmail(cpf, novoEmail);
     }
 
     public void editarLocal(String cpf, String novoLocal) {
+        avalia.avaliar(cpf);
+        avalia.avaliar(novoLocal);
         controlaClientes.editarLocal(cpf, novoLocal);
     }
 
     public void removeCliente(String cpf) {
+        avalia.avaliar(cpf);
         controlaClientes.removeCliente(cpf);
     }
 
-    
+
 
 }

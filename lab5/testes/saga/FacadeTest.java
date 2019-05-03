@@ -14,7 +14,7 @@ class FacadeTest {
     }
 
     @Test
-    void testCadastraCliente() {
+    void testCadastraClientePadrao() {
         assertEquals("07345161420", facade.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc2"));
     }
 

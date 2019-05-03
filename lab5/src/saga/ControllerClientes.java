@@ -3,11 +3,11 @@ package saga;
 import java.security.InvalidKeyException;
 import java.util.HashMap;
 
-public class ControlaClientes {
+public class ControllerClientes {
     private HashMap<String, Cliente> clientes;
     private Avaliador avalia;
 
-    public ControlaClientes() {
+    public ControllerClientes() {
         clientes = new HashMap<>();
         avalia = new Avaliador();
     }
@@ -35,7 +35,6 @@ public class ControlaClientes {
 
     }
 
-
     public String dadosTodosClientes() {
         String stringSaida = "";
         boolean contador = true;
@@ -50,19 +49,19 @@ public class ControlaClientes {
         return stringSaida;
     }
 
-    public void editarNome(String cpf, String novoNome) {
+    public void editaNome(String cpf, String novoNome) {
         avalia.avaliar(cpf);
         avalia.avaliar(novoNome);
         clientes.get(cpf).setNome(novoNome);
     }
 
-    public void editarEmail(String cpf, String novoEmail) {
+    public void editaEmail(String cpf, String novoEmail) {
         avalia.avaliar(cpf);
         avalia.avaliar(novoEmail);
         clientes.get(cpf).setEmail(novoEmail);
     }
 
-    public void editarLocal(String cpf, String novoLocal) {
+    public void editaLocal(String cpf, String novoLocal) {
         avalia.avaliar(cpf);
         avalia.avaliar(novoLocal);
         clientes.get(cpf).setLocalizacao(novoLocal);

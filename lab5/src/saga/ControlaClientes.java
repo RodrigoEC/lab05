@@ -38,11 +38,11 @@ public class ControlaClientes {
 
     public String dadosTodosClientes() {
         String stringSaida = "";
-        int contador = 0;
+        boolean contador = true;
         for (Cliente cliente : this.clientes.values()) {
-            if (contador == 0) {
+            if (contador) {
                 stringSaida += cliente.toString();
-                contador += 1;
+                contador = false;
             } else {
                 stringSaida += " | " + cliente.toString();
             }

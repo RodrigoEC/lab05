@@ -2,33 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6103720-77bc-48cd-98ff-16468a689d4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/saga/controlProdutos/Produto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/saga/controlFornecedores/FornecedorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/saga/controlProdutos/ControllerProdutosTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/saga/controlProdutos/ProdutoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/saga/FacadeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/Facade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlClientes/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlClientes/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlClientes/ControllerClientes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlClientes/ControllerClientes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/ChaveProduto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/ControllerFornecedores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/ControllerFornecedores.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/Fornecedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/Fornecedor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/Produto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlProdutos/ControllerProdutos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlProdutos/ControllerProdutos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/ControllerClientesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/lab05/saga/ControllerClientesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/ControllerFornecedoresTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/lab05/saga/ControllerFornecedoresTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/FornecedorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/lab05/saga/FornecedorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/controlClientes/ClienteTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/controlClientes/ControllerClientesTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/controlFornecedores/ControllerFornecedoresTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/controlFornecedores/FornecedorTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/saga/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/Facade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlClientes/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlClientes/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlClientes/ControllerClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlClientes/ControllerClientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlFornecedores/ChaveProduto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/saga/controlFornecedores/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlFornecedores/Fornecedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlFornecedores/Produto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlProdutos/ControllerProdutos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlProdutos/ControllerProdutos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/saga/ControllerClientesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/ControllerClientesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/saga/ControllerFornecedoresTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/controlFornecedores/ControllerFornecedoresTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/saga/FornecedorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/saga/controlClientes/ClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/ClienteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/saga/controlClientes/ControllerClientesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/ControllerClientesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/saga/controlFornecedores/ControllerFornecedoresTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/ControllerFornecedoresTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/saga/controlFornecedores/FornecedorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/FornecedorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/saga/controlProdutos/ControllerProdutosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/controlProdutos/ControllerProdutosTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,7 +29,111 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/saga/Facade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1611#1612#0" expanded="true" />
+                <element signature="e#1676#1677#0" expanded="true" />
+                <element signature="e#1724#1725#0" expanded="true" />
+                <element signature="e#1792#1793#0" expanded="true" />
+                <element signature="e#1976#1977#0" expanded="true" />
+                <element signature="e#2035#2036#0" expanded="true" />
+                <element signature="e#2540#2541#0" expanded="true" />
+                <element signature="e#2593#2594#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/Fornecedor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-188">
+              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#Fornecedor#0;class#Fornecedor#0" />
+                <element signature="e#756#757#0" expanded="true" />
+                <element signature="e#790#791#0" expanded="true" />
+                <element signature="e#2142#2143#0" expanded="true" />
+                <element signature="e#2232#2233#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testes/saga/ControllerFornecedoresTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="487">
+              <caret line="124" column="19" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="92" column="38" lean-forward="true" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#426#427#0" expanded="true" />
+                <element signature="e#470#471#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testes/saga/FornecedorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1943">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#658#659#0" expanded="true" />
+                <element signature="e#752#753#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testes/saga/controlProdutos/ControllerProdutosTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="126" column="4" selection-start-line="126" selection-start-column="4" selection-end-line="151" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/saga/controlProdutos/ControllerProdutos.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="68" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#483#484#0" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -83,16 +175,16 @@
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedoresEProdutos.java" />
         <option value="$PROJECT_DIR$/src/saga/controlClientes/ControllerClientes.java" />
         <option value="$PROJECT_DIR$/testes/saga/ProdutoTest.java" />
-        <option value="$PROJECT_DIR$/testes/saga/FornecedorTest.java" />
         <option value="$PROJECT_DIR$/src/saga/controlClientes/Cliente.java" />
         <option value="$PROJECT_DIR$/src/saga/Produto.java" />
         <option value="$PROJECT_DIR$/testes/saga/ControllerClientesTest.java" />
+        <option value="$PROJECT_DIR$/src/saga/controlProdutos/ControllerProdutos.java" />
+        <option value="$PROJECT_DIR$/src/saga/controlFornecedores/Fornecedor.java" />
+        <option value="$PROJECT_DIR$/testes/saga/controlProdutos/ControllerProdutosTest.java" />
+        <option value="$PROJECT_DIR$/testes/saga/FornecedorTest.java" />
+        <option value="$PROJECT_DIR$/src/saga/Facade.java" />
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java" />
         <option value="$PROJECT_DIR$/testes/saga/ControllerFornecedoresTest.java" />
-        <option value="$PROJECT_DIR$/testes/saga/controlProdutos/ControllerProdutosTest.java" />
-        <option value="$PROJECT_DIR$/src/saga/Facade.java" />
-        <option value="$PROJECT_DIR$/src/saga/controlFornecedores/Fornecedor.java" />
-        <option value="$PROJECT_DIR$/src/saga/controlProdutos/ControllerProdutos.java" />
       </list>
     </option>
   </component>
@@ -190,6 +282,7 @@
       <recent name="saga" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="saga.controlClientes" />
       <recent name="saga.controlFornecedores" />
       <recent name="saga.controlProdutos" />
       <recent name="saga" />
@@ -214,8 +307,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.FacadeTest">
-    <configuration name="AvaliadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ControllerFornecedoresTest">
+    <configuration name="ControllerFornecedoresTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lab05" />
       <extension name="coverage">
         <pattern>
@@ -224,28 +317,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="saga" />
-      <option name="MAIN_CLASS_NAME" value="saga.AvaliadorTest" />
+      <option name="MAIN_CLASS_NAME" value="saga.ControllerFornecedoresTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerProdutosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="lab05" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="saga.controlProdutos.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="saga.controlProdutos" />
-      <option name="MAIN_CLASS_NAME" value="saga.controlProdutos.ControllerProdutosTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FacadeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControllerFornecedoresTest.testDadosTodosProdutosFornecedorParametroInexistente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lab05" />
       <extension name="coverage">
         <pattern>
@@ -254,49 +332,68 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="saga" />
-      <option name="MAIN_CLASS_NAME" value="saga.FacadeTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="saga.ControllerFornecedoresTest" />
+      <option name="METHOD_NAME" value="testDadosTodosProdutosFornecedorParametroInexistente" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FornecedorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FornecedorTest.testEditaProdutosParametrosInvalidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lab05" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="saga.controlProdutos.*" />
+          <option name="PATTERN" value="saga.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="saga.controlFornecedores" />
-      <option name="MAIN_CLASS_NAME" value="saga.controlFornecedores.FornecedorTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="saga" />
+      <option name="MAIN_CLASS_NAME" value="saga.FornecedorTest" />
+      <option name="METHOD_NAME" value="testEditaProdutosParametrosInvalidos" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProdutoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FornecedorTest.testRemoveProdutosParametrosInvalidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lab05" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="saga.controlProdutos.*" />
+          <option name="PATTERN" value="saga.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="saga.controlProdutos" />
-      <option name="MAIN_CLASS_NAME" value="saga.controlProdutos.ProdutoTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="saga" />
+      <option name="MAIN_CLASS_NAME" value="saga.FornecedorTest" />
+      <option name="METHOD_NAME" value="testRemoveProdutosParametrosInvalidos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FornecedorTest.testRemoveProdutosParametrosNulos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="saga.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="saga" />
+      <option name="MAIN_CLASS_NAME" value="saga.FornecedorTest" />
+      <option name="METHOD_NAME" value="testRemoveProdutosParametrosNulos" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FacadeTest" />
-        <item itemvalue="JUnit.AvaliadorTest" />
-        <item itemvalue="JUnit.ProdutoTest" />
-        <item itemvalue="JUnit.ControllerProdutosTest" />
-        <item itemvalue="JUnit.FornecedorTest" />
+        <item itemvalue="JUnit.ControllerFornecedoresTest" />
+        <item itemvalue="JUnit.ControllerFornecedoresTest.testDadosTodosProdutosFornecedorParametroInexistente" />
+        <item itemvalue="JUnit.FornecedorTest.testRemoveProdutosParametrosNulos" />
+        <item itemvalue="JUnit.FornecedorTest.testRemoveProdutosParametrosInvalidos" />
+        <item itemvalue="JUnit.FornecedorTest.testEditaProdutosParametrosInvalidos" />
       </list>
     </recent_temporary>
   </component>
@@ -314,39 +411,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FornecedorTest_testDadosDeTodosOSprodutosVazio - 2019.05.03 at 20h 27m 31s.xml">
-      <configuration name="FornecedorTest.testDadosDeTodosOSprodutosVazio" configurationId="JUnit" />
+    <history-entry file="FornecedorTest_testAddProdutoParametrosNulos - 2019.05.03 at 22h 25m 12s.xml">
+      <configuration name="FornecedorTest.testAddProdutoParametrosNulos" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testEditaProdutoPadrao - 2019.05.03 at 20h 29m 39s.xml">
-      <configuration name="FornecedorTest.testEditaProdutoPadrao" configurationId="JUnit" />
+    <history-entry file="FornecedorTest_testDadosProdutoParametrosInvalidos - 2019.05.03 at 22h 27m 12s.xml">
+      <configuration name="FornecedorTest.testDadosProdutoParametrosInvalidos" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testEditaProdutoPadrao - 2019.05.03 at 20h 30m 13s.xml">
-      <configuration name="FornecedorTest.testEditaProdutoPadrao" configurationId="JUnit" />
+    <history-entry file="FornecedorTest_testDadosProdutoParametrosInvalidos - 2019.05.03 at 22h 27m 47s.xml">
+      <configuration name="FornecedorTest.testDadosProdutoParametrosInvalidos" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testEditaProdutoPadrao - 2019.05.03 at 20h 30m 46s.xml">
-      <configuration name="FornecedorTest.testEditaProdutoPadrao" configurationId="JUnit" />
+    <history-entry file="FornecedorTest_testDadosProdutoParametrosNulo - 2019.05.03 at 22h 27m 58s.xml">
+      <configuration name="FornecedorTest.testDadosProdutoParametrosNulo" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testEditaProdutoKeyInexistente - 2019.05.03 at 20h 32m 16s.xml">
-      <configuration name="FornecedorTest.testEditaProdutoKeyInexistente" configurationId="JUnit" />
+    <history-entry file="FornecedorTest_testEditaProdutosParametrosInvalidos - 2019.05.03 at 22h 31m 44s.xml">
+      <configuration name="FornecedorTest.testEditaProdutosParametrosInvalidos" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testRemoveProduto - 2019.05.03 at 20h 36m 11s.xml">
-      <configuration name="FornecedorTest.testRemoveProduto" configurationId="JUnit" />
+    <history-entry file="FornecedorTest_testEditaProdutosParametrosNulos - 2019.05.03 at 22h 32m 41s.xml">
+      <configuration name="FornecedorTest.testEditaProdutosParametrosNulos" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testRemoveProdutoKeyInexistente - 2019.05.03 at 20h 37m 40s.xml">
-      <configuration name="FornecedorTest.testRemoveProdutoKeyInexistente" configurationId="JUnit" />
+    <history-entry file="FornecedorTest_testEditaProdutosParametrosNulos - 2019.05.03 at 22h 33m 53s.xml">
+      <configuration name="FornecedorTest.testEditaProdutosParametrosNulos" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest - 2019.05.03 at 20h 37m 45s.xml">
-      <configuration name="FornecedorTest" configurationId="JUnit" />
+    <history-entry file="FornecedorTest_testEditaProdutosParametrosInvalidos - 2019.05.03 at 22h 34m 36s.xml">
+      <configuration name="FornecedorTest.testEditaProdutosParametrosInvalidos" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerProdutosTest - 2019.05.03 at 21h 03m 29s.xml">
-      <configuration name="ControllerProdutosTest" configurationId="JUnit" />
+    <history-entry file="FornecedorTest_testRemoveProdutosParametrosInvalidos - 2019.05.03 at 22h 36m 12s.xml">
+      <configuration name="FornecedorTest.testRemoveProdutosParametrosInvalidos" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerProdutosTest - 2019.05.03 at 21h 06m 04s.xml">
-      <configuration name="ControllerProdutosTest" configurationId="JUnit" />
+    <history-entry file="FornecedorTest_testRemoveProdutosParametrosNulos - 2019.05.03 at 22h 36m 49s.xml">
+      <configuration name="FornecedorTest.testRemoveProdutosParametrosNulos" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1366" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -378,16 +476,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testes/saga/FacadeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/ChaveProduto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -413,20 +501,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/saga/Avaliador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/ClienteTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -481,27 +555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/FornecedorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="81" column="42" selection-start-line="81" selection-start-column="42" selection-end-line="81" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#416#417#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#752#753#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/saga/controlProdutos/Produto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testes/saga/ControllerClientesTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
@@ -512,44 +565,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ControllerFornecedoresTest.java">
+    <entry file="file://$PROJECT_DIR$/testes/saga/FacadeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="390">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlProdutos/ControllerProdutosTest.java">
+    <entry file="file://$PROJECT_DIR$/testes/saga/ClienteTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="157" column="19" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="19" />
+        <state relative-caret-position="180">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/saga/Avaliador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/saga/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="81" column="45" selection-start-line="81" selection-start-column="45" selection-end-line="81" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1611#1612#0" expanded="true" />
+            <element signature="e#1676#1677#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1792#1793#0" expanded="true" />
+            <element signature="e#1976#1977#0" expanded="true" />
+            <element signature="e#2035#2036#0" expanded="true" />
+            <element signature="e#2540#2541#0" expanded="true" />
+            <element signature="e#2593#2594#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/Fornecedor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="-188">
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-            <element signature="e#714#715#0" expanded="true" />
+            <element signature="method#Fornecedor#0;class#Fornecedor#0" />
+            <element signature="e#756#757#0" expanded="true" />
+            <element signature="e#790#791#0" expanded="true" />
+            <element signature="e#2142#2143#0" expanded="true" />
+            <element signature="e#2232#2233#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/saga/controlProdutos/Produto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/saga/controlProdutos/ControllerProdutos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="79" column="118" selection-start-line="79" selection-start-column="118" selection-end-line="79" selection-end-column="118" />
+        <state relative-caret-position="227">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="68" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#483#484#0" expanded="true" />
@@ -558,10 +641,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/FornecedorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1943">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#658#659#0" expanded="true" />
+            <element signature="e#752#753#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="322">
+          <caret line="92" column="38" lean-forward="true" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#426#427#0" expanded="true" />
@@ -570,34 +665,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/saga/Facade.java">
+    <entry file="file://$PROJECT_DIR$/testes/saga/controlProdutos/ControllerProdutosTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="89" column="24" selection-start-line="89" selection-start-column="24" selection-end-line="89" selection-end-column="24" />
+        <state relative-caret-position="442">
+          <caret line="126" column="4" selection-start-line="126" selection-start-column="4" selection-end-line="151" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#647#648#0" expanded="true" />
-            <element signature="e#704#705#0" expanded="true" />
-            <element signature="e#746#747#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
-            <element signature="e#922#923#0" expanded="true" />
-            <element signature="e#982#983#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1101#1102#0" expanded="true" />
-            <element signature="e#1160#1161#0" expanded="true" />
-            <element signature="e#1205#1206#0" expanded="true" />
-            <element signature="e#1256#1257#0" expanded="true" />
-            <element signature="e#1514#1515#0" expanded="true" />
-            <element signature="e#1579#1580#0" expanded="true" />
-            <element signature="e#1627#1628#0" expanded="true" />
-            <element signature="e#1695#1696#0" expanded="true" />
-            <element signature="e#1879#1880#0" expanded="true" />
-            <element signature="e#1938#1939#0" expanded="true" />
-            <element signature="e#2340#2341#0" expanded="true" />
-            <element signature="e#2411#2412#0" expanded="true" />
-            <element signature="e#2455#2456#0" expanded="true" />
-            <element signature="e#2512#2513#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/ControllerFornecedoresTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="124" column="19" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

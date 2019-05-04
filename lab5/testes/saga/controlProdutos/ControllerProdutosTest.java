@@ -237,5 +237,4 @@ class ControllerProdutosTest {
         } catch (NullPointerException npe) {
         }
     }
-
 }

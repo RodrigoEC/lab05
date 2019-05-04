@@ -55,6 +55,8 @@ public class ControllerFornecedores {
     }
 
     public void removeFornecedor(String nome) {
+        this.avalia.avaliar(nome);
+
         if (this.mapaFornecedores.containsKey(nome)) {
             this.mapaFornecedores.remove(nome);
         } else {
@@ -62,4 +64,40 @@ public class ControllerFornecedores {
         }
     }
 
+    public void addProduto(String nome, String preco, String nomeProduto, String descricao) {
+        this.mapaFornecedores.get(nome).addProduto(preco, nomeProduto, descricao);
+    }
+
+    public String dadosProduto(String nome, String nomeProduto, String descricao) {
+        return this.mapaFornecedores.get(nome).dadosProduto(nomeProduto, descricao);
+    }
+
+    public String dadosTodosProdutosFornecedor(String nome) {
+        return this.mapaFornecedores.get(nome).dadosTodosProdutos();
+    }
+
+    public void editaProduto(String nome, String nomeProduto, String descricao, String novoPreco) {
+        this.mapaFornecedores.get(nome).editaProduto(novoPreco, nomeProduto, descricao);
+    }
+
+
+    public void removeProduto(String nome, String nomeProduto, String descricao) {
+        this.mapaFornecedores.get(nome).removeProduto(nomeProduto, descricao);
+    }
+
+    public String dadosTodosProdutos() {
+        String stringSaida = "";
+        boolean contador = true;
+        for (Fornecedor fornecedor : this.mapaFornecedores.values()) {
+            if (contador) {
+                stringSaida += dadosTodosProdutosFornecedor(fornecedor.getNome());
+                contador = false;
+            } else {
+                stringSaida += " | ";
+                stringSaida += dadosTodosProdutosFornecedor(fornecedor.getNome());
+            }
+
+        }
+        return stringSaida;
+    }
 }

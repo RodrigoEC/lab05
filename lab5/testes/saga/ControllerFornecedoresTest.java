@@ -1,4 +1,4 @@
-package saga.controlFornecedores;
+package saga;
 
 import saga.controlFornecedores.ControllerFornecedores;
 import org.junit.jupiter.api.BeforeEach;
@@ -98,6 +98,7 @@ class ControllerFornecedoresTest {
     }
 
     // TESTES PARA O METODO "dadosTodosFornecedores"
+
     @Test
     void testDadosDeTodosOsFornecedoresPadrao() {
         controller.cadastraFornecedor("pradaria", "pradaria@gmail.com", "4002-8922");
@@ -108,6 +109,27 @@ class ControllerFornecedoresTest {
     void testDadosDeTodosOsFornecedoresVazio() {
         controller.getMapaFornecedores().remove("padaria");
         assertEquals("", controller.dadosTodosFornecedores());
+    }
+
+
+    @Test
+    void testDadosTodosProdutosFornecedorParametroInexistente() {
+        try {
+            controller.dadosTodosProdutosFornecedor("vaquinha");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
+    }
+
+    @Test
+    void testDadosTodosProdutosPadrao() {
+        controller.cadastraFornecedor("palmerinha", "palmerinha@gmail.com", "159357");
+        controller.addProduto("padaria", "3,00", "tapioca", "tapioca delicia");
+        controller.addProduto("padaria", "70,00", "pao", "pao top");
+        controller.addProduto("palmerinha", "4,00", "sapatoDoce", "lalal");
+
+        assertEquals("padaria - tapioca - tapioca delicia - R$3,00 | padaria - pao - pao top - R$70,00 | " +
+                "palmerinha - sapatoDoce - lalal - R$4,00", controller.dadosTodosProdutos());
     }
 
     // TESTES PARA O METODO "editaEmail"
@@ -170,7 +192,4 @@ class ControllerFornecedoresTest {
         } catch (NullPointerException npe) {
         }
     }
-
-
-
 }

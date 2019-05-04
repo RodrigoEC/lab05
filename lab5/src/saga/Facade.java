@@ -7,11 +7,10 @@ import saga.controlProdutos.ControllerProdutos;
 public class Facade {
     private ControllerClientes controlaClientes;
     private ControllerFornecedores controlaFornecedores;
-    private ControllerProdutos controlaProdutos;
 
     public Facade() {
-        controlaClientes  = new ControllerClientes();
-        controlaFornecedores = new ControllerFornecedores();
+        this.controlaClientes  = new ControllerClientes();
+        this.controlaFornecedores = new ControllerFornecedores();
     }
 
     // PARTE DO CONTROLLER DOS CLIENTES
@@ -47,46 +46,46 @@ public class Facade {
     // PARTE DO CONTROLLER DOS FORNECEDORES
 
     public void cadastrarFornecedores(String nome, String email, String telefone) {
-        controlaFornecedores.cadastraFornecedor(nome, email, telefone);
+        this.controlaFornecedores.cadastraFornecedor(nome, email, telefone);
     }
 
     public String dadosFornecedor(String nome) {
-        return controlaFornecedores.dadosFornecedor(nome);
+        return this.controlaFornecedores.dadosFornecedor(nome);
     }
 
     public String dadosDeTodosFornecedores() {
-        return controlaFornecedores.dadosTodosFornecedores();
+        return this.controlaFornecedores.dadosTodosFornecedores();
     }
 
     public void editaEmailFornecedor(String nome, String novoEmail) {
-        controlaFornecedores.editaEmail(nome, novoEmail);
+        this.controlaFornecedores.editaEmail(nome, novoEmail);
     }
 
     public void removeFornecedor(String nome) {
-        controlaFornecedores.removeFornecedor(nome);
+        this.controlaFornecedores.removeFornecedor(nome);
     }
 
     public void addProduto(String nome, String preco, String nomeProduto, String descricao) {
-        controlaProdutos.addProduto(nome, preco, nomeProduto, descricao);
+        this.controlaFornecedores.addProduto(nome, preco, nomeProduto, descricao);
     }
 
     public void dadosProduto(String nome, String nomeProduto, String descricao) {
-        controlaProdutos.dadosProduto(nome, nomeProduto, descricao);
+        this.controlaFornecedores.dadosProduto(nome, nomeProduto, descricao);
     }
 
     public void dadosDosProdutosDoFornecedor(String nome) {
-        controlaProdutos.dadosTodosProdutosFornecedor(nome);
+        this.controlaFornecedores.dadosTodosProdutosFornecedor(nome);
     }
 
     public void dadosDeTodosOsProdutos() {
-        controlaProdutos.dadosTodosProdutos();
+        this.controlaFornecedores.dadosTodosProdutos();
     }
 
     public void editaProduto(String nome, String novoPreco, String nomeProduto, String descricao)   {
-        controlaProdutos.editaProduto(nome, nomeProduto, descricao, novoPreco);
+        this.controlaFornecedores.editaProduto(nome, nomeProduto, descricao, novoPreco);
     }
 
     public void removeProduto(String nome, String nomeProduto, String descricao) {
-        controlaProdutos.removeProduto(nome, nomeProduto, descricao);
+        this.controlaFornecedores.removeProduto(nome, nomeProduto, descricao);
     }
 }

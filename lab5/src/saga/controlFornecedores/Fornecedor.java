@@ -1,5 +1,6 @@
 package saga.controlFornecedores;
 
+import saga.Avaliador;
 import saga.controlProdutos.Produto;
 
 import java.util.HashMap;
@@ -10,12 +11,14 @@ public class Fornecedor {
     private String email;
     private String telefone;
     private HashMap<String, Produto> mapaProdutos;
+    private Avaliador avalia;
 
     public Fornecedor(String nome, String email, String telefone) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
         this.mapaProdutos = new HashMap<String, Produto>();
+        avalia = new Avaliador();
     }
 
     public String getEmail() {
@@ -35,14 +38,21 @@ public class Fornecedor {
     }
 
     public void addProduto(String preco,String  nomeProduto, String descricao) {
+        this.avalia.avaliar(preco);
+        this.avalia.avaliar(nomeProduto);
+        this.avalia.avaliar(descricao);
+
         Produto produto = new Produto(preco, nomeProduto, descricao);
         String chave = nomeProduto + descricao;
 
-        mapaProdutos.put(chave, produto);
+        this.mapaProdutos.put(chave, produto);
     }
 
     public String dadosProduto(String nomeProduto, String descricao) {
-        return mapaProdutos.get(nomeProduto + descricao).toString();
+        this.avalia.avaliar(nomeProduto);
+        this.avalia.avaliar(descricao);
+
+        return this.mapaProdutos.get(nomeProduto + descricao).toString();
     }
 
     public String dadosTodosProdutos() {
@@ -60,10 +70,17 @@ public class Fornecedor {
     }
 
     public void editaProduto(String novoPreco, String nomeProduto, String descricao) {
+        this.avalia.avaliar(nomeProduto);
+        this.avalia.avaliar(descricao);
+        this.avalia.avaliar(novoPreco);
+
         this.mapaProdutos.get(nomeProduto + descricao).setPreco(novoPreco);
     }
 
     public void removeProduto(String nomeProduto, String descricao) {
+        this.avalia.avaliar(nomeProduto);
+        this.avalia.avaliar(descricao);
+
         if (!this.mapaProdutos.containsKey(nomeProduto + descricao)){
             throw new NullPointerException("KEY INEXISTENTE");
         }

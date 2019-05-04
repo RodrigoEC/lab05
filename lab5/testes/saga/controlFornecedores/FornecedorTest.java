@@ -1,4 +1,4 @@
-package saga;
+package saga.controlFornecedores;
 
 import saga.controlFornecedores.Fornecedor;
 import org.junit.jupiter.api.BeforeEach;

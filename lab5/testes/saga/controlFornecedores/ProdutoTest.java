@@ -1,7 +1,8 @@
-package saga.controlProdutos;
+package saga.controlFornecedores;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import saga.controlFornecedores.Produto;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

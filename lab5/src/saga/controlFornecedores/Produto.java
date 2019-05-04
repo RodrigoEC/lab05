@@ -1,4 +1,4 @@
-package saga.controlProdutos;
+package saga.controlFornecedores;
 
 import java.util.Objects;
 

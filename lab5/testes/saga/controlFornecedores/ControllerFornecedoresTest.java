@@ -1,4 +1,4 @@
-package saga;
+package saga.controlFornecedores;
 
 import saga.controlFornecedores.ControllerFornecedores;
 import org.junit.jupiter.api.BeforeEach;
@@ -79,6 +79,16 @@ class ControllerFornecedoresTest {
         assertEquals("padaria - padaria@gmail.com - 4002-8922", controller.dadosFornecedor("padaria"));
     }
 
+
+    @Test
+    void testDadosFornecedorInexistente() {
+        try {
+            controller.dadosTodosProdutosFornecedor("lalala");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
+    }
+
     @Test
     void testDadosFornecedorInvalido() {
         try {
@@ -121,6 +131,7 @@ class ControllerFornecedoresTest {
         }
     }
 
+    //TESTANDO O METODO "dadosTodosFornecedores"
     @Test
     void testDadosTodosProdutosPadrao() {
         controller.cadastraFornecedor("palmerinha", "palmerinha@gmail.com", "159357");

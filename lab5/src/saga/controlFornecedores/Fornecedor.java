@@ -1,7 +1,6 @@
 package saga.controlFornecedores;
 
 import saga.Avaliador;
-import saga.controlProdutos.Produto;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -36,6 +35,30 @@ public class Fornecedor {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s - %s - %s", this.nome, this.email, this.telefone);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Fornecedor)) return false;
+        Fornecedor that = (Fornecedor) o;
+        return getNome().equals(that.getNome());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getNome());
+    }
+
+    // PARTE RELACIONADA A CLASSE PRODUTO
 
     public void addProduto(String preco,String  nomeProduto, String descricao) {
         this.avalia.avaliar(preco);
@@ -86,23 +109,5 @@ public class Fornecedor {
         }
 
         this.mapaProdutos.remove(nomeProduto + descricao);
-    }
-
-    @Override
-    public String toString() {
-        return String.format("%s - %s - %s", this.nome, this.email, this.telefone);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Fornecedor)) return false;
-        Fornecedor that = (Fornecedor) o;
-        return getNome().equals(that.getNome());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getNome());
     }
 }

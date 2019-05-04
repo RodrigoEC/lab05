@@ -1,4 +1,4 @@
-package saga;
+package saga.controlClientes;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,6 +16,7 @@ class ControllerClientesTest {
     }
 
     // Testes CadastraCliente
+
     @Test
     void testCadastraClientePadrao() {
         clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
@@ -89,7 +90,7 @@ class ControllerClientesTest {
 
 
 
-    // Testes dadosCliente
+    //TESTANDO O METODO "dadosCliente"
 
     @Test
     void testDadosDoClientePadrao() {
@@ -97,7 +98,7 @@ class ControllerClientesTest {
         assertEquals("rodrigo - lcc3 - rodrigo.cavalcanti@ccc.ufcg.edu.br", clientes.dadosCliente("07345161420"));
     }
 
-    // Testedo metodo "dadosTodosClientes"
+    //TESTANDO O METODO "dadosTodosClientes"
 
     @Test
     void testDadosDeTodosOsClientesPadrao() {
@@ -111,7 +112,7 @@ class ControllerClientesTest {
         assertEquals("", clientes.dadosTodosClientes());
     }
 
-    // Testeando metodo "editaNome"
+    //TESTANDO O METODO "editaNome"
 
     @Test
     void testEditaNomePadrao() {
@@ -144,7 +145,7 @@ class ControllerClientesTest {
 
     }
 
-    // testando o metodo "editaEmail"
+    //TESTANDO O METODO "editaEmail"
 
     @Test
     void testEditaEmailPadrao() {
@@ -188,7 +189,7 @@ class ControllerClientesTest {
     }
 
 
-    // testando o metodo "editaLocal"
+    //TESTANDO O METODO "editaLocal"
 
     @Test
     void testEditarLocal() {
@@ -231,12 +232,21 @@ class ControllerClientesTest {
         }
     }
 
-    // Teste para o metodo "removeCliente"
+    //TESTANDO O METODO "removeCliente"
 
     @Test
     void testRemoveCliente() {
         clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
         clientes.removeCliente("07345161420");
         assertFalse(clientes.getClientes().containsKey("07345161420"));
+    }
+
+    @Test
+    void testRemoveClienteInexistente() {
+        try {
+            clientes.removeCliente("07345161420");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
     }
 }

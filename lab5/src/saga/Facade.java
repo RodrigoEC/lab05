@@ -2,7 +2,6 @@ package saga;
 
 import saga.controlClientes.ControllerClientes;
 import saga.controlFornecedores.ControllerFornecedores;
-import saga.controlProdutos.ControllerProdutos;
 
 public class Facade {
     private ControllerClientes controlaClientes;
@@ -59,6 +58,10 @@ public class Facade {
 
     public void editaEmailFornecedor(String nome, String novoEmail) {
         this.controlaFornecedores.editaEmail(nome, novoEmail);
+    }
+
+    public void editaTelefoneFornecedor(String nome, String novoTelefone) {
+        this.controlaFornecedores.editaTelefone(nome, novoTelefone);
     }
 
     public void removeFornecedor(String nome) {

@@ -18,21 +18,21 @@ public class ControllerFornecedores {
         return this.mapaFornecedores;
     }
 
-    public void cadastraFornecedor(String nome, String email, String telefone) {
-        this.avalia.avaliar(nome);
+    public void cadastraFornecedor(String fornecedor, String email, String telefone) {
+        this.avalia.avaliar(fornecedor);
         this.avalia.avaliar(email);
         this.avalia.avaliar(telefone);
 
-        if (!this.mapaFornecedores.containsKey(nome)) {
-            Fornecedor fornecedor = new Fornecedor(nome, email, telefone);
-            this.mapaFornecedores.put(nome, fornecedor);
+        if (!this.mapaFornecedores.containsKey(fornecedor)) {
+            Fornecedor novoFornecedor = new Fornecedor(fornecedor, email, telefone);
+            this.mapaFornecedores.put(fornecedor, novoFornecedor);
         }
     }
 
-    public String dadosFornecedor(String nome) {
-        this.avalia.avaliar(nome);
+    public String dadosFornecedor(String fornecedor) {
+        this.avalia.avaliar(fornecedor);
 
-        return this.mapaFornecedores.get(nome).toString();
+        return this.mapaFornecedores.get(fornecedor).toString();
     }
 
     public String dadosTodosFornecedores() {
@@ -49,40 +49,47 @@ public class ControllerFornecedores {
         return stringSaida;
     }
 
-    public void editaEmail(String nome, String novoEmail) {
+    public void editaEmail(String fornecedor, String novoEmail) {
         this.avalia.avaliar(novoEmail);
-        this.mapaFornecedores.get(nome).setEmail(novoEmail);
+        this.mapaFornecedores.get(fornecedor).setEmail(novoEmail);
     }
 
-    public void removeFornecedor(String nome) {
-        this.avalia.avaliar(nome);
+    public void editaTelefone(String fornecedor, String novoTelefone) {
+        this.avalia.avaliar(novoTelefone);
+        this.mapaFornecedores.get(fornecedor).setTelefone(novoTelefone);
+    }
 
-        if (this.mapaFornecedores.containsKey(nome)) {
-            this.mapaFornecedores.remove(nome);
+    public void removeFornecedor(String fornecedor) {
+        this.avalia.avaliar(fornecedor);
+
+        if (this.mapaFornecedores.containsKey(fornecedor)) {
+            this.mapaFornecedores.remove(fornecedor);
         } else {
             throw new NullPointerException("KEY INEXISTENTE");
         }
     }
 
-    public void addProduto(String nome, String preco, String nomeProduto, String descricao) {
-        this.mapaFornecedores.get(nome).addProduto(preco, nomeProduto, descricao);
+    // PARTE RELACIONADA A PRODUTOS
+
+    public void addProduto(String fornecedor, String preco, String nomeProduto, String descricao) {
+        this.mapaFornecedores.get(fornecedor).addProduto(preco, nomeProduto, descricao);
     }
 
-    public String dadosProduto(String nome, String nomeProduto, String descricao) {
-        return this.mapaFornecedores.get(nome).dadosProduto(nomeProduto, descricao);
+    public String dadosProduto(String fornecedor, String nomeProduto, String descricao) {
+        return this.mapaFornecedores.get(fornecedor).dadosProduto(nomeProduto, descricao);
     }
 
-    public String dadosTodosProdutosFornecedor(String nome) {
-        return this.mapaFornecedores.get(nome).dadosTodosProdutos();
+    public String dadosTodosProdutosFornecedor(String fornecedor) {
+        return this.mapaFornecedores.get(fornecedor).dadosTodosProdutos();
     }
 
-    public void editaProduto(String nome, String nomeProduto, String descricao, String novoPreco) {
-        this.mapaFornecedores.get(nome).editaProduto(novoPreco, nomeProduto, descricao);
+    public void editaProduto(String fornecedor, String nomeProduto, String descricao, String novoPreco) {
+        this.mapaFornecedores.get(fornecedor).editaProduto(novoPreco, nomeProduto, descricao);
     }
 
 
-    public void removeProduto(String nome, String nomeProduto, String descricao) {
-        this.mapaFornecedores.get(nome).removeProduto(nomeProduto, descricao);
+    public void removeProduto(String fornecedor, String nomeProduto, String descricao) {
+        this.mapaFornecedores.get(fornecedor).removeProduto(nomeProduto, descricao);
     }
 
     public String dadosTodosProdutos() {

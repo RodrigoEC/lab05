@@ -1,5 +1,7 @@
 package saga.controlClientes;
 
+import java.util.Objects;
+
 public class Cliente {
     private String cpf;
     private String nome;
@@ -42,5 +44,16 @@ public class Cliente {
         return String.format("%s - %s - %s", this.nome, this.localizacao, this.email);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Cliente)) return false;
+        Cliente cliente = (Cliente) o;
+        return cpf.equals(cliente.cpf);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(cpf);
+    }
 }

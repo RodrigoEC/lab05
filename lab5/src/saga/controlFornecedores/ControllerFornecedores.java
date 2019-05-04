@@ -10,28 +10,29 @@ public class ControllerFornecedores {
 
 
     public ControllerFornecedores() {
-        mapaFornecedores = new HashMap<String, Fornecedor>();
-        avalia = new Avaliador();
+        this.mapaFornecedores = new HashMap<String, Fornecedor>();
+        this.avalia = new Avaliador();
     }
 
     public HashMap<String, Fornecedor> getMapaFornecedores() {
-        return mapaFornecedores;
+        return this.mapaFornecedores;
     }
 
     public void cadastraFornecedor(String nome, String email, String telefone) {
-        avalia.avaliar(nome);
-        avalia.avaliar(email);
-        avalia.avaliar(telefone);
-        if (!mapaFornecedores.containsKey(nome)) {
+        this.avalia.avaliar(nome);
+        this.avalia.avaliar(email);
+        this.avalia.avaliar(telefone);
+
+        if (!this.mapaFornecedores.containsKey(nome)) {
             Fornecedor fornecedor = new Fornecedor(nome, email, telefone);
-            mapaFornecedores.put(nome, fornecedor);
+            this.mapaFornecedores.put(nome, fornecedor);
         }
     }
 
     public String dadosFornecedor(String nome) {
-        avalia.avaliar(nome);
+        this.avalia.avaliar(nome);
 
-        return mapaFornecedores.get(nome).toString();
+        return this.mapaFornecedores.get(nome).toString();
     }
 
     public String dadosTodosFornecedores() {
@@ -49,27 +50,16 @@ public class ControllerFornecedores {
     }
 
     public void editaEmail(String nome, String novoEmail) {
-        avalia.avaliar(novoEmail);
-        mapaFornecedores.get(nome).setEmail(novoEmail);
+        this.avalia.avaliar(novoEmail);
+        this.mapaFornecedores.get(nome).setEmail(novoEmail);
     }
 
     public void removeFornecedor(String nome) {
-        if (mapaFornecedores.containsKey(nome)) {
-            mapaFornecedores.remove(nome);
+        if (this.mapaFornecedores.containsKey(nome)) {
+            this.mapaFornecedores.remove(nome);
         } else {
             throw new NullPointerException("KEY INEXISTENTE");
         }
     }
 
-    public void addProduto(String nome, String preco, String nomeProduto, String descricao) {
-        avalia.avaliar(nome);
-        avalia.avaliar(preco);
-        avalia.avaliar(nomeProduto);
-        avalia.avaliar(descricao);
-        if (mapaFornecedores.containsKey(nome)) {
-            mapaFornecedores.get(nome).addProduto(preco, nomeProduto, descricao);
-        }
-        throw  new NullPointerException("KEY INEXISTENTE");
-
-    }
 }

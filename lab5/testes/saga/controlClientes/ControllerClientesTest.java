@@ -1,4 +1,4 @@
-package saga;
+package saga.controlClientes;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,6 +20,18 @@ class ControllerClientesTest {
     void testCadastraClientePadrao() {
         clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
         assertTrue(clientes.getClientes().containsKey("07345161420"));
+    }
+
+    @Test
+    void tesCadastraClienteJaCadastrado() {
+        clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
+
+        try {
+            clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
+
     }
 
     @Test
@@ -55,11 +67,6 @@ class ControllerClientesTest {
 
     @Test
     void testCadastraClienteParametrosInvalidos() {
-        try {
-            clientes.cadastraCliente(" ", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
-            fail("era pra dar ruim");
-        } catch (IllegalArgumentException iae) {
-        }
 
         try {
             clientes.cadastraCliente("07345161420", " ", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
@@ -85,13 +92,15 @@ class ControllerClientesTest {
     // Testes dadosCliente
 
     @Test
-    void testDadosClientePadrao() {
+    void testDadosDoClientePadrao() {
         clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
         assertEquals("rodrigo - lcc3 - rodrigo.cavalcanti@ccc.ufcg.edu.br", clientes.dadosCliente("07345161420"));
     }
 
+    // Testedo metodo "dadosTodosClientes"
+
     @Test
-    void testDadosClientesPadrao() {
+    void testDadosDeTodosOsClientesPadrao() {
         clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
         clientes.cadastraCliente("073451614", "rodro", "rodrigo.cavalcanti@ccc.ufg.edu.br", "lcc2");
         assertEquals("rodro - lcc2 - rodrigo.cavalcanti@ccc.ufg.edu.br | rodrigo - lcc3 - rodrigo.cavalcanti@ccc.ufcg.edu.br", clientes.dadosTodosClientes());
@@ -102,10 +111,10 @@ class ControllerClientesTest {
         assertEquals("", clientes.dadosTodosClientes());
     }
 
-    // Testes de Editar o cliente
+    // Testeando metodo "editaNome"
 
     @Test
-    void testEditarNome() {
+    void testEditaNomePadrao() {
         clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
         clientes.editaNome("07345161420", "pablo escobar");
         assertEquals("pablo escobar", clientes.getClientes().get("07345161420").getNome());
@@ -120,6 +129,7 @@ class ControllerClientesTest {
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
         }
+
     }
 
     @Test
@@ -131,10 +141,13 @@ class ControllerClientesTest {
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
         }
+
     }
 
+    // testando o metodo "editaEmail"
+
     @Test
-    void testEditarEmail() {
+    void testEditaEmailPadrao() {
         clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
         clientes.editaEmail("07345161420", "rodrigolegal@marara.com");
         assertEquals("rodrigolegal@marara.com", clientes.getClientes().get("07345161420").getEmail());
@@ -149,6 +162,12 @@ class ControllerClientesTest {
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
         }
+
+        try {
+            clientes.editaEmail(null, "ororor");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
     }
 
     @Test
@@ -160,8 +179,16 @@ class ControllerClientesTest {
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
         }
+
+        try {
+            clientes.editaEmail(" ", "ellelelfl");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
     }
 
+
+    // testando o metodo "editaLocal"
 
     @Test
     void testEditarLocal() {
@@ -179,6 +206,12 @@ class ControllerClientesTest {
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
         }
+
+        try {
+            clientes.editaLocal(null, "llc1");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
     }
 
     @Test
@@ -190,9 +223,15 @@ class ControllerClientesTest {
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
         }
+
+        try {
+            clientes.editaLocal("", "lacc");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
     }
 
-    // Teste para remover clientes
+    // Teste para o metodo "removeCliente"
 
     @Test
     void testRemoveCliente() {

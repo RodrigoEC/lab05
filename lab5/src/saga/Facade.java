@@ -2,10 +2,12 @@ package saga;
 
 import saga.controlClientes.ControllerClientes;
 import saga.controlFornecedores.ControllerFornecedores;
+import saga.controlProdutos.ControllerProdutos;
 
 public class Facade {
     private ControllerClientes controlaClientes;
     private ControllerFornecedores controlaFornecedores;
+    private ControllerProdutos controlaProdutos;
 
     public Facade() {
         controlaClientes  = new ControllerClientes();
@@ -65,13 +67,26 @@ public class Facade {
     }
 
     public void addProduto(String nome, String preco, String nomeProduto, String descricao) {
-        controlaFornecedores.addProduto(nome, preco, nomeProduto, descricao);
+        controlaProdutos.addProduto(nome, preco, nomeProduto, descricao);
     }
 
+    public void dadosProduto(String nome, String nomeProduto, String descricao) {
+        controlaProdutos.dadosProduto(nome, nomeProduto, descricao);
+    }
 
+    public void dadosDosProdutosDoFornecedor(String nome) {
+        controlaProdutos.dadosTodosProdutosFornecedor(nome);
+    }
 
+    public void dadosDeTodosOsProdutos() {
+        controlaProdutos.dadosTodosProdutos();
+    }
 
+    public void editaProduto(String nome, String novoPreco, String nomeProduto, String descricao)   {
+        controlaProdutos.editaProduto(nome, nomeProduto, descricao, novoPreco);
+    }
 
-
-
+    public void removeProduto(String nome, String nomeProduto, String descricao) {
+        controlaProdutos.removeProduto(nome, nomeProduto, descricao);
+    }
 }

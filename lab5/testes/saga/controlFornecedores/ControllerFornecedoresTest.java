@@ -1,4 +1,4 @@
-package saga;
+package saga.controlFornecedores;
 
 import saga.controlFornecedores.ControllerFornecedores;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,6 +15,7 @@ class ControllerFornecedoresTest {
         controller.cadastraFornecedor("padaria", "padaria@gmail.com", "4002-8922");
     }
 
+    // TESTES PARA O METODO "cadastraFornecedor"
     @Test
     void testCadastraFornecedorPadrao() {
         assertTrue(controller.getMapaFornecedores().containsKey("padaria"));
@@ -71,6 +72,8 @@ class ControllerFornecedoresTest {
     }
 
 
+    // TESTES PARA O METODO "dadosFornecedor"
+
     @Test
     void testDadosFornecedor() {
         assertEquals("padaria - padaria@gmail.com - 4002-8922", controller.dadosFornecedor("padaria"));
@@ -94,6 +97,7 @@ class ControllerFornecedoresTest {
         }
     }
 
+    // TESTES PARA O METODO "dadosTodosFornecedores"
     @Test
     void testDadosDeTodosOsFornecedoresPadrao() {
         controller.cadastraFornecedor("pradaria", "pradaria@gmail.com", "4002-8922");
@@ -105,6 +109,8 @@ class ControllerFornecedoresTest {
         controller.getMapaFornecedores().remove("padaria");
         assertEquals("", controller.dadosTodosFornecedores());
     }
+
+    // TESTES PARA O METODO "editaEmail"
 
     @Test
     void testEditaEmail() {
@@ -148,6 +154,8 @@ class ControllerFornecedoresTest {
         }
     }
 
+    // TESTES PARA O METODO "removeFornecedor"
+
     @Test
     void testRemoveFornecedor() {
         controller.removeFornecedor("padaria");
@@ -163,60 +171,6 @@ class ControllerFornecedoresTest {
         }
     }
 
-    @Test
-    void testAddProdutoPadrao() {
-        controller.addProduto("padaria", "3,00", "tapioca", "tapioca boaaaa");
-        assertTrue(controller.getMapaFornecedores().get("padaria").getMapaProdutos().containsKey("tapiocatapioca boaaaa"));
-    }
 
-    @Test
-    void testAddProdutoFornecedorInexistente() {
-        try {
-            controller.addProduto("paria", "3,00", "tapioca", "tapioca boaaaa");
-            fail("ERA PRA DAR RUIM");
-        } catch (NullPointerException npe) {
-        }
-    }
 
-    @Test
-    void testAddProdutoParametrosInexistente() {
-        try {
-            controller.addProduto("paria", "3,00", "tapioca", "");
-            fail("ERA PRA DAR RUIM");
-        } catch (IllegalArgumentException iae) {
-        }
-
-        try {
-            controller.addProduto("paria", "3,00", " ", "tapioca boaaaa");
-            fail("ERA PRA DAR RUIM");
-        } catch (IllegalArgumentException iae) {
-        }
-
-        try {
-            controller.addProduto("paria", "   ", "tapioca", "tapioca boaaaa");
-            fail("ERA PRA DAR RUIM");
-        } catch (IllegalArgumentException iae) {
-        }
-    }
-
-    @Test
-    void testAddProdutoParametrosNulos() {
-        try {
-            controller.addProduto("paria", null, "tapioca", "tapioca boaaaa");
-            fail("ERA PRA DAR RUIM");
-        } catch (NullPointerException npe) {
-        }
-
-        try {
-            controller.addProduto("paria", "3,00", null, "tapioca boaaaa");
-            fail("ERA PRA DAR RUIM");
-        } catch (NullPointerException npe) {
-        }
-
-        try {
-            controller.addProduto("paria", "3,00", "tapioca", null);
-            fail("ERA PRA DAR RUIM");
-        } catch (NullPointerException npe) {
-        }
-    }
 }

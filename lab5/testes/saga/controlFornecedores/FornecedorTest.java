@@ -233,4 +233,28 @@ class FornecedorTest {
         } catch (NullPointerException npe) {
         }
     }
+
+    @Test
+    void testFornecedoresIguais() {
+        Fornecedor fornecedorGemeo = new Fornecedor("padaria","padaria@gmail.com", "4002-8922");
+        assertTrue(fornecedor.equals(fornecedorGemeo));
+    }
+
+    @Test
+    void testFornecedoresDiferentes() {
+        Fornecedor fornecedor2 = new Fornecedor("parara","padaria@gmail.com", "4002-8922");
+        assertFalse(fornecedor.equals(fornecedor2));
+    }
+
+    @Test
+    void testHashCodesIguais() {
+        Fornecedor fornecedorGemeo = new Fornecedor("padaria","padaria@gmail.com", "4002-8922");
+        assertTrue(fornecedor.hashCode() == fornecedorGemeo.hashCode());
+    }
+
+    @Test
+    void testHashCodesDiferentes() {
+        Fornecedor fornecedor2 = new Fornecedor("parara","padaria@gmail.com", "4002-8922");
+        assertTrue(fornecedor.hashCode() != fornecedor2.hashCode());
+    }
 }

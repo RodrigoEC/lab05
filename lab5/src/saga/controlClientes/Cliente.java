@@ -3,7 +3,7 @@ package saga.controlClientes;
 import java.util.Objects;
 
 /**
- * Classe responsavel por criar e alterar um objeto que representa um cliente.
+ * Classe responsável por criar e alterar um objeto que representa um cliente.
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
@@ -122,9 +122,9 @@ public class Cliente {
     }
 
     /**
-     * Metodo que cria um novo hashCode para o objeto
+     * Método que cria um novo hashCode para o objeto
      *
-     * @return o novo HashCode.
+     * @return O novo HashCode.
      */
     @Override
     public int hashCode() {

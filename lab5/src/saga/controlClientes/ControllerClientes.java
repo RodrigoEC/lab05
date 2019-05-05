@@ -4,7 +4,11 @@ import saga.Avaliador;
 
 import java.util.HashMap;
 
-
+/**
+ * Classe responsável por criar um controller responsável por fazer operações sobre objetos do tipo Cliente.
+ *
+ * @author Rodrigo Eloy Cavalcanti - 118210111
+ */
 public class ControllerClientes {
     /**
      * Atributo que representa um mapa de clientes, onde a chave é o cpf do cliente.
@@ -36,7 +40,8 @@ public class ControllerClientes {
 
     /**
      * Método responsável por criar e cadastrar um novo cliente, cujo atributos são passados como parâmetros do método.
-     * Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
+     * será lançada.
      *
      * @param cpf cpf do cliente.
      * @param nome nome do cliente.

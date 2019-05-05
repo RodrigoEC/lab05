@@ -7,6 +7,9 @@ import java.util.Objects;
 
 /**
  * Classer responsável por criar um objeto que representa um fornecedor de um mercado.
+ *
+ * @author Rodrigo Eloy Cavalcanti - 118210111
+ *
  */
 public class Fornecedor {
     /**
@@ -128,7 +131,7 @@ public class Fornecedor {
     // PARTE RELACIONADA A CLASSE PRODUTO
 
     /**
-     * Método que cria um novo produto baseado no preço, no nome do produto e na sua descrição e o adiociona no mapa de
+     * Método que cria um novo produto baseado no preço, no nome do produto e na sua descrição e o adiciona no mapa de
      * produtos. Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
      * será lançada.
      *
@@ -164,7 +167,7 @@ public class Fornecedor {
     }
 
     /**
-     * Método que retorna a representação texutal de todos os produtos que foram adicionados ao fornecedor.
+     * Método que retorna a representação textual de todos os produtos que foram adicionados ao fornecedor.
      *
      * @return A representação textual de todos os produtos.
      */

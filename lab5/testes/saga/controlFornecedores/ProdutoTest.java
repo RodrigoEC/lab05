@@ -19,4 +19,6 @@ class ProdutoTest {
     void testToString() {
         assertEquals("placebo - placebo - R$3,00", produto.toString());
     }
+
+    
 }

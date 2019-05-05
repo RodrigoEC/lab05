@@ -42,9 +42,9 @@ public class ControllerFornecedores {
      * Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
      * será lançada.
      *
-     * @param fornecedor
-     * @param email
-     * @param telefone
+     * @param fornecedor Nome do fornecedor.
+     * @param email E-mail do fornecedor.
+     * @param telefone Telefone do fornecedor.
      */
     public void cadastraFornecedor(String fornecedor, String email, String telefone) {
         this.avalia.avaliar(fornecedor);
@@ -167,6 +167,7 @@ public class ControllerFornecedores {
      * Método que retorna a representação textual de todos os produtos que foram adicionados ao fornecedor, cujo nome
      * foi passado como parâmetro.
      *
+     * @param fornecedor nome do fornecedor.
      * @return A representação textual de todos os produtos.
      */
     public String dadosTodosProdutosFornecedor(String fornecedor) {

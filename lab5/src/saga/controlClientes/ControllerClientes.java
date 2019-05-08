@@ -152,7 +152,7 @@ public class ControllerClientes {
         avalia.avaliar(cpf);
 
         if (this.clientes.containsKey(cpf)) {
-            clientes.remove(cpf);
+            clientes.remove(cpf, clientes.get((cpf)));
         } else {
             throw new NullPointerException("KEY INEXISTENTE");
         }

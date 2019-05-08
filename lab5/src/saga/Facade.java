@@ -3,10 +3,26 @@ package saga;
 import saga.controlClientes.ControllerClientes;
 import saga.controlFornecedores.ControllerFornecedores;
 
+/**
+ * Essa classe é responsável por reunir em uma fachada os controllers das outras classes.
+ *
+ * @author rodrigo Eloy Cavalcanti - 118210111
+ */
 public class Facade {
+
+    /**
+     * Controller da classe Cliente.
+     */
     private ControllerClientes controlaClientes;
+
+    /**
+     * Controller da classe Fornecedor
+     */
     private ControllerFornecedores controlaFornecedores;
 
+    /**
+     * Construtor responsável por criar o objeto do tipo Facade e  incializar seus atributos.
+     */
     public Facade() {
         this.controlaClientes  = new ControllerClientes();
         this.controlaFornecedores = new ControllerFornecedores();

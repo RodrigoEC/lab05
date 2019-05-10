@@ -21,7 +21,7 @@ public class Produto {
     /**
      * Atributo que representa o preço do produto.
      */
-    private String preco;
+    private double preco;
 
     /**
      * Construtor responsável por criar o objeto baseado nos parâmetros que serão passados.
@@ -30,7 +30,7 @@ public class Produto {
      * @param nomeProduto Nome do produto.
      * @param descricao Descrição do produto criado.
      */
-    public Produto(String preco, String nomeProduto, String descricao) {
+    public Produto(double preco, String nomeProduto, String descricao) {
         this.preco = preco;
         this.nomeProduto = nomeProduto;
         this.descricao = descricao;
@@ -41,7 +41,7 @@ public class Produto {
      *
      * @return o atributo "preco".
      */
-    public String getPreco() {
+    public double getPreco() {
         return preco;
     }
 
@@ -50,7 +50,7 @@ public class Produto {
      *
      * @param preco o preço que será atribuído ao atributo "preco".
      */
-    public void setPreco(String preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 

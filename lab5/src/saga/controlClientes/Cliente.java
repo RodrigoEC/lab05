@@ -11,7 +11,7 @@ public class Cliente {
     /**
      * Atributo que representa o cpf do cliente.
      */
-    private int cpf;
+    private String cpf;
 
     /**
      * Atributo que representa o nome do cliente.
@@ -36,7 +36,7 @@ public class Cliente {
      * @param email e-mail do cliente
      * @param local local onde o cliente trabalha
      */
-    public Cliente(int cpf, String nome, String email, String local) {
+    public Cliente(String cpf, String nome, String email, String local) {
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;

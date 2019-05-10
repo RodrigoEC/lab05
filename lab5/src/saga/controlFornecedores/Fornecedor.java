@@ -1,6 +1,6 @@
 package saga.controlFornecedores;
 
-import saga.AvaliadorClientes;
+import saga.Avaliador;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -31,7 +31,7 @@ public class Fornecedor {
      * Atributo que é um hashMap de objetos do tipo Produto, em que a chave do mapa é o nome do produto e a sua descrição.
      */
     private HashMap<String, Produto> mapaProdutos;
-    private AvaliadorClientes avalia;
+    private Avaliador avalia;
 
     /**
      * Construtor responsável por criar um objeto do tipo Fornecedor baseado nos parametros "nome", "email" e "telefone".
@@ -45,7 +45,7 @@ public class Fornecedor {
         this.email = email;
         this.telefone = telefone;
         this.mapaProdutos = new HashMap<String, Produto>();
-        avalia = new AvaliadorClientes();
+        avalia = new Avaliador();
     }
 
     /**
@@ -139,10 +139,10 @@ public class Fornecedor {
      * @param nomeProduto nome do produto.
      * @param descricao descrição do produto.
      */
-    public void addProduto(String preco,String  nomeProduto, String descricao) {
-        this.avalia.avaliar(preco);
-        this.avalia.avaliar(nomeProduto);
-        this.avalia.avaliar(descricao);
+    public void addProduto(double preco, String nomeProduto, String descricao) {
+        this.avalia.validaPrecoProduto(preco);
+        this.avalia.validaNome(nomeProduto, "fornecedor");
+        this.avalia.validaDescricaoProduto(descricao);
 
         Produto produto = new Produto(preco, nomeProduto, descricao);
         String chave = nomeProduto + descricao;
@@ -160,8 +160,8 @@ public class Fornecedor {
      * @return A representação textual do produto.
      */
     public String dadosProduto(String nomeProduto, String descricao) {
-        this.avalia.avaliar(nomeProduto);
-        this.avalia.avaliar(descricao);
+        this.avalia.validaNome(nomeProduto, "fornecedor");
+        this.avalia.validaDescricaoProduto(descricao);
 
         return this.mapaProdutos.get(nomeProduto + descricao).toString();
     }
@@ -193,10 +193,10 @@ public class Fornecedor {
      * @param nomeProduto nome do produto que terá o preço alterado.
      * @param descricao descrição do produto que terá o preço alterado.
      */
-    public void editaProduto(String novoPreco, String nomeProduto, String descricao) {
-        this.avalia.avaliar(nomeProduto);
-        this.avalia.avaliar(descricao);
-        this.avalia.avaliar(novoPreco);
+    public void editaProduto(double novoPreco, String nomeProduto, String descricao) {
+        this.avalia.validaNome(nomeProduto, "fornecedor");
+        this.avalia.validaDescricaoProduto(descricao);
+        this.avalia.validaPrecoProduto(novoPreco);
 
         this.mapaProdutos.get(nomeProduto + descricao).setPreco(novoPreco);
     }
@@ -210,8 +210,8 @@ public class Fornecedor {
      * @param descricao Descrição do produto.
      */
     public void removeProduto(String nomeProduto, String descricao) {
-        this.avalia.avaliar(nomeProduto);
-        this.avalia.avaliar(descricao);
+        this.avalia.validaNome(nomeProduto, "fornecedor");
+        this.avalia.validaDescricaoProduto(descricao);
 
         if (!this.mapaProdutos.containsKey(nomeProduto + descricao)){
             throw new NullPointerException("KEY INEXISTENTE");

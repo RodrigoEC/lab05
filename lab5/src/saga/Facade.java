@@ -30,7 +30,7 @@ public class Facade {
     }
 
     public static void main(String[] args) {
-        args = new String[] {"saga.Facade", "acceptance_test/use_case_1.txt"};
+        args = new String[] {"saga.Facade", "acceptance_test/use_case_1.txt", "acceptance_test/use_case_2.txt", "acceptance_test/use_case_3.txt"};
         EasyAccept.main(args);
     }
 
@@ -47,7 +47,7 @@ public class Facade {
      * @param local local que o cliente trabalha.
      * @return o cpf do cliente.
      */
-    public int adicionaCliente(int cpf, String nome, String email, String local) {
+    public String adicionaCliente(String cpf, String nome, String email, String local) {
         return controlaClientes.cadastraCliente(cpf, nome, email, local);
     }
 
@@ -58,8 +58,8 @@ public class Facade {
      * @param cpf cpf do cliente.
      * @return representação textual do cliente.
      */
-    public String dadosCliente(int cpf) {
-        return controlaClientes.dadosCliente(cpf);
+    public String exibeCliente(String cpf) {
+        return this.controlaClientes.dadosCliente(cpf);
     }
 
     /**
@@ -71,41 +71,19 @@ public class Facade {
         return controlaClientes.dadosTodosClientes();
     }
 
-    /**
-     * Método responsável por alterar o nome do cliente, cujo cpf é passado como parâmetro, pelo novo nome que foi
-     * passado como parâmetro. Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma
-     * exceção será lançada.
-     *
-     * @param cpf cpf do cliente.
-     * @param novoNome nome que vai substituir o nome antigo.
-     */
-    public void editarNome(int cpf, String novoNome) {
-        controlaClientes.editaNome(cpf, novoNome);
-    }
 
     /**
-     * Método responsável por alterar o email do cliente, cujo cpf é passado como parâmetro, pelo novo email que foi
-     * passado como parâmetro. Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma
-     * exceção será lançada.
+     * Método responsável por chamar o método o método "editaCliente" no controller de clientes.
      *
      * @param cpf cpf do cliente.
-     * @param novoEmail email que vai substituir o email antigo.
+     * @param atributo atributo a ser alterado.
+     * @param novoValor valor que será colocado no atributo.
      */
-    public void editaEmail(int cpf, String novoEmail) {
-        controlaClientes.editaEmail(cpf, novoEmail);
+    public void editaCliente(String cpf, String atributo, String novoValor) {
+        this.controlaClientes.editaCliente(cpf, atributo, novoValor);
     }
 
-    /**
-     * Método responsável por alterar o local de trabalho do cliente, cujo cpf é passado como parâmetro, pelo novo local
-     * que foi passado como parâmetro. Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor
-     * null uma exceção será lançada.
-     *
-     * @param cpf cpf do cliente.
-     * @param novoLocal local de trabalho que será substituir o atributo "localizacao" antigo.
-     */
-    public void editaLocal(int cpf, String novoLocal) {
-        controlaClientes.editaLocal(cpf, novoLocal);
-    }
+
 
     /**
      * Método responsável por remover o cliente, cujo cpf é passado como parâmetro, do hashMap de clientes. Caso o
@@ -114,8 +92,8 @@ public class Facade {
      *
      * @param cpf cpf do cliente que será removido.
      */
-    public void removeCliente(int cpf) {
-        controlaClientes.removeCliente(cpf);
+    public void removeCliente(String cpf) {
+        this.controlaClientes.removeCliente(cpf);
     }
 
     // PARTE DO CONTROLLER DOS FORNECEDORES
@@ -126,23 +104,23 @@ public class Facade {
      * Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
      * será lançada.
      *
-     * @param fornecedor Nome do fornecedor.
+     * @param nome Nome do fornecedor.
      * @param email E-mail do fornecedor.
      * @param telefone Telefone do fornecedor.
      */
-    public void cadastrarFornecedores(String fornecedor, String email, String telefone) {
-        this.controlaFornecedores.cadastraFornecedor(fornecedor, email, telefone);
+    public String adicionaFornecedor(String nome, String email, String telefone) {
+        return this.controlaFornecedores.cadastraFornecedor(nome, email, telefone);
     }
 
     /**
      * Método responsável por retornar a representacao textual do fornecedor, cujo nome é passado como parâmetro. Caso
      * o parâmetro seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
      *
-     * @param fornecedor nome do fornecedor.
+     * @param nome nome do fornecedor.
      * @return A representação textual do fornecedor.
      */
-    public String dadosFornecedor(String fornecedor) {
-        return this.controlaFornecedores.dadosFornecedor(fornecedor);
+    public String exibeFornecedor(String nome) {
+        return this.controlaFornecedores.dadosFornecedor(nome);
     }
 
     /**
@@ -154,29 +132,19 @@ public class Facade {
         return this.controlaFornecedores.dadosTodosFornecedores();
     }
 
-    /**
-     * Método responsável por alterar o email do fornecedor, cujo nome é passado como parâmetro, pelo novo email que foi
-     * passado como parâmetro. Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma
-     * exceção será lançada.
-     *
-     * @param fornecedor nome do fornecedor.
-     * @param novoEmail novo e-mail que substituirá o antigo.
-     */
-    public void editaEmailFornecedor(String fornecedor, String novoEmail) {
-        this.controlaFornecedores.editaEmail(fornecedor, novoEmail);
-    }
 
     /**
-     * Método responsável por alterar o telefone do fornecedor, cujo nome é passado como parâmetro, pelo novo telefone
-     * que foi passado como parâmetro. Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor
-     * null uma exceção será lançada.
+     * Método responsável por alterar o atributo que é passado como parâmetro novo valor que foi passado como parâmetro.
+     * Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
      *
-     * @param fornecedor Nome do fornecedor.
-     * @param novoTelefone Novo telefone que substituirá o antigo.
+     * @param nome nome do fornecedor
+     * @param atributo atributo a ser modificado
+     * @param novoValor valor a ser atribuito ao atributo
      */
-    public void editaTelefoneFornecedor(String fornecedor, String novoTelefone) {
-        this.controlaFornecedores.editaTelefone(fornecedor, novoTelefone);
+    public void editaFornecedor(String nome, String atributo, String novoValor) {
+        this.controlaFornecedores.editaFornecedor(nome, atributo, novoValor);
     }
+
 
     /**
      * Método responsável por remover um fornecedor, cujo nome é passado como parâmetro, do hashMap de clientes. Caso o
@@ -199,7 +167,7 @@ public class Facade {
      * @param nomeProduto nome do produto.
      * @param descricao descrição do produto.
      */
-    public void addProduto(String fornecedor, String preco, String nomeProduto, String descricao) {
+    public void adicionaProduto(String fornecedor, double preco, String nomeProduto, String descricao) {
         this.controlaFornecedores.addProduto(fornecedor, preco, nomeProduto, descricao);
     }
 
@@ -249,7 +217,7 @@ public class Facade {
      * @param nomeProduto nome do produto que terá o preço alterado.
      * @param descricao descrição do produto que terá o preço alterado.
      */
-    public void editaProduto(String fornecedor, String novoPreco, String nomeProduto, String descricao)   {
+    public void editaProduto(String fornecedor, double novoPreco, String nomeProduto, String descricao)   {
         this.controlaFornecedores.editaProduto(fornecedor, nomeProduto, descricao, novoPreco);
     }
 

@@ -135,9 +135,9 @@ class ControllerFornecedoresTest {
     @Test
     void testDadosTodosProdutosPadrao() {
         controller.cadastraFornecedor("palmerinha", "palmerinha@gmail.com", "159357");
-        controller.addProduto("padaria", "3,00", "tapioca", "tapioca delicia");
-        controller.addProduto("padaria", "70,00", "pao", "pao top");
-        controller.addProduto("palmerinha", "4,00", "sapatoDoce", "lalal");
+        controller.addProduto("padaria", 3.00, "tapioca", "tapioca delicia");
+        controller.addProduto("padaria", 70.00, "pao", "pao top");
+        controller.addProduto("palmerinha", 4.00, "sapatoDoce", "lalal");
 
         assertEquals("padaria - tapioca - tapioca delicia - R$3,00 | padaria - pao - pao top - R$70,00 | " +
                 "palmerinha - sapatoDoce - lalal - R$4,00", controller.dadosTodosProdutos());
@@ -145,47 +145,6 @@ class ControllerFornecedoresTest {
 
     // TESTES PARA O METODO "editaEmail"
 
-    @Test
-    void testEditaEmail() {
-        controller.editaEmail("padaria", "padarinha@gmail.com");
-        assertEquals("padarinha@gmail.com", controller.getMapaFornecedores().get("padaria").getEmail());
-    }
-
-    @Test
-    void testEditaEmailNomeInexistente() {
-        try {
-            controller.editaEmail("vacas loucas", " edefef");
-            fail("ERA PRA DAR RUIM");
-        } catch (NullPointerException npe) {
-        }
-    }
-
-    @Test
-    void testEditaEmailNomeNulo() {
-        try {
-            controller.editaEmail(null, "cmcmcm");
-            fail("ERA PRA DAR RUIM");
-        } catch (NullPointerException npe) {
-        }
-    }
-
-    @Test
-    void testEditaEmaiNovoEmailnvalido() {
-        try {
-            controller.editaEmail("padaria",  " ");
-            fail("era pra dar ruim");
-        } catch (IllegalArgumentException iae) {
-        }
-    }
-
-    @Test
-    void testEditaEmailNovoEmailNulo() {
-        try {
-            controller.editaEmail("padaria" ,null);
-            fail("ERA PRA DAR RUIM");
-        } catch (NullPointerException npe) {
-        }
-    }
 
     // TESTES PARA O METODO "removeFornecedor"
 

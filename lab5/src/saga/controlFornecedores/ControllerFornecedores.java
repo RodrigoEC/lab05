@@ -1,7 +1,6 @@
 package saga.controlFornecedores;
 
-import saga.AvaliadorClientes;
-import saga.ValidaFornecedor;
+import saga.Avaliador;
 
 import java.util.HashMap;
 /**
@@ -19,14 +18,14 @@ public class ControllerFornecedores {
      * Atributo que representa um objeto reponsavel por avaliar os parâmetros, lançando as exceções adequadas se
      * necessário.
      */
-    private ValidaFornecedor avalia;
+    private Avaliador avalia;
 
     /**
      * Construtor responsável por criar o objeto do tipo ControllerFornecedores e inicializar os atributos da classe.
      */
     public ControllerFornecedores() {
         this.mapaFornecedores = new HashMap<>();
-        this.avalia = new ValidaFornecedor();
+        this.avalia = new Avaliador();
     }
 
     /**
@@ -46,11 +45,11 @@ public class ControllerFornecedores {
      * @param fornecedor Nome do fornecedor.
      * @param email E-mail do fornecedor.
      * @param telefone Telefone do fornecedor.
-     */
-    public void cadastraFornecedor(String fornecedor, String email, String telefone) {
-        this.avalia.validaNomeFornecedor(fornecedor);
-        this.avalia.validaEmailFornecedor(email);
-        this.avalia.validaTelefoneFornecedor(telefone);
+ */
+    public String cadastraFornecedor(String fornecedor, String email, String telefone) {
+        this.avalia.validaNome(fornecedor, "fornecedor");
+        this.avalia.validaEmail(email, "fornecedor");
+        this.avalia.validaTelefone(telefone);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             Fornecedor novoFornecedor = new Fornecedor(fornecedor, email, telefone);
@@ -58,6 +57,7 @@ public class ControllerFornecedores {
         } else {
             throw new IllegalArgumentException("Erro no cadastro de fornecedor: fornecedor ja existe.");
         }
+        return fornecedor;
     }
 
     /**
@@ -68,8 +68,11 @@ public class ControllerFornecedores {
      * @return A representação textual do fornecedor.
      */
     public String dadosFornecedor(String fornecedor){
-        this.avalia.validaNomeFornecedor(fornecedor);
+        this.avalia.validaNome(fornecedor, "fornecedor");
 
+        if (!this.mapaFornecedores.containsKey(fornecedor)) {
+            throw new NullPointerException("Erro na exibicao do fornecedor: fornecedor nao existe.");
+        }
         return this.mapaFornecedores.get(fornecedor).toString();
     }
 
@@ -92,31 +95,34 @@ public class ControllerFornecedores {
         return stringSaida;
     }
 
-    /**
-     * Método responsável por alterar o email do fornecedor, cujo nome é passado como parâmetro, pelo novo email que foi
-     * passado como parâmetro. Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma
-     * exceção será lançada.
-     *
-     * @param fornecedor nome do fornecedor.
-     * @param novoEmail novo e-mail que substituirá o antigo.
-     */
-    public void editaEmail(String fornecedor, String novoEmail) {
-        this.avalia.validaEmailFornecedor(novoEmail);
-        this.mapaFornecedores.get(fornecedor).setEmail(novoEmail);
-    }
 
     /**
-     * Método responsável por alterar o telefone do fornecedor, cujo nome é passado como parâmetro, pelo novo telefone
-     * que foi passado como parâmetro. Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor
-     * null uma exceção será lançada.
+     * Método responsável por alterar o atributo que é passado como parâmetro novo valor que foi passado como parâmetro.
+     * Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
      *
-     * @param fornecedor Nome do fornecedor.
-     * @param novoTelefone Novo telefone que substituirá o antigo.
+     * @param nome cpf do fornecedor
+     * @param atributo atributo que sera alterado
+     * @param novoValor valor que será colocado no atributo
      */
-    public void editaTelefone(String fornecedor, String novoTelefone) {
-        this.avalia.validaTelefoneFornecedor(novoTelefone);
-        this.mapaFornecedores.get(fornecedor).setTelefone(novoTelefone);
+    public void editaFornecedor(String nome, String atributo, String novoValor) {
+        avalia.validaNome(nome, "fornecedor");
+        avalia.validaNovoValor(novoValor, "fornecedor");
+        avalia.validaAtributo(atributo, "fornecedor");
+
+        if (!this.mapaFornecedores.containsKey(nome)) {
+            throw new NullPointerException("Erro na edicao do fornecedor: fornecedor nao existe.");
+        }
+        if ("nome".equals(atributo.toLowerCase())) {
+            throw new IllegalArgumentException("Erro na edicao do fornecedor: nome nao pode ser editado.");
+
+        } else if ("email".equals(atributo.toLowerCase())) {
+            this.mapaFornecedores.get(nome).setEmail(novoValor);
+
+        } else if ("telefone".equals(atributo.toLowerCase())) {
+            this.mapaFornecedores.get(nome).setTelefone(novoValor);
+        }
     }
+
 
     /**
      * Método responsável por remover um fornecedor, cujo nome é passado como parâmetro, do hashMap de clientes. Caso o
@@ -126,7 +132,7 @@ public class ControllerFornecedores {
      * @param fornecedor Nome do fornecedor.
      */
     public void removeFornecedor(String fornecedor) {
-        this.avalia.validaEmailFornecedor(fornecedor);
+        this.avalia.validaNomeFornecedorRemover(fornecedor);
 
         if (this.mapaFornecedores.containsKey(fornecedor)) {
             this.mapaFornecedores.remove(fornecedor);
@@ -147,8 +153,15 @@ public class ControllerFornecedores {
      * @param nomeProduto nome do produto.
      * @param descricao descrição do produto.
      */
-    public void addProduto(String fornecedor, String preco, String nomeProduto, String descricao) {
-        if (!this.mapaFornecedores.)
+    public void addProduto(String fornecedor, double preco, String nomeProduto, String descricao) {
+        avalia.validaPrecoProduto(preco);
+        avalia.validaNome(fornecedor, "fornecedor");
+        avalia.validaNome(nomeProduto, "fornecedor");
+        avalia.validaDescricaoProduto(descricao);
+
+        if (!this.mapaFornecedores.containsKey(fornecedor)) {
+            throw new NullPointerException("Erro no cadastro de produto: fornecedor nao existe.");
+        }
         this.mapaFornecedores.get(fornecedor).addProduto(preco, nomeProduto, descricao);
     }
 
@@ -188,7 +201,7 @@ public class ControllerFornecedores {
      * @param nomeProduto nome do produto que terá o preço alterado.
      * @param descricao descrição do produto que terá o preço alterado.
      */
-    public void editaProduto(String fornecedor, String nomeProduto, String descricao, String novoPreco) {
+    public void editaProduto(String fornecedor, String nomeProduto, String descricao, double novoPreco) {
         this.mapaFornecedores.get(fornecedor).editaProduto(novoPreco, nomeProduto, descricao);
     }
 

@@ -13,7 +13,7 @@ class FornecedorTest {
     @BeforeEach
     void fornecedorPadrao() {
         fornecedor = new Fornecedor( "padaria","padaria@gmail.com", "4002-8922");
-        fornecedor.addProduto("3,00", "tapioca", "tapioca delicia");
+        fornecedor.addProduto(3.00, "tapioca", "tapioca delicia");
 
     }
 
@@ -34,19 +34,19 @@ class FornecedorTest {
     @Test
     void testAddProdutoParametrosInexistente() {
         try {
-            fornecedor.addProduto("3,00", "tapioca", "");
+            fornecedor.addProduto(3.00, "tapioca", "");
             fail("ERA PRA DAR RUIM");
         } catch (IllegalArgumentException iae) {
         }
 
         try {
-            fornecedor.addProduto( "3,00", " ", "tapioca boaaaa");
+            fornecedor.addProduto( 3.00, " ", "tapioca boaaaa");
             fail("ERA PRA DAR RUIM");
         } catch (IllegalArgumentException iae) {
         }
 
         try {
-            fornecedor.addProduto( "   ", "tapioca", "tapioca boaaaa");
+            fornecedor.addProduto( -1, "tapioca", "tapioca boaaaa");
             fail("ERA PRA DAR RUIM");
         } catch (IllegalArgumentException iae) {
         }
@@ -55,19 +55,13 @@ class FornecedorTest {
     @Test
     void testAddProdutoParametrosNulos() {
         try {
-            fornecedor.addProduto( null, "tapioca", "tapioca boaaaa");
+            fornecedor.addProduto( 3.00, null, "tapioca boaaaa");
             fail("ERA PRA DAR RUIM");
         } catch (NullPointerException npe) {
         }
 
         try {
-            fornecedor.addProduto( "3,00", null, "tapioca boaaaa");
-            fail("ERA PRA DAR RUIM");
-        } catch (NullPointerException npe) {
-        }
-
-        try {
-            fornecedor.addProduto( "3,00", "tapioca", null);
+            fornecedor.addProduto( 3.00, "tapioca", null);
             fail("ERA PRA DAR RUIM");
         } catch (NullPointerException npe) {
         }
@@ -82,7 +76,7 @@ class FornecedorTest {
 
     @Test
     void testDadosProdutoParametrosInvalidos() {
-        fornecedor.addProduto( "3,00", "tapioca", "tapioca boaaaa");
+        fornecedor.addProduto( 3.00, "tapioca", "tapioca boaaaa");
         try {
             fornecedor.dadosProduto( "tapioca", "    ");
             fail("era pra dar ruim");
@@ -99,7 +93,7 @@ class FornecedorTest {
 
     @Test
     void testDadosProdutoParametrosNulo() {
-        fornecedor.addProduto( "3,00", "tapioca", "tapioca boaaaa");
+        fornecedor.addProduto( 3.00, "tapioca", "tapioca boaaaa");
         try {
             fornecedor.dadosProduto( "tapioca",  null);
             fail("era pra dar ruim");
@@ -118,7 +112,7 @@ class FornecedorTest {
 
     @Test
     void testDadosDeTodosOsProdutos() {
-        fornecedor.addProduto("3,00", "tapio", "tapio");
+        fornecedor.addProduto(3.00, "tapio", "tapio");
         assertEquals("padaria - tapio - tapio - R$3,00 | padaria - tapioca - tapioca delicia - R$3,00", fornecedor.dadosTodosProdutos());
     }
 
@@ -132,14 +126,14 @@ class FornecedorTest {
 
     @Test
     void testEditaProdutoPadrao() {
-        fornecedor.editaProduto("1,00", "tapioca", "tapioca delicia");
-        assertEquals("1,00", fornecedor.getMapaProdutos().get("tapiocatapioca delicia").getPreco());
+        fornecedor.editaProduto(1.00, "tapioca", "tapioca delicia");
+        assertEquals(1.00, fornecedor.getMapaProdutos().get("tapiocatapioca delicia").getPreco());
     }
 
     @Test
     void testEditaProdutoKeyInexistente() {
         try {
-            fornecedor.editaProduto("1,00", "tap", "tapioca delicia");
+            fornecedor.editaProduto(1.00, "tap", "tapioca delicia");
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
         }
@@ -147,38 +141,34 @@ class FornecedorTest {
 
     @Test
     void testEditaProdutosParametrosInvalidos() {
-        fornecedor.addProduto( "3,00", "tapioca", "tapioca delicia");
+        fornecedor.addProduto( 3.00, "tapioca", "tapioca delicia");
         try {
-            fornecedor.editaProduto( "", "tapioca", "tapioca delicia");
+            fornecedor.editaProduto( -1, "tapioca", "tapioca delicia");
         } catch (IllegalArgumentException iae) {
         }
 
         try {
-            fornecedor.editaProduto( "1,00", "", "tapioca delicia");
+            fornecedor.editaProduto( 1.00, "", "tapioca delicia");
         } catch (IllegalArgumentException iae) {
         }
 
         try {
-            fornecedor.editaProduto( "1,00", "tapioca", "");
+            fornecedor.editaProduto( 1.00, "tapioca", "");
         } catch (IllegalArgumentException iae) {
         }
     }
 
     @Test
     void testEditaProdutosParametrosNulos() {
-        fornecedor.addProduto( "3,00", "tapioca", "tapioca delicia");
+        fornecedor.addProduto( 3.00, "tapioca", "tapioca delicia");
+
         try {
-            fornecedor.editaProduto( null, "tapioca", "tapioca delicia");
+            fornecedor.editaProduto( 1.00, null, "tapioca delicia");
         } catch (NullPointerException npe) {
         }
 
         try {
-            fornecedor.editaProduto( "1,00", null, "tapioca delicia");
-        } catch (NullPointerException npe) {
-        }
-
-        try {
-            fornecedor.editaProduto( "1,00", "tapioca", null);
+            fornecedor.editaProduto( 1.00, "tapioca", null);
         } catch (NullPointerException npe) {
         }
     }
@@ -202,7 +192,7 @@ class FornecedorTest {
 
     @Test
     void testRemoveProdutosParametrosInvalidos() {
-        fornecedor.addProduto( "3,00", "tapioca", "tapioca delicia");
+        fornecedor.addProduto( 3.00, "tapioca", "tapioca delicia");
 
         try {
             fornecedor.removeProduto( " ", "tapioca delicia");
@@ -219,7 +209,7 @@ class FornecedorTest {
 
     @Test
     void testRemoveProdutosParametrosNulos() {
-        fornecedor.addProduto( "3,00", "tapioca", "tapioca delicia");
+        fornecedor.addProduto( 3.00, "tapioca", "tapioca delicia");
 
         try {
             fornecedor.removeProduto(null, "tapioca delicia");

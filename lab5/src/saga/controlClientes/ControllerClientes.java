@@ -1,6 +1,6 @@
 package saga.controlClientes;
 
-import saga.AvaliadorClientes;
+import saga.Avaliador;
 
 import java.util.HashMap;
 
@@ -13,20 +13,20 @@ public class ControllerClientes {
     /**
      * Atributo que representa um mapa de clientes, onde a chave é o cpf do cliente.
      */
-    private HashMap<Integer, Cliente> clientes;
+    private HashMap<String, Cliente> clientes;
 
     /**
      * Atributo que representa um objeto reponsavel por avaliar os parâmetros, lançando as exceções adequadas se
      * necessário.
      */
-    private AvaliadorClientes avalia;
+    private Avaliador avalia;
 
     /**
      * Construtor responsável por inicializar os atributos da classe.
      */
     public ControllerClientes() {
         clientes = new HashMap<>();
-        avalia = new AvaliadorClientes();
+        avalia = new Avaliador();
     }
 
     /**
@@ -34,7 +34,7 @@ public class ControllerClientes {
      *
      * @return o atributo clientes.
      */
-    public HashMap<Integer, Cliente> getClientes() {
+    public HashMap<String, Cliente> getClientes() {
         return clientes;
     }
 
@@ -49,11 +49,11 @@ public class ControllerClientes {
      * @param local local que o cliente trabalha.
      * @return o cpf do cliente.
      */
-    public int cadastraCliente(int cpf, String nome, String email, String local) {
+    public String cadastraCliente(String cpf, String nome, String email, String local) {
         avalia.validarCPFCliente(cpf);
-        avalia.validaNomeCliente(nome);
-        avalia.validaEmailCliente(email);
-        avalia.validaLocalizacaoCliente(local);
+        avalia.validaNome(nome, "cliente");
+        avalia.validaEmail(email, "cliente");
+        avalia.validaLocalizacao(local);
 
         if (!clientes.containsKey(cpf)) {
             Cliente cliente = new Cliente(cpf, nome, email, local);
@@ -71,9 +71,12 @@ public class ControllerClientes {
      * @param cpf cpf do cliente.
      * @return representação textual do cliente.
      */
-    public String dadosCliente(int cpf) {
+    public String dadosCliente(String cpf) {
         avalia.validarCPFCliente(cpf);
 
+        if (!this.clientes.containsKey(cpf)) {
+            throw new NullPointerException("Erro na exibicao do cliente: cliente nao existe.");
+        }
         return clientes.get(cpf).toString();
     }
 
@@ -97,49 +100,33 @@ public class ControllerClientes {
     }
 
     /**
-     * Método responsável por alterar o nome do cliente, cujo cpf é passado como parâmetro, pelo novo nome que foi
-     * passado como parâmetro. Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma
-     * exceção será lançada.
+     * Método responsável por alterar o atributo que é passado como parâmetro novo valor que foi passado como parâmetro.
+     * Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
      *
-     * @param cpf cpf do cliente.
-     * @param novoNome nome que vai substituir o nome antigo.
+     * @param cpf cpf do cliente
+     * @param atributo atributo que sera alterado
+     * @param novoValor valor que será colocado no atributo
      */
-    public void editaNome(int cpf, String novoNome) {
+    public void editaCliente(String cpf, String atributo, String novoValor) {
         avalia.validarCPFCliente(cpf);
-        avalia.validaNomeCliente(novoNome);
+        avalia.validaNovoValor(novoValor, "cliente");
+        avalia.validaAtributo(atributo, "cliente");
 
-        clientes.get(cpf).setNome(novoNome);
+        if (!this.clientes.containsKey(cpf)) {
+            throw new NullPointerException("Erro na edicao do cliente: cliente nao existe.");
+        }
+
+        if ("nome".equals(atributo.toLowerCase())) {
+            clientes.get(cpf).setNome(novoValor);
+
+        } else if ("email".equals(atributo.toLowerCase())) {
+            clientes.get(cpf).setEmail(novoValor);
+
+        } else if ("localizacao".equals(atributo.toLowerCase())) {
+            clientes.get(cpf).setLocalizacao(novoValor);
+        }
     }
 
-    /**
-     * Método responsável por alterar o email do cliente, cujo cpf é passado como parâmetro, pelo novo email que foi
-     * passado como parâmetro. Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma
-     * exceção será lançada.
-     *
-     * @param cpf cpf do cliente.
-     * @param novoEmail email que vai substituir o email antigo.
-     */
-    public void editaEmail(int cpf, String novoEmail) {
-        avalia.validarCPFCliente(cpf);
-        avalia.validaEmailCliente(novoEmail);
-
-        clientes.get(cpf).setEmail(novoEmail);
-    }
-
-    /**
-     * Método responsável por alterar o local de trabalho do cliente, cujo cpf é passado como parâmetro, pelo novo local
-     * que foi passado como parâmetro. Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor
-     * null uma exceção será lançada.
-     *
-     * @param cpf cpf do cliente.
-     * @param novoLocal local de trabalho que será substituir o atributo "localizacao" antigo.
-     */
-    public void editaLocal(int cpf, String novoLocal) {
-        avalia.validarCPFCliente(cpf);
-        avalia.validaLocalizacaoCliente(novoLocal);
-
-        clientes.get(cpf).setLocalizacao(novoLocal);
-    }
 
     /**
      * Método responsável por remover o cliente, cujo cpf é passado como parâmetro, do hashMap de clientes. Caso o
@@ -148,7 +135,7 @@ public class ControllerClientes {
      *
      * @param cpf cpf do cliente que será removido.
      */
-    public void removeCliente(int cpf) {
+    public void removeCliente(String cpf) {
         avalia.validarCPFCliente(cpf);
 
         if (this.clientes.containsKey(cpf)) {

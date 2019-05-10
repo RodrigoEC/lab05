@@ -4,6 +4,7 @@ cliente2=adicionaCliente cpf=94412783134 nome="Wilson Andre" email="wilson_andre
 cliente3=adicionaCliente cpf=19418510068 nome="Amigao Fernandes" email="amigao_fernandes@ccc.ufcg.edu.br" localizacao="LSD"
 cliente4=adicionaCliente cpf=64269141198 nome="Ana Amari" email="ana_amari@ccc.ufcg.edu.br" localizacao="SPG"
 cliente5=adicionaCliente cpf=58217738123 nome="Lucio Correia" email="lucio_correia@ccc.ufcg.edu.br" localizacao="SPLab"
+
 expectError "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo." adicionaCliente cpf=12314143100 nome=""  email="victor@ccc.ufcg.edu.br" localizacao="Analytics"
 expectError "Erro no cadastro do cliente: email nao pode ser vazio ou nulo." adicionaCliente cpf=14112354612 nome="Lucas Oliveira" email="" localizacao="PetComputacao"
 expectError "Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula." adicionaCliente cpf=15551214299 nome="Ana Amaral" email="amaral_ana@ccc.ufcg.edu.br" localizacao=""

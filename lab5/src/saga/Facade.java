@@ -1,5 +1,6 @@
 package saga;
 
+import easyaccept.EasyAccept;
 import saga.controlClientes.ControllerClientes;
 import saga.controlFornecedores.ControllerFornecedores;
 
@@ -28,6 +29,11 @@ public class Facade {
         this.controlaFornecedores = new ControllerFornecedores();
     }
 
+    public static void main(String[] args) {
+        args = new String[] {"saga.Facade", "acceptance_test/use_case_1.txt"};
+        EasyAccept.main(args);
+    }
+
     // PARTE DO CONTROLLER DOS CLIENTES
 
     /**
@@ -41,7 +47,7 @@ public class Facade {
      * @param local local que o cliente trabalha.
      * @return o cpf do cliente.
      */
-    public String cadastraCliente(String cpf, String nome, String email, String local) {
+    public String adicionaCliente(String cpf, String nome, String email, String local) {
         return controlaClientes.cadastraCliente(cpf, nome, email, local);
     }
 

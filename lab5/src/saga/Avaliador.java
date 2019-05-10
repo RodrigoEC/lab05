@@ -6,7 +6,7 @@ package saga;
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
 public class Avaliador {
-    public void avaliar(String stringASerAvaliada) {
+    public void validaNomeCliente(String stringASerAvaliada) {
         if (stringASerAvaliada == null) {
             throw new NullPointerException("PARAMETRO NULO");
         }

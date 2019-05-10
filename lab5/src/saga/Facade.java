@@ -47,7 +47,7 @@ public class Facade {
      * @param local local que o cliente trabalha.
      * @return o cpf do cliente.
      */
-    public String adicionaCliente(String cpf, String nome, String email, String local) {
+    public int adicionaCliente(int cpf, String nome, String email, String local) {
         return controlaClientes.cadastraCliente(cpf, nome, email, local);
     }
 
@@ -58,7 +58,7 @@ public class Facade {
      * @param cpf cpf do cliente.
      * @return representação textual do cliente.
      */
-    public String dadosCliente(String cpf) {
+    public String dadosCliente(int cpf) {
         return controlaClientes.dadosCliente(cpf);
     }
 
@@ -79,7 +79,7 @@ public class Facade {
      * @param cpf cpf do cliente.
      * @param novoNome nome que vai substituir o nome antigo.
      */
-    public void editarNome(String cpf, String novoNome) {
+    public void editarNome(int cpf, String novoNome) {
         controlaClientes.editaNome(cpf, novoNome);
     }
 
@@ -91,7 +91,7 @@ public class Facade {
      * @param cpf cpf do cliente.
      * @param novoEmail email que vai substituir o email antigo.
      */
-    public void editaEmail(String cpf, String novoEmail) {
+    public void editaEmail(int cpf, String novoEmail) {
         controlaClientes.editaEmail(cpf, novoEmail);
     }
 
@@ -103,7 +103,7 @@ public class Facade {
      * @param cpf cpf do cliente.
      * @param novoLocal local de trabalho que será substituir o atributo "localizacao" antigo.
      */
-    public void editaLocal(String cpf, String novoLocal) {
+    public void editaLocal(int cpf, String novoLocal) {
         controlaClientes.editaLocal(cpf, novoLocal);
     }
 
@@ -114,11 +114,12 @@ public class Facade {
      *
      * @param cpf cpf do cliente que será removido.
      */
-    public void removeCliente(String cpf) {
+    public void removeCliente(int cpf) {
         controlaClientes.removeCliente(cpf);
     }
 
     // PARTE DO CONTROLLER DOS FORNECEDORES
+
 
     /**
      * Método responsável por criar e cadastrar um objeto do tipo Fornecedor e adiciona-lo ao mapa de Fornecedores.
@@ -264,4 +265,5 @@ public class Facade {
     public void removeProduto(String fornecedor, String nomeProduto, String descricao) {
         this.controlaFornecedores.removeProduto(fornecedor, nomeProduto, descricao);
     }
+
 }

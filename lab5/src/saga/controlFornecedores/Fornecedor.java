@@ -1,6 +1,6 @@
 package saga.controlFornecedores;
 
-import saga.Avaliador;
+import saga.AvaliadorClientes;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -31,7 +31,7 @@ public class Fornecedor {
      * Atributo que é um hashMap de objetos do tipo Produto, em que a chave do mapa é o nome do produto e a sua descrição.
      */
     private HashMap<String, Produto> mapaProdutos;
-    private Avaliador avalia;
+    private AvaliadorClientes avalia;
 
     /**
      * Construtor responsável por criar um objeto do tipo Fornecedor baseado nos parametros "nome", "email" e "telefone".
@@ -45,7 +45,7 @@ public class Fornecedor {
         this.email = email;
         this.telefone = telefone;
         this.mapaProdutos = new HashMap<String, Produto>();
-        avalia = new Avaliador();
+        avalia = new AvaliadorClientes();
     }
 
     /**

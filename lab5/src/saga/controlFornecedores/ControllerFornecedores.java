@@ -1,6 +1,7 @@
 package saga.controlFornecedores;
 
-import saga.Avaliador;
+import saga.AvaliadorClientes;
+import saga.ValidaFornecedor;
 
 import java.util.HashMap;
 /**
@@ -18,14 +19,14 @@ public class ControllerFornecedores {
      * Atributo que representa um objeto reponsavel por avaliar os parâmetros, lançando as exceções adequadas se
      * necessário.
      */
-    private Avaliador avalia;
+    private ValidaFornecedor avalia;
 
     /**
      * Construtor responsável por criar o objeto do tipo ControllerFornecedores e inicializar os atributos da classe.
      */
     public ControllerFornecedores() {
         this.mapaFornecedores = new HashMap<>();
-        this.avalia = new Avaliador();
+        this.avalia = new ValidaFornecedor();
     }
 
     /**
@@ -47,13 +48,15 @@ public class ControllerFornecedores {
      * @param telefone Telefone do fornecedor.
      */
     public void cadastraFornecedor(String fornecedor, String email, String telefone) {
-        this.avalia.avaliar(fornecedor);
-        this.avalia.avaliar(email);
-        this.avalia.avaliar(telefone);
+        this.avalia.validaNomeFornecedor(fornecedor);
+        this.avalia.validaEmailFornecedor(email);
+        this.avalia.validaTelefoneFornecedor(telefone);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             Fornecedor novoFornecedor = new Fornecedor(fornecedor, email, telefone);
             this.mapaFornecedores.put(fornecedor, novoFornecedor);
+        } else {
+            throw new IllegalArgumentException("Erro no cadastro de fornecedor: fornecedor ja existe.");
         }
     }
 
@@ -64,8 +67,8 @@ public class ControllerFornecedores {
      * @param fornecedor nome do fornecedor.
      * @return A representação textual do fornecedor.
      */
-    public String dadosFornecedor(String fornecedor) {
-        this.avalia.avaliar(fornecedor);
+    public String dadosFornecedor(String fornecedor){
+        this.avalia.validaNomeFornecedor(fornecedor);
 
         return this.mapaFornecedores.get(fornecedor).toString();
     }
@@ -98,7 +101,7 @@ public class ControllerFornecedores {
      * @param novoEmail novo e-mail que substituirá o antigo.
      */
     public void editaEmail(String fornecedor, String novoEmail) {
-        this.avalia.avaliar(novoEmail);
+        this.avalia.validaEmailFornecedor(novoEmail);
         this.mapaFornecedores.get(fornecedor).setEmail(novoEmail);
     }
 
@@ -111,7 +114,7 @@ public class ControllerFornecedores {
      * @param novoTelefone Novo telefone que substituirá o antigo.
      */
     public void editaTelefone(String fornecedor, String novoTelefone) {
-        this.avalia.avaliar(novoTelefone);
+        this.avalia.validaTelefoneFornecedor(novoTelefone);
         this.mapaFornecedores.get(fornecedor).setTelefone(novoTelefone);
     }
 
@@ -123,7 +126,7 @@ public class ControllerFornecedores {
      * @param fornecedor Nome do fornecedor.
      */
     public void removeFornecedor(String fornecedor) {
-        this.avalia.avaliar(fornecedor);
+        this.avalia.validaEmailFornecedor(fornecedor);
 
         if (this.mapaFornecedores.containsKey(fornecedor)) {
             this.mapaFornecedores.remove(fornecedor);
@@ -145,6 +148,7 @@ public class ControllerFornecedores {
      * @param descricao descrição do produto.
      */
     public void addProduto(String fornecedor, String preco, String nomeProduto, String descricao) {
+        if (!this.mapaFornecedores.)
         this.mapaFornecedores.get(fornecedor).addProduto(preco, nomeProduto, descricao);
     }
 

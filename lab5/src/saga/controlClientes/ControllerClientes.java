@@ -1,6 +1,6 @@
 package saga.controlClientes;
 
-import saga.Avaliador;
+import saga.AvaliadorClientes;
 
 import java.util.HashMap;
 
@@ -13,20 +13,20 @@ public class ControllerClientes {
     /**
      * Atributo que representa um mapa de clientes, onde a chave é o cpf do cliente.
      */
-    private HashMap<String, Cliente> clientes;
+    private HashMap<Integer, Cliente> clientes;
 
     /**
      * Atributo que representa um objeto reponsavel por avaliar os parâmetros, lançando as exceções adequadas se
      * necessário.
      */
-    private Avaliador avalia;
+    private AvaliadorClientes avalia;
 
     /**
      * Construtor responsável por inicializar os atributos da classe.
      */
     public ControllerClientes() {
         clientes = new HashMap<>();
-        avalia = new Avaliador();
+        avalia = new AvaliadorClientes();
     }
 
     /**
@@ -34,7 +34,7 @@ public class ControllerClientes {
      *
      * @return o atributo clientes.
      */
-    public HashMap<String, Cliente> getClientes() {
+    public HashMap<Integer, Cliente> getClientes() {
         return clientes;
     }
 
@@ -49,18 +49,18 @@ public class ControllerClientes {
      * @param local local que o cliente trabalha.
      * @return o cpf do cliente.
      */
-    public String cadastraCliente(String cpf, String nome, String email, String local) {
-        avalia.avaliar(cpf);
-        avalia.avaliar(nome);
-        avalia.avaliar(email);
-        avalia.avaliar(local);
+    public int cadastraCliente(int cpf, String nome, String email, String local) {
+        avalia.validarCPFCliente(cpf);
+        avalia.validaNomeCliente(nome);
+        avalia.validaEmailCliente(email);
+        avalia.validaLocalizacaoCliente(local);
 
         if (!clientes.containsKey(cpf)) {
             Cliente cliente = new Cliente(cpf, nome, email, local);
             clientes.put(cpf, cliente);
             return cpf;
         } else {
-            throw new IllegalArgumentException("CLIENTE JA CADASTRADO");
+            throw new IllegalArgumentException("Erro no cadastro do cliente: cliente ja existe.");
         }
     }
 
@@ -71,8 +71,8 @@ public class ControllerClientes {
      * @param cpf cpf do cliente.
      * @return representação textual do cliente.
      */
-    public String dadosCliente(String cpf) {
-        avalia.avaliar(cpf);
+    public String dadosCliente(int cpf) {
+        avalia.validarCPFCliente(cpf);
 
         return clientes.get(cpf).toString();
     }
@@ -104,9 +104,9 @@ public class ControllerClientes {
      * @param cpf cpf do cliente.
      * @param novoNome nome que vai substituir o nome antigo.
      */
-    public void editaNome(String cpf, String novoNome) {
-        avalia.avaliar(cpf);
-        avalia.avaliar(novoNome);
+    public void editaNome(int cpf, String novoNome) {
+        avalia.validarCPFCliente(cpf);
+        avalia.validaNomeCliente(novoNome);
 
         clientes.get(cpf).setNome(novoNome);
     }
@@ -119,9 +119,9 @@ public class ControllerClientes {
      * @param cpf cpf do cliente.
      * @param novoEmail email que vai substituir o email antigo.
      */
-    public void editaEmail(String cpf, String novoEmail) {
-        avalia.avaliar(cpf);
-        avalia.avaliar(novoEmail);
+    public void editaEmail(int cpf, String novoEmail) {
+        avalia.validarCPFCliente(cpf);
+        avalia.validaEmailCliente(novoEmail);
 
         clientes.get(cpf).setEmail(novoEmail);
     }
@@ -134,9 +134,9 @@ public class ControllerClientes {
      * @param cpf cpf do cliente.
      * @param novoLocal local de trabalho que será substituir o atributo "localizacao" antigo.
      */
-    public void editaLocal(String cpf, String novoLocal) {
-        avalia.avaliar(cpf);
-        avalia.avaliar(novoLocal);
+    public void editaLocal(int cpf, String novoLocal) {
+        avalia.validarCPFCliente(cpf);
+        avalia.validaLocalizacaoCliente(novoLocal);
 
         clientes.get(cpf).setLocalizacao(novoLocal);
     }
@@ -148,8 +148,8 @@ public class ControllerClientes {
      *
      * @param cpf cpf do cliente que será removido.
      */
-    public void removeCliente(String cpf) {
-        avalia.avaliar(cpf);
+    public void removeCliente(int cpf) {
+        avalia.validarCPFCliente(cpf);
 
         if (this.clientes.containsKey(cpf)) {
             clientes.remove(cpf, clientes.get((cpf)));

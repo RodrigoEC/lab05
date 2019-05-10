@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class AvaliadorTest {
-    private Avaliador avalia;
+class AvaliadorClientesTest {
+    private AvaliadorClientes avalia;
 
     @BeforeEach
     void avaliadorPadrao() {
-        avalia = new Avaliador();
+        avalia = new AvaliadorClientes();
     }
 
     @Test

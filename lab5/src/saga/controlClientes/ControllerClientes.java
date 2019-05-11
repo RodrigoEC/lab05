@@ -1,6 +1,6 @@
 package saga.controlClientes;
 
-import saga.Avaliador;
+import saga.Validador;
 
 import java.util.HashMap;
 
@@ -19,14 +19,14 @@ public class ControllerClientes {
      * Atributo que representa um objeto reponsavel por avaliar os parâmetros, lançando as exceções adequadas se
      * necessário.
      */
-    private Avaliador avalia;
+    private Validador avalia;
 
     /**
      * Construtor responsável por inicializar os atributos da classe.
      */
     public ControllerClientes() {
         clientes = new HashMap<>();
-        avalia = new Avaliador();
+        avalia = new Validador();
     }
 
     /**
@@ -51,8 +51,8 @@ public class ControllerClientes {
      */
     public String cadastraCliente(String cpf, String nome, String email, String local) {
         avalia.validarCPFCliente(cpf);
-        avalia.validaNome(nome, "cliente");
-        avalia.validaEmail(email, "cliente");
+        avalia.validaNome(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
+        avalia.validaEmail(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
         avalia.validaLocalizacao(local);
 
         if (!clientes.containsKey(cpf)) {
@@ -109,8 +109,8 @@ public class ControllerClientes {
      */
     public void editaCliente(String cpf, String atributo, String novoValor) {
         avalia.validarCPFCliente(cpf);
-        avalia.validaNovoValor(novoValor, "cliente");
-        avalia.validaAtributo(atributo, "cliente");
+        avalia.validaNovoValor(novoValor, "Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
+        avalia.validaAtributo(atributo, "Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
 
         if (!this.clientes.containsKey(cpf)) {
             throw new NullPointerException("Erro na edicao do cliente: cliente nao existe.");
@@ -124,6 +124,8 @@ public class ControllerClientes {
 
         } else if ("localizacao".equals(atributo.toLowerCase())) {
             clientes.get(cpf).setLocalizacao(novoValor);
+        } else {
+            throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao existe.");
         }
     }
 

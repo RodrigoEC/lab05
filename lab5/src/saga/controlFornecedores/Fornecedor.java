@@ -1,6 +1,6 @@
 package saga.controlFornecedores;
 
-import saga.Avaliador;
+import saga.Validador;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -31,7 +31,7 @@ public class Fornecedor {
      * Atributo que é um hashMap de objetos do tipo Produto, em que a chave do mapa é o nome do produto e a sua descrição.
      */
     private HashMap<String, Produto> mapaProdutos;
-    private Avaliador avalia;
+    private Validador avaliador;
 
     /**
      * Construtor responsável por criar um objeto do tipo Fornecedor baseado nos parametros "nome", "email" e "telefone".
@@ -45,7 +45,7 @@ public class Fornecedor {
         this.email = email;
         this.telefone = telefone;
         this.mapaProdutos = new HashMap<String, Produto>();
-        avalia = new Avaliador();
+        avaliador = new Validador();
     }
 
     /**
@@ -132,37 +132,36 @@ public class Fornecedor {
 
     /**
      * Método que cria um novo produto baseado no preço, no nome do produto e na sua descrição e o adiciona no mapa de
-     * produtos. Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
-     * será lançada.
+     * produtos.Caso o mapa não tiver uma key que será passada uma exceção será lançada.
      *
      * @param preco preço do produto.
      * @param nomeProduto nome do produto.
      * @param descricao descrição do produto.
      */
-    public void addProduto(double preco, String nomeProduto, String descricao) {
-        this.avalia.validaPrecoProduto(preco);
-        this.avalia.validaNome(nomeProduto, "fornecedor");
-        this.avalia.validaDescricaoProduto(descricao);
+    public void addProduto( String nomeProduto, String descricao, double preco) {
 
-        Produto produto = new Produto(preco, nomeProduto, descricao);
+        Produto produto = new Produto(nomeProduto, descricao, preco);
         String chave = nomeProduto + descricao;
 
+        if (this.mapaProdutos.containsKey(chave)) {
+            throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
+        }
         this.mapaProdutos.put(chave, produto);
     }
 
     /**
-     * Método que retorna a representacao textual do produto que tem o nome e a descrição iguais aos parâmetros. Caso
-     * algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Método que retorna a representacao textual do produto que tem o nome e a descrição iguais aos parâmetros. Caso o
+     * mapa não tiver uma key que será passada uma exceção será lançada.
      *
      * @param nomeProduto nome do produto.
      * @param descricao descrição do produto.
      *
      * @return A representação textual do produto.
      */
-    public String dadosProduto(String nomeProduto, String descricao) {
-        this.avalia.validaNome(nomeProduto, "fornecedor");
-        this.avalia.validaDescricaoProduto(descricao);
-
+    public String exibeProduto(String nomeProduto, String descricao) {
+        if (!this.mapaProdutos.containsKey(nomeProduto + descricao)) {
+            throw new NullPointerException("Erro na exibicao de produto: produto nao existe.");
+        }
         return this.mapaProdutos.get(nomeProduto + descricao).toString();
     }
 
@@ -186,35 +185,26 @@ public class Fornecedor {
     }
 
     /**
-     * Método responsável por alterar o preço do produto, cujo nome e descrição sao iguais aos parametros.Caso
-     * algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Método responsável por alterar o preço do produto, cujo nome e descrição sao iguais aos parametros.
      *
      * @param novoPreco novo preço a ser alterado.
      * @param nomeProduto nome do produto que terá o preço alterado.
      * @param descricao descrição do produto que terá o preço alterado.
      */
     public void editaProduto(double novoPreco, String nomeProduto, String descricao) {
-        this.avalia.validaNome(nomeProduto, "fornecedor");
-        this.avalia.validaDescricaoProduto(descricao);
-        this.avalia.validaPrecoProduto(novoPreco);
-
         this.mapaProdutos.get(nomeProduto + descricao).setPreco(novoPreco);
     }
 
     /**
-     * Método responsável por remover um produto ja cadastrados.Caso algum dos parâmetros passados seja uma string
-     * vazia, apenas de espaços ou um valor null uma exceção será lançada. Além disso, se a key não existir no mapa, uma
+     * Método responsável por remover um produto ja cadastrados. Se a key não existir no mapa, uma
      * exceção também será lançada.
      *
      * @param nomeProduto Nome do produto.
      * @param descricao Descrição do produto.
      */
     public void removeProduto(String nomeProduto, String descricao) {
-        this.avalia.validaNome(nomeProduto, "fornecedor");
-        this.avalia.validaDescricaoProduto(descricao);
-
         if (!this.mapaProdutos.containsKey(nomeProduto + descricao)){
-            throw new NullPointerException("KEY INEXISTENTE");
+            throw new NullPointerException("Erro na remocao de produto: produto nao existe.");
         }
 
         this.mapaProdutos.remove(nomeProduto + descricao);

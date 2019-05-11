@@ -167,8 +167,8 @@ public class Facade {
      * @param nomeProduto nome do produto.
      * @param descricao descrição do produto.
      */
-    public void adicionaProduto(String fornecedor, double preco, String nomeProduto, String descricao) {
-        this.controlaFornecedores.addProduto(fornecedor, preco, nomeProduto, descricao);
+    public void adicionaProduto(String fornecedor, String nomeProduto, String descricao, double preco) {
+        this.controlaFornecedores.addProduto(fornecedor, nomeProduto, descricao, preco);
     }
 
     /**
@@ -182,8 +182,8 @@ public class Facade {
      *
      * @return Os dados do produto de um fornecedor específico.
      */
-    public void dadosProduto(String fornecedor, String nomeProduto, String descricao) {
-        this.controlaFornecedores.dadosProduto(fornecedor, nomeProduto, descricao);
+    public String exibeProduto(String nomeProduto, String descricao, String fornecedor) {
+        return this.controlaFornecedores.exibeProduto(fornecedor, nomeProduto, descricao);
     }
 
     /**
@@ -193,8 +193,8 @@ public class Facade {
      * @param fornecedor nome do fornecedor.
      * @return A representação textual de todos os produtos.
      */
-    public void dadosDosProdutosDoFornecedor(String fornecedor) {
-        this.controlaFornecedores.dadosTodosProdutosFornecedor(fornecedor);
+    public String dadosDosProdutosDoFornecedor(String fornecedor) {
+        return this.controlaFornecedores.dadosTodosProdutosFornecedor(fornecedor);
     }
 
     /**
@@ -203,8 +203,8 @@ public class Facade {
      *
      * @return uma string com todas as representações textuais de todos os produtos cadastrados em todos os fornecedores.
      */
-    public void dadosDeTodosOsProdutos() {
-        this.controlaFornecedores.dadosTodosProdutos();
+    public String dadosDeTodosOsProdutos() {
+        return this.controlaFornecedores.dadosTodosProdutos();
     }
 
     /**
@@ -217,7 +217,7 @@ public class Facade {
      * @param nomeProduto nome do produto que terá o preço alterado.
      * @param descricao descrição do produto que terá o preço alterado.
      */
-    public void editaProduto(String fornecedor, double novoPreco, String nomeProduto, String descricao)   {
+    public void editaProduto(String nomeProduto, String descricao, String fornecedor, double novoPreco)   {
         this.controlaFornecedores.editaProduto(fornecedor, nomeProduto, descricao, novoPreco);
     }
 
@@ -230,7 +230,7 @@ public class Facade {
      * @param nomeProduto Nome do produto.
      * @param descricao Descrição do produto.
      */
-    public void removeProduto(String fornecedor, String nomeProduto, String descricao) {
+    public void removeProduto(String nomeProduto, String descricao, String fornecedor) {
         this.controlaFornecedores.removeProduto(fornecedor, nomeProduto, descricao);
     }
 

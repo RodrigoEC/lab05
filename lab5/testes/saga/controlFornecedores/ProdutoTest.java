@@ -12,7 +12,7 @@ class ProdutoTest {
 
     @BeforeEach
     void produtoPadrao() {
-        produto = new Produto(3.00, "placebo", "placebo");
+        produto = new Produto( "placebo", "placebo", 3.00);
     }
 
     @Test
@@ -22,25 +22,25 @@ class ProdutoTest {
 
     @Test
     void comparaProdutosIguais() {
-        Produto produtoGemeo = new Produto(3.00, "placebo", "placebo");
+        Produto produtoGemeo = new Produto( "placebo", "placebo", 3.00);
         assertTrue(produto.equals(produtoGemeo));
     }
 
     @Test
     void comparaProdutosDiferenca() {
-        Produto produto2 = new Produto(1.00, "lalala", "plalalal");
+        Produto produto2 = new Produto( "lalala", "plalalal", 1.00);
         assertFalse(produto.equals(produto2));
     }
 
     @Test
     void comparaHashcodesIguais() {
-        Produto produtoGemeo = new Produto(3.00, "placebo", "placebo");
+        Produto produtoGemeo = new Produto( "placebo", "placebo", 3.00);
         assertTrue(produto.hashCode() == produtoGemeo.hashCode());
     }
 
     @Test
     void comparaHashcodesDiferentes() {
-        Produto produto2 = new Produto(1.00, "lalala", "plalalal");
+        Produto produto2 = new Produto( "lalala", "plalalal", 1.00);
         assertFalse(produto.hashCode() == produto2.hashCode());
     }
 }

@@ -31,6 +31,7 @@ class ControllerClientesTest {
             clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
         }
 
     }
@@ -41,6 +42,8 @@ class ControllerClientesTest {
             clientes.cadastraCliente(null, "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+            npe.printStackTrace();
+
 
         }
 
@@ -48,6 +51,8 @@ class ControllerClientesTest {
             clientes.cadastraCliente("07345161420", null, "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+            npe.printStackTrace();
+
 
         }
 
@@ -55,6 +60,8 @@ class ControllerClientesTest {
             clientes.cadastraCliente("07345161420", "rodrigo", null, "lcc3");
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+            npe.printStackTrace();
+
 
         }
 
@@ -62,6 +69,8 @@ class ControllerClientesTest {
             clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", null);
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+            npe.printStackTrace();
+
 
         }
     }
@@ -73,18 +82,21 @@ class ControllerClientesTest {
             clientes.cadastraCliente("07345161420", " ", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
         }
 
         try {
             clientes.cadastraCliente("07345161420", "rodrigo", "", "lcc3");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
         }
 
         try {
             clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "    ");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
         }
     }
 
@@ -129,6 +141,7 @@ class ControllerClientesTest {
             clientes.editaCliente("07345161420", "nome", " ");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
         }
     }
 
@@ -140,6 +153,8 @@ class ControllerClientesTest {
             clientes.editaCliente("07345161420", "nome", null);
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+            npe.printStackTrace();
+
         }
     }
 
@@ -159,6 +174,7 @@ class ControllerClientesTest {
             clientes.editaCliente("07345161420", "email", " ");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
         }
     }
 
@@ -170,6 +186,8 @@ class ControllerClientesTest {
             clientes.editaCliente("07345161420", "email", null);
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+            npe.printStackTrace();
+
         }
     }
 
@@ -188,6 +206,7 @@ class ControllerClientesTest {
             clientes.editaCliente("07345161420", "Localizacao", " ");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
         }
     }
 
@@ -199,6 +218,9 @@ class ControllerClientesTest {
             clientes.editaCliente("07345161420", "Localizacao", null);
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+            npe.printStackTrace();
+
+
         }
     }
 
@@ -210,6 +232,8 @@ class ControllerClientesTest {
             clientes.editaCliente("07345161420", "zuzuzu", "gretchen");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
         }
     }
 
@@ -221,6 +245,8 @@ class ControllerClientesTest {
             clientes.editaCliente("07345161422", "nome", "gretchen");
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+            npe.printStackTrace();
+
         }
     }
 
@@ -240,6 +266,8 @@ class ControllerClientesTest {
             clientes.removeCliente("07345161420");
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+            npe.printStackTrace();
+
         }
     }
 }

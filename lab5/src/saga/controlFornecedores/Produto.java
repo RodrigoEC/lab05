@@ -30,7 +30,7 @@ public class Produto {
      * @param nomeProduto Nome do produto.
      * @param descricao Descrição do produto criado.
      */
-    public Produto(double preco, String nomeProduto, String descricao) {
+    public Produto(String nomeProduto, String descricao, double preco) {
         this.preco = preco;
         this.nomeProduto = nomeProduto;
         this.descricao = descricao;
@@ -62,7 +62,7 @@ public class Produto {
      */
     @Override
     public String toString()     {
-        return String.format("%s - %s - R$%s", this.nomeProduto, this.descricao, this.preco);
+        return String.format("%s - %s - R$%,.2f", this.nomeProduto, this.descricao, this.preco);
     }
 
     /**

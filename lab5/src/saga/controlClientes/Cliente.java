@@ -37,6 +37,7 @@ public class Cliente {
      * @param local local onde o cliente trabalha
      */
     public Cliente(String cpf, String nome, String email, String local) {
+
         this.cpf = cpf;
         this.nome = nome;
         this.email = email;

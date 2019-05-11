@@ -41,7 +41,6 @@ expectError "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo." 
 
 removeProduto nome="X-frango" descricao="Hamburguer de frango com queijo e calabresa" fornecedor="Seu Olavo"
 expectError "Erro na remocao de produto: produto nao existe." removeProduto nome="X-frango" descricao="Hamburguer de frango com queijo e calabresa" fornecedor="Seu Olavo"
-
 expectError "Erro na remocao de produto: nome nao pode ser vazio ou nulo." removeProduto nome="" descricao="Sanduiche com presunto, queijo e manteiga" fornecedor="Seu Olavo"
 expectError "Erro na remocao de produto: descricao nao pode ser vazia ou nula." removeProduto nome="X-frango" descricao="" fornecedor="Seu Olavo"
 expectError "Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo." removeProduto nome="X-frango" descricao="Hamburguer de frango com queijo e calabresa" fornecedor=""

@@ -28,6 +28,8 @@ class ControllerFornecedoresTest {
             controller.cadastraFornecedor("", "padaria@gmail.com", "4002-8922");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
         }
 
         try {
@@ -35,6 +37,8 @@ class ControllerFornecedoresTest {
             controller.cadastraFornecedor("padaria", "  ", "4002-8922");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
         }
 
         try {
@@ -42,6 +46,8 @@ class ControllerFornecedoresTest {
             controller.cadastraFornecedor("padaria", "padaria@gmail.com", "   ");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
         }
 
     }
@@ -53,6 +59,7 @@ class ControllerFornecedoresTest {
             controller.cadastraFornecedor(null, "padaria@gmail.com", "4002-8922");
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+             npe.printStackTrace();
         }
 
         try {
@@ -60,6 +67,7 @@ class ControllerFornecedoresTest {
             controller.cadastraFornecedor("padaria", null, "4002-8922");
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+             npe.printStackTrace();
         }
 
         try {
@@ -67,6 +75,7 @@ class ControllerFornecedoresTest {
             controller.cadastraFornecedor("padaria", "padaria@gmail.com", null);
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+             npe.printStackTrace();
         }
 
     }
@@ -86,6 +95,7 @@ class ControllerFornecedoresTest {
             controller.dadosTodosProdutosFornecedor("lalala");
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+             npe.printStackTrace();
         }
     }
 
@@ -94,7 +104,9 @@ class ControllerFornecedoresTest {
         try {
             controller.dadosFornecedor("  ");
             fail("era pra dar ruim");
-        } catch (IllegalArgumentException iae) {
+        } catch (NullPointerException iae) {
+            iae.printStackTrace();
+
         }
     }
 
@@ -104,6 +116,7 @@ class ControllerFornecedoresTest {
             controller.dadosFornecedor(null);
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+            npe.printStackTrace();
         }
     }
 
@@ -128,6 +141,7 @@ class ControllerFornecedoresTest {
             controller.dadosTodosProdutosFornecedor("vaquinha");
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
+             npe.printStackTrace();
         }
     }
 
@@ -135,9 +149,9 @@ class ControllerFornecedoresTest {
     @Test
     void testDadosTodosProdutosPadrao() {
         controller.cadastraFornecedor("palmerinha", "palmerinha@gmail.com", "159357");
-        controller.addProduto("padaria", 3.00, "tapioca", "tapioca delicia");
-        controller.addProduto("padaria", 70.00, "pao", "pao top");
-        controller.addProduto("palmerinha", 4.00, "sapatoDoce", "lalal");
+        controller.addProduto("padaria",  "tapioca", "tapioca delicia", 3.00);
+        controller.addProduto("padaria","pao", "pao top", 70.00);
+        controller.addProduto("palmerinha",  "sapatoDoce", "lalal", 4.00);
 
         assertEquals("padaria - tapioca - tapioca delicia - R$3,00 | padaria - pao - pao top - R$70,00 | " +
                 "palmerinha - sapatoDoce - lalal - R$4,00", controller.dadosTodosProdutos());
@@ -160,6 +174,176 @@ class ControllerFornecedoresTest {
             controller.removeFornecedor("cabeloPreto");
             fail("ERA PRA DAR RUIM");
         } catch (NullPointerException npe) {
+             npe.printStackTrace();
+        }
+    }
+
+    // Test parametros do métodp "addProduto"
+
+    @Test
+    void testAddProdutoParametrosInexistente() {
+        try {
+            controller.addProduto( "  ","tapioca", "", 3.00);
+            fail("ERA PRA DAR RUIM");
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+
+        try {
+            controller.addProduto( "padaria","tapioca", "", 3.00);
+            fail("ERA PRA DAR RUIM");
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+
+        try {
+            controller.addProduto(  "padaria"," ", "tapioca boaaaa", 3.00);
+            fail("ERA PRA DAR RUIM");
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+
+        try {
+            controller.addProduto( "padaria","tapioca", "tapioca boaaaa", -1);
+            fail("ERA PRA DAR RUIM");
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+    }
+
+    @Test
+    void testAddProdutoParametrosNulos() {
+        try {
+            controller.addProduto( null,"tapioca", "FEFE", 3.00);
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+             npe.printStackTrace();
+
+        }
+
+        try {
+            controller.addProduto( "padaria",null, "FEFEFEF", 3.00);
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+             npe.printStackTrace();
+        }
+
+        try {
+            controller.addProduto(  "padaria","FEFEFEF", null, 3.00);
+            fail("ERA PRA DAR RUIM");
+        } catch (NullPointerException npe) {
+             npe.printStackTrace();
+        }
+    }
+
+    @Test
+    void exibeProdutoParametrosInvalidos() {
+        controller.addProduto(  "padaria","tapioca", "tapioca boaaaa", 3.00);
+        try {
+            controller.exibeProduto( "padaria","tapioca", "    ");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+
+        try {
+            controller.exibeProduto(  "padaria" ," ", "tapioca boaaaa");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+    }
+
+    // teste do metodo editaCliente
+
+    @Test
+    void testEditaProdutosParametrosInvalidos() {
+        controller.addProduto(  "padaria", "tapioca", "tapioca delicia", 3.00);
+        try {
+            controller.editaProduto( "padaria", "tapioca", "tapioca delicia", -1);
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+
+        try {
+            controller.editaProduto( "padaria", "", "tapioca delicia", 1.00);
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+
+        try {
+            controller.editaProduto(  "padaria", "tapioca", "", 1.00);
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+    }
+
+    @Test
+    void testEditaProdutosParametrosNulos() {
+        controller.addProduto( "padaria" ,"tapioca", "tapioca delicia", 3.00);
+
+        try {
+            controller.editaProduto( "padaria", null, "tapioca delicia", 1.00);
+        } catch (NullPointerException npe) {
+             npe.printStackTrace();
+        }
+
+        try {
+            controller.editaProduto( "padaria", "tapioca", null,1.00);
+        } catch (NullPointerException npe) {
+             npe.printStackTrace();
+        }
+    }
+
+    // testes da do metodo "removeProduto"
+
+
+    @Test
+    void testRemoveProdutosParametrosInvalidos() {
+        controller.addProduto(  "padaria","tapioca", "tapioca delicia", 3.00);
+
+        try {
+            controller.removeProduto( "padaria"," ", "tapioca delicia");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+
+        try {
+            controller.removeProduto( "padaria","tapioca", " ");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+            iae.printStackTrace();
+
+        }
+    }
+
+    @Test
+    void testRemoveProdutosParametrosNulos() {
+        controller.addProduto(  "padaria","tapioca", "tapioca delicia", 3.00);
+
+        try {
+            controller.removeProduto("padaria",null, "tapioca delicia");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+             npe.printStackTrace();
+        }
+
+        try {
+            controller.removeProduto("padaria","tapioca", null);
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+             npe.printStackTrace();
         }
     }
 }

@@ -19,14 +19,14 @@ public class ControllerClientes {
      * Atributo que representa um objeto reponsavel por avaliar os parâmetros, lançando as exceções adequadas se
      * necessário.
      */
-    private Validador avalia;
+    private ValidaControllerCliente avalia;
 
     /**
      * Construtor responsável por inicializar os atributos da classe.
      */
     public ControllerClientes() {
         clientes = new HashMap<>();
-        avalia = new Validador();
+        avalia = new ValidaControllerCliente();
     }
 
     /**
@@ -50,10 +50,7 @@ public class ControllerClientes {
      * @return o cpf do cliente.
      */
     public String cadastraCliente(String cpf, String nome, String email, String local) {
-        avalia.validarCPFCliente(cpf);
-        avalia.validaNome(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
-        avalia.validaEmail(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
-        avalia.validaLocalizacao(local);
+        avalia.validaEntradasCadastraCliente(cpf, nome, email, local);
 
         if (!clientes.containsKey(cpf)) {
             Cliente cliente = new Cliente(cpf, nome, email, local);
@@ -72,7 +69,7 @@ public class ControllerClientes {
      * @return representação textual do cliente.
      */
     public String dadosCliente(String cpf) {
-        avalia.validarCPFCliente(cpf);
+        avalia.validaEntradasDadosCliente(cpf);
 
         if (!this.clientes.containsKey(cpf)) {
             throw new NullPointerException("Erro na exibicao do cliente: cliente nao existe.");
@@ -108,9 +105,7 @@ public class ControllerClientes {
      * @param novoValor valor que será colocado no atributo
      */
     public void editaCliente(String cpf, String atributo, String novoValor) {
-        avalia.validarCPFCliente(cpf);
-        avalia.validaNovoValor(novoValor, "Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
-        avalia.validaAtributo(atributo, "Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
+        avalia.validaEntradasEditaCliente(cpf, novoValor, atributo);
 
         if (!this.clientes.containsKey(cpf)) {
             throw new NullPointerException("Erro na edicao do cliente: cliente nao existe.");
@@ -138,7 +133,7 @@ public class ControllerClientes {
      * @param cpf cpf do cliente que será removido.
      */
     public void removeCliente(String cpf) {
-        avalia.validarCPFCliente(cpf);
+        avalia.validaEntradasRemoveCliente(cpf);
 
         if (this.clientes.containsKey(cpf)) {
             clientes.remove(cpf, clientes.get((cpf)));

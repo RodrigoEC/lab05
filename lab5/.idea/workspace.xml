@@ -328,12 +328,12 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Facade" />
       <item itemvalue="JUnit.ControllerFornecedoresTest.testDadosFornecedorInexistente" />
       <item itemvalue="JUnit.ValidaControllerFornecedorTest.testValidaEntradasInvalidasEditaProduto" />
       <item itemvalue="JUnit.ValidaControllerFornecedorTest.testValidaEntradasNulasEditaProduto" />
       <item itemvalue="JUnit.ValidaControllerFornecedorTest.testValidaEntradasInvalidasRemoveProduto" />
       <item itemvalue="JUnit.ValidaControllerFornecedorTest.testValidaEntradasNulasRemoveProduto" />
-      <item itemvalue="Application.Facade" />
     </list>
     <recent_temporary>
       <list>

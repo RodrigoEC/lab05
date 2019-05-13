@@ -29,7 +29,6 @@ public class ValidaControllerCliente {
             throw new IllegalArgumentException(mensagem);
         }
     }
-
     /**
      * Método que serve para validas as entradas do método "cadastraCliente".
      *

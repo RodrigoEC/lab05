@@ -1,7 +1,5 @@
 package saga.controlClientes;
 
-import saga.Validador;
-
 import java.util.HashMap;
 
 /**
@@ -25,8 +23,8 @@ public class ControllerClientes {
      * Construtor responsável por inicializar os atributos da classe.
      */
     public ControllerClientes() {
-        clientes = new HashMap<>();
-        avalia = new ValidaControllerCliente();
+        this.clientes = new HashMap<>();
+        this.avalia = new ValidaControllerCliente();
     }
 
     /**
@@ -50,11 +48,11 @@ public class ControllerClientes {
      * @return o cpf do cliente.
      */
     public String cadastraCliente(String cpf, String nome, String email, String local) {
-        avalia.validaEntradasCadastraCliente(cpf, nome, email, local);
+        this.avalia.validaEntradasCadastraCliente(cpf, nome, email, local);
 
-        if (!clientes.containsKey(cpf)) {
+        if (!this.clientes.containsKey(cpf)) {
             Cliente cliente = new Cliente(cpf, nome, email, local);
-            clientes.put(cpf, cliente);
+            this.clientes.put(cpf, cliente);
             return cpf;
         } else {
             throw new IllegalArgumentException("Erro no cadastro do cliente: cliente ja existe.");
@@ -69,7 +67,7 @@ public class ControllerClientes {
      * @return representação textual do cliente.
      */
     public String dadosCliente(String cpf) {
-        avalia.validaEntradasDadosCliente(cpf);
+        this.avalia.validaEntradasDadosCliente(cpf);
 
         if (!this.clientes.containsKey(cpf)) {
             throw new NullPointerException("Erro na exibicao do cliente: cliente nao existe.");
@@ -105,20 +103,20 @@ public class ControllerClientes {
      * @param novoValor valor que será colocado no atributo
      */
     public void editaCliente(String cpf, String atributo, String novoValor) {
-        avalia.validaEntradasEditaCliente(cpf, novoValor, atributo);
+        this.avalia.validaEntradasEditaCliente(cpf, atributo, novoValor);
 
         if (!this.clientes.containsKey(cpf)) {
             throw new NullPointerException("Erro na edicao do cliente: cliente nao existe.");
         }
 
         if ("nome".equals(atributo.toLowerCase())) {
-            clientes.get(cpf).setNome(novoValor);
+            this.clientes.get(cpf).setNome(novoValor);
 
         } else if ("email".equals(atributo.toLowerCase())) {
-            clientes.get(cpf).setEmail(novoValor);
+            this.clientes.get(cpf).setEmail(novoValor);
 
         } else if ("localizacao".equals(atributo.toLowerCase())) {
-            clientes.get(cpf).setLocalizacao(novoValor);
+            this.clientes.get(cpf).setLocalizacao(novoValor);
         } else {
             throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao existe.");
         }
@@ -133,7 +131,7 @@ public class ControllerClientes {
      * @param cpf cpf do cliente que será removido.
      */
     public void removeCliente(String cpf) {
-        avalia.validaEntradasRemoveCliente(cpf);
+        this.avalia.validaEntradasRemoveCliente(cpf);
 
         if (this.clientes.containsKey(cpf)) {
             clientes.remove(cpf, clientes.get((cpf)));

@@ -1,7 +1,5 @@
 package saga.controlFornecedores;
 
-import saga.Validador;
-
 import java.util.HashMap;
 /**
  * Classe responsável por criar um controller responsável por fazer operações sobre objetos do tipo Fornecedor.
@@ -18,14 +16,14 @@ public class ControllerFornecedores {
      * Atributo que representa um objeto reponsavel por avaliadorr os parâmetros, lançando as exceções adequadas se
      * necessário.
      */
-    private Validador avaliador;
+    private ValidaControllerFornecedor avaliador;
 
     /**
      * Construtor responsável por criar o objeto do tipo ControllerFornecedores e inicializar os atributos da classe.
      */
     public ControllerFornecedores() {
         this.mapaFornecedores = new HashMap<>();
-        this.avaliador = new Validador();
+        this.avaliador = new ValidaControllerFornecedor();
     }
 
     /**
@@ -47,9 +45,7 @@ public class ControllerFornecedores {
      * @param telefone Telefone do fornecedor.
  */
     public String cadastraFornecedor(String fornecedor, String email, String telefone) {
-        this.avaliador.validaNome(fornecedor, "Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
-        this.avaliador.validaEmail(email, "Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
-        this.avaliador.validaTelefone(telefone);
+        this.avaliador.validaEntradasCadastraFornecedor(fornecedor, email, telefone);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             Fornecedor novoFornecedor = new Fornecedor(fornecedor, email, telefone);
@@ -68,7 +64,6 @@ public class ControllerFornecedores {
      * @return A representação textual do fornecedor.
      */
     public String dadosFornecedor(String fornecedor){
-
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro na exibicao do fornecedor: fornecedor nao existe.");
         }
@@ -104,9 +99,7 @@ public class ControllerFornecedores {
      * @param novoValor valor que será colocado no atributo
      */
     public void editaFornecedor(String nome, String atributo, String novoValor) {
-        this.avaliador.validaNome(nome, "Erro na edicao do fornecedor: nome nao pode ser editado." );
-        this.avaliador.validaAtributo(atributo, "Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.");
-        this.avaliador.validaNovoValor(novoValor, "Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.");
+        this.avaliador.validaEntradasEditaFornecedor(nome, atributo, novoValor);
 
         if (!this.mapaFornecedores.containsKey(nome)) {
             throw new NullPointerException("Erro na edicao do fornecedor: fornecedor nao existe.");
@@ -133,7 +126,7 @@ public class ControllerFornecedores {
      * @param fornecedor Nome do fornecedor.
      */
     public void removeFornecedor(String fornecedor) {
-        this.avaliador.validaNome(fornecedor, "Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio.");
+        this.avaliador.validaEntradaRemoveFornecedor(fornecedor);
 
         if (this.mapaFornecedores.containsKey(fornecedor)) {
             this.mapaFornecedores.remove(fornecedor);
@@ -155,10 +148,7 @@ public class ControllerFornecedores {
      * @param descricao descrição do produto.
      */
     public void addProduto(String fornecedor, String nomeProduto, String descricao, double preco) {
-        this.avaliador.validaPrecoProduto(preco, "Erro no cadastro de produto: preco invalido.");
-        this.avaliador.validaNome(fornecedor, "Erro no cadastro de produto: fornecedor nao pode ser vazio ou nulo.");
-        this.avaliador.validaNome(nomeProduto, "Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
-        this.avaliador.validaDescricaoProduto(descricao, "Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
+        this.avaliador.validaEntradasAddProduto(fornecedor, nomeProduto, descricao, preco);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro no cadastro de produto: fornecedor nao existe.");
@@ -179,10 +169,7 @@ public class ControllerFornecedores {
      * @return Os dados do produto de um fornecedor específico.
      */
     public String exibeProduto(String fornecedor, String nomeProduto, String descricao) {
-        this.avaliador.validaNome(fornecedor, "Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
-        this.avaliador.validaNome(nomeProduto, "Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
-        this.avaliador.validaDescricaoProduto(descricao, "Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
-
+        this.avaliador.validaEntradasExibeProduto(fornecedor, nomeProduto, descricao);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro na exibicao de produto: fornecedor nao existe.");
@@ -212,10 +199,7 @@ public class ControllerFornecedores {
      * @param descricao descrição do produto que terá o preço alterado.
      */
     public void editaProduto(String fornecedor, String nomeProduto, String descricao, double novoPreco) {
-        this.avaliador.validaNome(fornecedor, "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
-        this.avaliador.validaNome(nomeProduto ,"Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
-        this.avaliador.validaDescricaoProduto(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
-        this.avaliador.validaPrecoProduto(novoPreco, "Erro na edicao de produto: preco invalido.");
+        this.avaliador.validaEntradasEditaProduto(fornecedor, nomeProduto, descricao, novoPreco);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro na edicao de produto: fornecedor nao existe.");
@@ -233,9 +217,7 @@ public class ControllerFornecedores {
      * @param descricao Descrição do produto.
      */
     public void removeProduto(String fornecedor, String nomeProduto, String descricao) {
-        this.avaliador.validaNome(fornecedor, "Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo.");
-        this.avaliador.validaNome(nomeProduto, "Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
-        this.avaliador.validaDescricaoProduto(descricao, "Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
+        this.avaliador.validaEntradasRemoveProduto(fornecedor, nomeProduto, descricao);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro na remocao de produto: fornecedor nao existe.");

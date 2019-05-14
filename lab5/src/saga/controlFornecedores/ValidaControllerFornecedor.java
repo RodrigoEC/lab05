@@ -2,13 +2,14 @@ package saga.controlFornecedores;
 
 public class ValidaControllerFornecedor {
 
+
     /**
      * Método responsável por validar o parametro "parametro" que for passado.
      *
      * @param parametro frase que será validada.
      * @param mensagem mensagem que será msotrada quando a exceção for lançada.
      */
-    private void validadorAuxiliar(String parametro, String mensagem) {
+    private static void validadorAuxiliar(String parametro, String mensagem) {
         if (parametro == null) {
             throw new NullPointerException(mensagem);
         }
@@ -23,8 +24,14 @@ public class ValidaControllerFornecedor {
      * @param preco preço do produto.
      * @param mensagem mensagem que será mostrada quando a exceção for lançada
      */
-    private void validaPreco(double preco, String mensagem) {
+    private static void validaPreco(double preco, String mensagem) {
         if (preco < 0) {
+            throw new IllegalArgumentException(mensagem);
+        }
+    }
+
+    private static void validaFator(double fator, String mensagem) {
+        if (fator < 0 || fator >= 1) {
             throw new IllegalArgumentException(mensagem);
         }
     }
@@ -37,7 +44,7 @@ public class ValidaControllerFornecedor {
      * @param email email do fornecedor.
      * @param telefone telefone do fornecedor.
      */
-    public void validaEntradasCadastraFornecedor(String fornecedor, String email, String telefone) {
+    public static void validaEntradasCadastraFornecedor(String fornecedor, String email, String telefone) {
         validadorAuxiliar(fornecedor, "Erro no cadastro do fornecedor: nome nao pode ser vazio ou nulo.");
         validadorAuxiliar(email, "Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
         validadorAuxiliar(telefone, "Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.");
@@ -50,7 +57,7 @@ public class ValidaControllerFornecedor {
      * @param atributo atributo que será editado.
      * @param novoValor valor a ser atribuido ao atributo passado como parâmetro.
      */
-    public void validaEntradasEditaFornecedor(String nome, String atributo, String novoValor) {
+    public static void validaEntradasEditaFornecedor(String nome, String atributo, String novoValor) {
         validadorAuxiliar(nome, "Erro na edicao do fornecedor: nome nao pode ser editado.");
         validadorAuxiliar(atributo, "Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.");
         validadorAuxiliar(novoValor, "Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.");
@@ -61,7 +68,7 @@ public class ValidaControllerFornecedor {
      *
      * @param fornecedor noem do fornecedor.
      */
-    public void validaEntradaRemoveFornecedor(String fornecedor) {
+    public static void validaEntradaRemoveFornecedor(String fornecedor) {
         validadorAuxiliar(fornecedor, "Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio.");
     }
 
@@ -75,7 +82,7 @@ public class ValidaControllerFornecedor {
      * @param descricao descrição do produto.
      * @param preco preço do produto.
      */
-    public void validaEntradasAddProduto(String fornecedor, String nomeProduto, String descricao, double preco) {
+    public static void validaEntradasAddProduto(String fornecedor, String nomeProduto, String descricao, double preco) {
         validadorAuxiliar(fornecedor, "Erro no cadastro de produto: fornecedor nao pode ser vazio ou nulo.");
         validadorAuxiliar(nomeProduto, "Erro no cadastro de produto: nome nao pode ser vazio ou nulo.");
         validadorAuxiliar(descricao, "Erro no cadastro de produto: descricao nao pode ser vazia ou nula.");
@@ -89,7 +96,7 @@ public class ValidaControllerFornecedor {
      * @param nomeProduto nome do produto.
      * @param descricao descrição do produto.
      */
-    public void validaEntradasExibeProduto(String fornecedor, String nomeProduto, String descricao) {
+    public static void validaEntradasExibeProduto(String fornecedor, String nomeProduto, String descricao) {
         validadorAuxiliar(fornecedor, "Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
         validadorAuxiliar(nomeProduto, "Erro na exibicao de produto: nome nao pode ser vazio ou nulo.");
         validadorAuxiliar(descricao, "Erro na exibicao de produto: descricao nao pode ser vazia ou nula.");
@@ -103,7 +110,7 @@ public class ValidaControllerFornecedor {
      * @param descricao descrição do produto.
      * @param novoPreco novo preço a ser editado.
      */
-    public void validaEntradasEditaProduto(String fornecedor, String nomeProduto, String descricao, double novoPreco) {
+    public static void validaEntradasEditaProduto(String fornecedor, String nomeProduto, String descricao, double novoPreco) {
         validadorAuxiliar(fornecedor, "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
         validadorAuxiliar(nomeProduto ,"Erro na edicao de produto: nome nao pode ser vazio ou nulo.");
         validadorAuxiliar(descricao, "Erro na edicao de produto: descricao nao pode ser vazia ou nula.");
@@ -117,9 +124,16 @@ public class ValidaControllerFornecedor {
      * @param nomeProduto nome do produto.
      * @param descricao descrição do produto.
      */
-    public void validaEntradasRemoveProduto(String fornecedor, String nomeProduto, String descricao) {
+    public static void validaEntradasRemoveProduto(String fornecedor, String nomeProduto, String descricao) {
         validadorAuxiliar(fornecedor, "Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo.");
         validadorAuxiliar(nomeProduto, "Erro na remocao de produto: nome nao pode ser vazio ou nulo.");
         validadorAuxiliar(descricao, "Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
+    }
+
+    public static void validaEntradasAddCombo(String nomeCombo, String descricaoCombo, double fator, String produtos) {
+        validadorAuxiliar(nomeCombo, "Erro no cadastro de combo: fornecedor nao pode ser vazio ou nulo.");
+        validadorAuxiliar(descricaoCombo, "Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
+        validaFator(fator, "Erro no cadastro de combo: fator invalido.");
+        validadorAuxiliar(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
     }
 }

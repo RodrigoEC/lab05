@@ -234,4 +234,7 @@ public class Facade {
         this.controlaFornecedores.removeProduto(fornecedor, nomeProduto, descricao);
     }
 
+    public void adicionaCombo(String fornecedor, String nomeCombo, String descricaoCombo, double fator, String produtos) {
+        this.controlaFornecedores.addCombo(fornecedor, nomeCombo, descricaoCombo, fator, produtos);
+    }
 }

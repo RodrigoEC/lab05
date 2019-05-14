@@ -1,5 +1,6 @@
 package saga.controlFornecedores;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
 
@@ -134,10 +135,10 @@ public class Fornecedor {
      * @param nomeProduto nome do produto.
      * @param descricao descrição do produto.
      */
-    public void addProduto( String nomeProduto, String descricao, double preco) {
+    public void addProduto(String nomeProduto, String descricao, double preco) {
 
         Produto produto = new Produto(nomeProduto, descricao, preco);
-        String chave = nomeProduto + descricao;
+        String chave = nomeProduto + " - " + descricao;
 
         if (this.mapaProdutos.containsKey(chave)) {
             throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
@@ -155,10 +156,10 @@ public class Fornecedor {
      * @return A representação textual do produto.
      */
     public String exibeProduto(String nomeProduto, String descricao) {
-        if (!this.mapaProdutos.containsKey(nomeProduto + descricao)) {
+        if (!this.mapaProdutos.containsKey(nomeProduto + " - " + descricao)) {
             throw new NullPointerException("Erro na exibicao de produto: produto nao existe.");
         }
-        return this.mapaProdutos.get(nomeProduto + descricao).toString();
+        return this.mapaProdutos.get(nomeProduto + " - " + descricao).toString();
     }
 
     /**
@@ -188,7 +189,7 @@ public class Fornecedor {
      * @param descricao descrição do produto que terá o preço alterado.
      */
     public void editaProduto(double novoPreco, String nomeProduto, String descricao) {
-        this.mapaProdutos.get(nomeProduto + descricao).setPreco(novoPreco);
+        this.mapaProdutos.get(nomeProduto + " - " + descricao).setPreco(novoPreco);
     }
 
     /**
@@ -199,10 +200,18 @@ public class Fornecedor {
      * @param descricao Descrição do produto.
      */
     public void removeProduto(String nomeProduto, String descricao) {
-        if (!this.mapaProdutos.containsKey(nomeProduto + descricao)){
+        if (!this.mapaProdutos.containsKey(nomeProduto + " - " + descricao)){
             throw new NullPointerException("Erro na remocao de produto: produto nao existe.");
         }
 
-        this.mapaProdutos.remove(nomeProduto + descricao);
+        this.mapaProdutos.remove(nomeProduto + " - " + descricao);
+    }
+
+    public void addCombo(String nomeCombo, String descricaoCombo, double fator, String produtos) {
+        String[] produtoss = produtos.split(", ");
+
+        Combo combo = new Combo(nomeCombo, descricaoCombo, fator)
+        String chave = nome + " - " + descricaoCombo;
+        this.mapaCombos.put(chave, )
     }
 }

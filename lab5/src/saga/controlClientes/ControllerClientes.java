@@ -14,17 +14,10 @@ public class ControllerClientes {
     private HashMap<String, Cliente> clientes;
 
     /**
-     * Atributo que representa um objeto reponsavel por avaliar os parâmetros, lançando as exceções adequadas se
-     * necessário.
-     */
-    private ValidaControllerCliente avalia;
-
-    /**
      * Construtor responsável por inicializar os atributos da classe.
      */
     public ControllerClientes() {
         this.clientes = new HashMap<>();
-        this.avalia = new ValidaControllerCliente();
     }
 
     /**
@@ -48,7 +41,7 @@ public class ControllerClientes {
      * @return o cpf do cliente.
      */
     public String cadastraCliente(String cpf, String nome, String email, String local) {
-        this.avalia.validaEntradasCadastraCliente(cpf, nome, email, local);
+        ValidaControllerCliente.validaEntradasCadastraCliente(cpf, nome, email, local);
 
         if (!this.clientes.containsKey(cpf)) {
             Cliente cliente = new Cliente(cpf, nome, email, local);
@@ -67,7 +60,7 @@ public class ControllerClientes {
      * @return representação textual do cliente.
      */
     public String dadosCliente(String cpf) {
-        this.avalia.validaEntradasDadosCliente(cpf);
+        ValidaControllerCliente.validaEntradasDadosCliente(cpf);
 
         if (!this.clientes.containsKey(cpf)) {
             throw new NullPointerException("Erro na exibicao do cliente: cliente nao existe.");
@@ -103,7 +96,7 @@ public class ControllerClientes {
      * @param novoValor valor que será colocado no atributo
      */
     public void editaCliente(String cpf, String atributo, String novoValor) {
-        this.avalia.validaEntradasEditaCliente(cpf, atributo, novoValor);
+        ValidaControllerCliente.validaEntradasEditaCliente(cpf, atributo, novoValor);
 
         if (!this.clientes.containsKey(cpf)) {
             throw new NullPointerException("Erro na edicao do cliente: cliente nao existe.");
@@ -131,7 +124,7 @@ public class ControllerClientes {
      * @param cpf cpf do cliente que será removido.
      */
     public void removeCliente(String cpf) {
-        this.avalia.validaEntradasRemoveCliente(cpf);
+        ValidaControllerCliente.validaEntradasRemoveCliente(cpf);
 
         if (this.clientes.containsKey(cpf)) {
             clientes.remove(cpf, clientes.get((cpf)));

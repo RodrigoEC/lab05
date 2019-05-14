@@ -8,7 +8,7 @@ public class ValidaControllerCliente {
      * @param parametro frase que será validada.
      * @param mensagem mensagem que será mostrada quando a exceção for lançada.
      */
-    private void validadorAuxiliar(String parametro, String mensagem) {
+    private static void validadorAuxiliar(String parametro, String mensagem) {
         if (parametro == null) {
             throw new NullPointerException(mensagem);
         }
@@ -24,7 +24,7 @@ public class ValidaControllerCliente {
      * @param cpf cpf que será validado
      * @param mensagem mensagem que será mostrado quando a exceção for lançada.
      */
-    private void validaCPF(String cpf, String mensagem) {
+    private static void validaCPF(String cpf, String mensagem) {
         if (cpf.length() != 11) {
             throw new IllegalArgumentException(mensagem);
         }
@@ -37,7 +37,7 @@ public class ValidaControllerCliente {
      * @param email email do cliente.
      * @param local local de trabalho do cliente.
      */
-    public void validaEntradasCadastraCliente(String cpf, String nome, String email, String local) {
+    public static void validaEntradasCadastraCliente(String cpf, String nome, String email, String local) {
         validaCPF(cpf, "Erro no cadastro do cliente: cpf invalido.");
         validadorAuxiliar(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
         validadorAuxiliar(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
@@ -49,7 +49,7 @@ public class ValidaControllerCliente {
      *
      * @param cpf cpf do cliente.
      */
-    public void validaEntradasDadosCliente(String cpf) {
+    public static void validaEntradasDadosCliente(String cpf) {
         validaCPF(cpf,"Erro na exibicao do cliente: cpf invalido.");
     }
 
@@ -60,7 +60,7 @@ public class ValidaControllerCliente {
      * @param atributo atributo que será editado.
      * @param novoValor valor que será atribuido ao atributo.
      */
-    public void validaEntradasEditaCliente(String cpf, String atributo, String novoValor) {
+    public static void validaEntradasEditaCliente(String cpf, String atributo, String novoValor) {
         validaCPF(cpf, "Erro na edicao do cliente: cpf invalido.");
         validadorAuxiliar(atributo, "Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
         validadorAuxiliar(novoValor, "Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
@@ -72,7 +72,7 @@ public class ValidaControllerCliente {
      *
      * @param cpf nome do cliente.
      */
-    public void validaEntradasRemoveCliente(String cpf) {
+    public static void validaEntradasRemoveCliente(String cpf) {
         validaCPF(cpf, "Erro na remocao do cliente: cpf invalido.");
     }
 }

@@ -28,7 +28,7 @@ class FornecedorTest {
 
     @Test
     void testAddProduto() {
-        assertTrue(fornecedor.getMapaProdutos().containsKey("tapiocatapioca delicia"));
+        assertTrue(fornecedor.getMapaProdutos().containsKey("tapioca - tapioca delicia"));
     }
 
 
@@ -59,7 +59,7 @@ class FornecedorTest {
     @Test
     void testEditaProdutoPadrao() {
         fornecedor.editaProduto(1.00, "tapioca", "tapioca delicia");
-        assertEquals(1.00, fornecedor.getMapaProdutos().get("tapiocatapioca delicia").getPreco());
+        assertEquals(1.00, fornecedor.getMapaProdutos().get("tapioca - tapioca delicia").getPreco());
     }
 
     @Test
@@ -78,7 +78,7 @@ class FornecedorTest {
     @Test
     void testRemoveProduto() {
         fornecedor.removeProduto("tapioca", "tapioca delicia");
-        assertTrue(!fornecedor.getMapaProdutos().containsKey("tapiocatapioca delicia"));
+        assertTrue(!fornecedor.getMapaProdutos().containsKey("tapioca - tapioca delicia"));
     }
 
     @Test

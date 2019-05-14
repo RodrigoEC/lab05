@@ -210,7 +210,8 @@ public class Fornecedor {
     public void addCombo(String nomeCombo, String descricaoCombo, double fator, String produtos) {
         String[] produtoss = produtos.split(", ");
 
-        Combo combo = new Combo(nomeCombo, descricaoCombo, fator)
+        double preco = this.mapaProdutos.get(produtoss[0]).getPreco() + this.mapaProdutos.get(produtoss[1]).getPreco() - ;
+        Combo combo = new Combo(nomeCombo, descricaoCombo, preco);
         String chave = nome + " - " + descricaoCombo;
         this.mapaCombos.put(chave, )
     }

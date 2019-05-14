@@ -1,5 +1,9 @@
 package saga.controlFornecedores;
 
+import saga.controlClientes.Cliente;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 /**
  * Classe responsável por criar um controller responsável por fazer operações sobre objetos do tipo Fornecedor.
@@ -71,9 +75,15 @@ public class ControllerFornecedores {
      * @return A representação textual de todos os fornecedores.
      */
     public String dadosTodosFornecedores() {
+        ArrayList<Fornecedor> fornecedores = new ArrayList<>();
+        for (Fornecedor fornecedor : this.mapaFornecedores.values()) {
+            fornecedores.add(fornecedor);
+        }
+        Collections.sort(fornecedores);
+
         String stringSaida = "";
         boolean contador = true;
-        for (Fornecedor fornecedor : this.mapaFornecedores.values()) {
+        for (Fornecedor fornecedor : fornecedores) {
             if (contador) {
                 stringSaida += fornecedor.toString();
                 contador = false;

@@ -45,7 +45,7 @@ class FornecedorTest {
     @Test
     void testDadosDeTodosOsProdutos() {
         fornecedor.addProduto( "tapio", "tapio", 3.00);
-        assertEquals("padaria - tapio - tapio - R$3,00 | padaria - tapioca - tapioca delicia - R$3,00", fornecedor.dadosTodosProdutos());
+        assertEquals("padaria - tapioca - tapioca delicia - R$3,00 | padaria - tapio - tapio - R$3,00", fornecedor.dadosTodosProdutos());
     }
 
     @Test

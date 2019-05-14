@@ -1,5 +1,7 @@
 package saga.controlClientes;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 /**
@@ -74,9 +76,15 @@ public class ControllerClientes {
      * @return as representações textuais dos clientes.
      */
     public String dadosTodosClientes() {
+        ArrayList<Cliente> clientes = new ArrayList<>();
+        for (Cliente cliente : this.clientes.values()) {
+            clientes.add(cliente);
+        }
+        Collections.sort(clientes);
+
         String stringSaida = "";
         boolean contador = true;
-        for (Cliente cliente : this.clientes.values()) {
+        for (Cliente cliente : clientes) {
             if (contador) {
                 stringSaida += cliente.toString();
                 contador = false;

@@ -236,7 +236,7 @@ extends java.lang.Object</pre>
                java.lang.String&nbsp;descricao,
                double&nbsp;preco)</code></th>
 <td class="colLast">
-<div class="block">Método que cria um novo produto baseado no preço, no nome do produto e na sua descrição e o adiciona no mapa de
+<div class="block">Método que cria um novo simples baseado no preço, no nome do simples e na sua descrição e o adiciona no mapa de
  produtos de determinado fornecedor, cujo nome foi passado como o parâmetro "fornecedor".</div>
 </td>
 </tr>
@@ -295,7 +295,7 @@ extends java.lang.Object</pre>
             java.lang.String&nbsp;fornecedor,
             double&nbsp;novoPreco)</code></th>
 <td class="colLast">
-<div class="block">Método responsável por alterar o preço do produto, cujo nome e descrição sao iguais aos parametros, produto esse
+<div class="block">Método responsável por alterar o preço do simples, cujo nome e descrição sao iguais aos parametros, simples esse
  de um determinado forncedor cujo no é passado como parâmetro.Caso algum dos parâmetros passados seja uma string
  vazia, apenas de espaços ou um valor null uma exceção será lançada.</div>
 </td>
@@ -320,7 +320,7 @@ extends java.lang.Object</pre>
             java.lang.String&nbsp;descricao,
             java.lang.String&nbsp;fornecedor)</code></th>
 <td class="colLast">
-<div class="block">Método que retorna a representacao textual do produto, baseando-se no nome e na descrição, de determinado
+<div class="block">Método que retorna a representacao textual do simples, baseando-se no nome e na descrição, de determinado
  fornecedor, cujo nome foi passado como parâmetro.</div>
 </td>
 </tr>
@@ -349,7 +349,7 @@ extends java.lang.Object</pre>
              java.lang.String&nbsp;descricao,
              java.lang.String&nbsp;fornecedor)</code></th>
 <td class="colLast">
-<div class="block">Método responsável por remover um produto ja cadastrados de um fornecedor também ja cadastrado.Caso algum dos
+<div class="block">Método responsável por remover um simples ja cadastrados de um fornecedor também ja cadastrado.Caso algum dos
  parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.</div>
 </td>
 </tr>
@@ -621,15 +621,15 @@ extends java.lang.Object</pre>
                             java.lang.String&nbsp;nomeProduto,
                             java.lang.String&nbsp;descricao,
                             double&nbsp;preco)</pre>
-<div class="block">Método que cria um novo produto baseado no preço, no nome do produto e na sua descrição e o adiciona no mapa de
+<div class="block">Método que cria um novo simples baseado no preço, no nome do simples e na sua descrição e o adiciona no mapa de
  produtos de determinado fornecedor, cujo nome foi passado como o parâmetro "fornecedor". Caso algum dos
  parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>fornecedor</code> - nome do fornecedor.</dd>
-<dd><code>preco</code> - preço do produto.</dd>
-<dd><code>nomeProduto</code> - nome do produto.</dd>
-<dd><code>descricao</code> - descrição do produto.</dd>
+<dd><code>preco</code> - preço do simples.</dd>
+<dd><code>nomeProduto</code> - nome do simples.</dd>
+<dd><code>descricao</code> - descrição do simples.</dd>
 </dl>
 </li>
 </ul>
@@ -642,16 +642,16 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;exibeProduto&#8203;(java.lang.String&nbsp;nomeProduto,
                                      java.lang.String&nbsp;descricao,
                                      java.lang.String&nbsp;fornecedor)</pre>
-<div class="block">Método que retorna a representacao textual do produto, baseando-se no nome e na descrição, de determinado
+<div class="block">Método que retorna a representacao textual do simples, baseando-se no nome e na descrição, de determinado
  fornecedor, cujo nome foi passado como parâmetro. Caso algum dos parâmetros passados seja uma string vazia,
  apenas de espaços ou um valor null uma exceção será lançada.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>fornecedor</code> - Nome do fornecedor.</dd>
-<dd><code>nomeProduto</code> - Nome do produto.</dd>
-<dd><code>descricao</code> - Descrição fo produto.</dd>
+<dd><code>nomeProduto</code> - Nome do simples.</dd>
+<dd><code>descricao</code> - Descrição fo simples.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>Os dados do produto de um fornecedor específico.</dd>
+<dd>Os dados do simples de um fornecedor específico.</dd>
 </dl>
 </li>
 </ul>
@@ -697,15 +697,15 @@ extends java.lang.Object</pre>
                          java.lang.String&nbsp;descricao,
                          java.lang.String&nbsp;fornecedor,
                          double&nbsp;novoPreco)</pre>
-<div class="block">Método responsável por alterar o preço do produto, cujo nome e descrição sao iguais aos parametros, produto esse
+<div class="block">Método responsável por alterar o preço do simples, cujo nome e descrição sao iguais aos parametros, simples esse
  de um determinado forncedor cujo no é passado como parâmetro.Caso algum dos parâmetros passados seja uma string
  vazia, apenas de espaços ou um valor null uma exceção será lançada.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>fornecedor</code> - Nome do fornecedor.</dd>
 <dd><code>novoPreco</code> - novo preço a ser alterado.</dd>
-<dd><code>nomeProduto</code> - nome do produto que terá o preço alterado.</dd>
-<dd><code>descricao</code> - descrição do produto que terá o preço alterado.</dd>
+<dd><code>nomeProduto</code> - nome do simples que terá o preço alterado.</dd>
+<dd><code>descricao</code> - descrição do simples que terá o preço alterado.</dd>
 </dl>
 </li>
 </ul>
@@ -718,14 +718,14 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;removeProduto&#8203;(java.lang.String&nbsp;nomeProduto,
                           java.lang.String&nbsp;descricao,
                           java.lang.String&nbsp;fornecedor)</pre>
-<div class="block">Método responsável por remover um produto ja cadastrados de um fornecedor também ja cadastrado.Caso algum dos
+<div class="block">Método responsável por remover um simples ja cadastrados de um fornecedor também ja cadastrado.Caso algum dos
  parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
  Além disso, se a key não existir no mapa, uma exceção também será lançada.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>fornecedor</code> - Nome do fornecedor</dd>
-<dd><code>nomeProduto</code> - Nome do produto.</dd>
-<dd><code>descricao</code> - Descrição do produto.</dd>
+<dd><code>nomeProduto</code> - Nome do simples.</dd>
+<dd><code>descricao</code> - Descrição do simples.</dd>
 </dl>
 </li>
 </ul>

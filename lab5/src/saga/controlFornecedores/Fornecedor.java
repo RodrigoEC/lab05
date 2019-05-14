@@ -1,8 +1,6 @@
 package saga.controlFornecedores;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Classer responsável por criar um objeto que representa um fornecedor de um mercado.
@@ -10,7 +8,7 @@ import java.util.Objects;
  * @author Rodrigo Eloy Cavalcanti - 118210111
  *
  */
-public class Fornecedor {
+public class Fornecedor implements Comparable<Fornecedor>{
     /**
      * Atributo que representa o nome do fornecedor.
      */
@@ -27,9 +25,10 @@ public class Fornecedor {
     private String telefone;
 
     /**
-     * Atributo que é um hashMap de objetos do tipo Produto, em que a chave do mapa é o nome do produto e a sua descrição.
+     * Atributo que é um hashMap de objetos do tipo Simples, em que a chave do mapa é o nome do produto e a sua descrição.
      */
-    private HashMap<String, Produto> mapaProdutos;
+    private Map<String, Simples> mapaProdutos;
+    private Map<String, Combo> mapaCombos;
 
     /**
      * Construtor responsável por criar um objeto do tipo Fornecedor baseado nos parametros "nome", "email" e "telefone".
@@ -42,7 +41,8 @@ public class Fornecedor {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
-        this.mapaProdutos = new HashMap<String, Produto>();
+        this.mapaProdutos = new HashMap<>();
+        this.mapaCombos = new HashMap<>();
     }
 
     /**
@@ -68,7 +68,7 @@ public class Fornecedor {
      *
      * @return O atributo mapaProdutos.
      */
-    public HashMap<String, Produto> getMapaProdutos() {
+    public Map<String, Simples> getMapaProdutos() {
         return mapaProdutos;
     }
 
@@ -137,13 +137,13 @@ public class Fornecedor {
      */
     public void addProduto(String nomeProduto, String descricao, double preco) {
 
-        Produto produto = new Produto(nomeProduto, descricao, preco);
+        Simples simples = new Simples(nomeProduto, descricao, preco);
         String chave = nomeProduto + " - " + descricao;
 
         if (this.mapaProdutos.containsKey(chave)) {
-            throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
+            throw new IllegalArgumentException("Erro no cadastro de simples: simples ja existe.");
         }
-        this.mapaProdutos.put(chave, produto);
+        this.mapaProdutos.put(chave, simples);
     }
 
     /**
@@ -168,14 +168,15 @@ public class Fornecedor {
      * @return A representação textual de todos os produtos.
      */
     public String dadosTodosProdutos() {
+
         String stringSaida = "";
         boolean contador = true;
-        for (Produto produto : this.mapaProdutos.values()) {
+        for (Simples simples : this.mapaProdutos.values()) {
             if (contador) {
-                stringSaida += this.nome + " - " + produto.toString();
+                stringSaida += this.nome + " - " + simples.toString();
                 contador = false;
             } else {
-                stringSaida += " | " + this.nome + " - " + produto.toString();
+                stringSaida += " | " + this.nome + " - " + simples.toString();
             }
         }
         return stringSaida;
@@ -210,9 +211,19 @@ public class Fornecedor {
     public void addCombo(String nomeCombo, String descricaoCombo, double fator, String produtos) {
         String[] produtoss = produtos.split(", ");
 
-        double preco = this.mapaProdutos.get(produtoss[0]).getPreco() + this.mapaProdutos.get(produtoss[1]).getPreco() - ;
-        Combo combo = new Combo(nomeCombo, descricaoCombo, preco);
+        double preco = calculaPrecoCombo(produtoss[0], produtoss[1], fator);
         String chave = nome + " - " + descricaoCombo;
-        this.mapaCombos.put(chave, )
+        Combo combo = new Combo(nomeCombo, descricaoCombo, preco);
+
+        this.mapaCombos.put(chave, combo);
+    }
+
+    private double calculaPrecoCombo(String preco1, String preco2, double fator) {
+        return (this.mapaProdutos.get(preco1).getPreco() + this.mapaProdutos.get(preco2).getPreco()) * (1 - fator);
+    }
+
+    @Override
+    public int compareTo(Fornecedor fornecedor) {
+        return this.toString().compareTo(fornecedor.toString());
     }
 }

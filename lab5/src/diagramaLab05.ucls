@@ -1,141 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<class-diagram version="1.2.3" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
-  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="saga.controlFornecedores.Produto" project="lab5" 
-    file="/lab5/src/saga/controlFornecedores/Produto.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="861" y="825"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="saga.controlClientes.Cliente" project="lab5" 
-    file="/lab5/src/saga/controlClientes/Cliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="475" y="397"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="saga.Facade" project="lab5" file="/lab5/src/saga/Facade.java" binary="false" 
-    corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="-243" y="585"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="4" language="java" name="saga.controlFornecedores.Fornecedor" project="lab5" 
-    file="/lab5/src/saga/controlFornecedores/Fornecedor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="537" y="824"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="5" language="java" name="saga.controlFornecedores.ControllerFornecedores" project="lab5" 
-    file="/lab5/src/saga/controlFornecedores/ControllerFornecedores.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="132" y="827"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="saga.controlFornecedores.ValidaControllerFornecedor" project="lab5" 
-    file="/lab5/src/saga/controlFornecedores/ValidaControllerFornecedor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="133" y="1151"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="7" language="java" name="saga.controlClientes.ControllerClientes" project="lab5" 
-    file="/lab5/src/saga/controlClientes/ControllerClientes.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="150" y="429"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="saga.controlClientes.ValidaControllerCliente" project="lab5" 
-    file="/lab5/src/saga/controlClientes/ValidaControllerCliente.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="151" y="117"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <association id="9">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="10" name="clientes"/>      
-      <multiplicity id="11" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="12">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="13" name="avaliador"/>      
-      <multiplicity id="14" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="15">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="16" name="avalia"/>      
-      <multiplicity id="17" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="18">    
-    <bendpoint x="-59" y="713"/>    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="19" name="controlaFornecedores">        
-        <position height="17" width="113" x="-135" y="690"/>      
-      </attribute>      
-      <multiplicity id="20" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="21">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="22" name="mapaFornecedores"/>      
-      <multiplicity id="23" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="24">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="25" name="controlaClientes"/>      
-      <multiplicity id="26" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="27">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="28" name="mapaProdutos"/>      
-      <multiplicity id="29" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-    sort-features="false" accessors="true" visibility="true">    
-    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
-    <operations public="true" package="true" protected="true" private="true" static="true"/>  
-  </classifier-display>  
+<class-diagram version="1.2.3" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true"
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">
+  <class id="1" language="java" name="saga.controlFornecedores.Simples" project="lab5"
+    file="/lab5/src/saga/controlFornecedores/Produto.java" binary="false" corner="BOTTOM_RIGHT">
+    <position height="-1" width="-1" x="861" y="825"/>
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true"
+      sort-features="false" accessors="true" visibility="true">
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>
+      <operations public="true" package="true" protected="true" private="true" static="true"/>
+    </display>
+  </class>
+  <class id="2" language="java" name="saga.controlClientes.Cliente" project="lab5"
+    file="/lab5/src/saga/controlClientes/Cliente.java" binary="false" corner="BOTTOM_RIGHT">
+    <position height="-1" width="-1" x="475" y="397"/>
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true"
+      sort-features="false" accessors="true" visibility="true">
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>
+      <operations public="true" package="true" protected="true" private="true" static="true"/>
+    </display>
+  </class>
+  <class id="3" language="java" name="saga.Facade" project="lab5" file="/lab5/src/saga/Facade.java" binary="false"
+    corner="BOTTOM_RIGHT">
+    <position height="-1" width="-1" x="-243" y="585"/>
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true"
+      sort-features="false" accessors="true" visibility="true">
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>
+      <operations public="true" package="true" protected="true" private="true" static="true"/>
+    </display>
+  </class>
+  <class id="4" language="java" name="saga.controlFornecedores.Fornecedor" project="lab5"
+    file="/lab5/src/saga/controlFornecedores/Fornecedor.java" binary="false" corner="BOTTOM_RIGHT">
+    <position height="-1" width="-1" x="537" y="824"/>
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true"
+      sort-features="false" accessors="true" visibility="true">
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>
+      <operations public="true" package="true" protected="true" private="true" static="true"/>
+    </display>
+  </class>
+  <class id="5" language="java" name="saga.controlFornecedores.ControllerFornecedores" project="lab5"
+    file="/lab5/src/saga/controlFornecedores/ControllerFornecedores.java" binary="false" corner="BOTTOM_RIGHT">
+    <position height="-1" width="-1" x="132" y="827"/>
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true"
+      sort-features="false" accessors="true" visibility="true">
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>
+      <operations public="true" package="true" protected="true" private="true" static="true"/>
+    </display>
+  </class>
+  <class id="6" language="java" name="saga.controlFornecedores.ValidaControllerFornecedor" project="lab5"
+    file="/lab5/src/saga/controlFornecedores/ValidaControllerFornecedor.java" binary="false" corner="BOTTOM_RIGHT">
+    <position height="-1" width="-1" x="133" y="1151"/>
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true"
+      sort-features="false" accessors="true" visibility="true">
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>
+      <operations public="true" package="true" protected="true" private="true" static="true"/>
+    </display>
+  </class>
+  <class id="7" language="java" name="saga.controlClientes.ControllerClientes" project="lab5"
+    file="/lab5/src/saga/controlClientes/ControllerClientes.java" binary="false" corner="BOTTOM_RIGHT">
+    <position height="-1" width="-1" x="150" y="429"/>
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true"
+      sort-features="false" accessors="true" visibility="true">
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>
+      <operations public="true" package="true" protected="true" private="true" static="true"/>
+    </display>
+  </class>
+  <class id="8" language="java" name="saga.controlClientes.ValidaControllerCliente" project="lab5"
+    file="/lab5/src/saga/controlClientes/ValidaControllerCliente.java" binary="false" corner="BOTTOM_RIGHT">
+    <position height="-1" width="-1" x="151" y="117"/>
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true"
+      sort-features="false" accessors="true" visibility="true">
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>
+      <operations public="true" package="true" protected="true" private="true" static="true"/>
+    </display>
+  </class>
+  <association id="9">
+    <end type="SOURCE" refId="7" navigable="false">
+      <attribute id="10" name="clientes"/>
+      <multiplicity id="11" minimum="0" maximum="2147483647"/>
+    </end>
+    <end type="TARGET" refId="2" navigable="true"/>
+    <display labels="true" multiplicity="true"/>
+  </association>
+  <association id="12">
+    <end type="SOURCE" refId="5" navigable="false">
+      <attribute id="13" name="avaliador"/>
+      <multiplicity id="14" minimum="0" maximum="1"/>
+    </end>
+    <end type="TARGET" refId="6" navigable="true"/>
+    <display labels="true" multiplicity="true"/>
+  </association>
+  <association id="15">
+    <end type="SOURCE" refId="7" navigable="false">
+      <attribute id="16" name="avalia"/>
+      <multiplicity id="17" minimum="0" maximum="1"/>
+    </end>
+    <end type="TARGET" refId="8" navigable="true"/>
+    <display labels="true" multiplicity="true"/>
+  </association>
+  <association id="18">
+    <bendpoint x="-59" y="713"/>
+    <end type="SOURCE" refId="3" navigable="false">
+      <attribute id="19" name="controlaFornecedores">
+        <position height="17" width="113" x="-135" y="690"/>
+      </attribute>
+      <multiplicity id="20" minimum="0" maximum="1"/>
+    </end>
+    <end type="TARGET" refId="5" navigable="true"/>
+    <display labels="true" multiplicity="true"/>
+  </association>
+  <association id="21">
+    <end type="SOURCE" refId="5" navigable="false">
+      <attribute id="22" name="mapaFornecedores"/>
+      <multiplicity id="23" minimum="0" maximum="2147483647"/>
+    </end>
+    <end type="TARGET" refId="4" navigable="true"/>
+    <display labels="true" multiplicity="true"/>
+  </association>
+  <association id="24">
+    <end type="SOURCE" refId="3" navigable="false">
+      <attribute id="25" name="controlaClientes"/>
+      <multiplicity id="26" minimum="0" maximum="1"/>
+    </end>
+    <end type="TARGET" refId="7" navigable="true"/>
+    <display labels="true" multiplicity="true"/>
+  </association>
+  <association id="27">
+    <end type="SOURCE" refId="4" navigable="false">
+      <attribute id="28" name="mapaProdutos"/>
+      <multiplicity id="29" minimum="0" maximum="2147483647"/>
+    </end>
+    <end type="TARGET" refId="1" navigable="true"/>
+    <display labels="true" multiplicity="true"/>
+  </association>
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true"
+    sort-features="false" accessors="true" visibility="true">
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>
+    <operations public="true" package="true" protected="true" private="true" static="true"/>
+  </classifier-display>
   <association-display labels="true" multiplicity="true"/>
 </class-diagram>

@@ -116,7 +116,7 @@ class ControllerClientesTest {
     void testDadosDeTodosOsClientesPadrao() {
         clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
         clientes.cadastraCliente("07345161422", "rodro", "rodrigo.cavalcanti@ccc.ufg.edu.br", "lcc2");
-        assertEquals("rodro - lcc2 - rodrigo.cavalcanti@ccc.ufg.edu.br | rodrigo - lcc3 - rodrigo.cavalcanti@ccc.ufcg.edu.br", clientes.dadosTodosClientes());
+        assertEquals("rodrigo - lcc3 - rodrigo.cavalcanti@ccc.ufcg.edu.br | rodro - lcc2 - rodrigo.cavalcanti@ccc.ufg.edu.br", clientes.dadosTodosClientes());
     }
 
     @Test

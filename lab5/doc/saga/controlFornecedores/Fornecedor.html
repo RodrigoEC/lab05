@@ -166,7 +166,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>private java.util.HashMap&lt;java.lang.String,&#8203;<a href="Produto.html" title="class in saga.controlFornecedores">Produto</a>&gt;</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#mapaProdutos">mapaProdutos</a></span></code></th>
 <td class="colLast">
-<div class="block">Atributo que é um hashMap de objetos do tipo Produto, em que a chave do mapa é o nome do produto e a sua descrição.</div>
+<div class="block">Atributo que é um hashMap de objetos do tipo Produto, em que a chave do mapa é o nome do simples e a sua descrição.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -232,7 +232,7 @@ extends java.lang.Object</pre>
           java.lang.String&nbsp;descricao,
           double&nbsp;preco)</code></th>
 <td class="colLast">
-<div class="block">Método que cria um novo produto baseado no preço, no nome do produto e na sua descrição e o adiciona no mapa de
+<div class="block">Método que cria um novo simples baseado no preço, no nome do simples e na sua descrição e o adiciona no mapa de
  produtos.Caso o mapa não tiver uma key que será passada uma exceção será lançada.</div>
 </td>
 </tr>
@@ -249,7 +249,7 @@ extends java.lang.Object</pre>
             java.lang.String&nbsp;nomeProduto,
             java.lang.String&nbsp;descricao)</code></th>
 <td class="colLast">
-<div class="block">Método responsável por alterar o preço do produto, cujo nome e descrição sao iguais aos parametros.</div>
+<div class="block">Método responsável por alterar o preço do simples, cujo nome e descrição sao iguais aos parametros.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -264,7 +264,7 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#exibeProduto(java.lang.String,java.lang.String)">exibeProduto</a></span>&#8203;(java.lang.String&nbsp;nomeProduto,
             java.lang.String&nbsp;descricao)</code></th>
 <td class="colLast">
-<div class="block">Método que retorna a representacao textual do produto que tem o nome e a descrição iguais aos parâmetros.</div>
+<div class="block">Método que retorna a representacao textual do simples que tem o nome e a descrição iguais aos parâmetros.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
@@ -300,7 +300,7 @@ extends java.lang.Object</pre>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#removeProduto(java.lang.String,java.lang.String)">removeProduto</a></span>&#8203;(java.lang.String&nbsp;nomeProduto,
              java.lang.String&nbsp;descricao)</code></th>
 <td class="colLast">
-<div class="block">Método responsável por remover um produto ja cadastrados.</div>
+<div class="block">Método responsável por remover um simples ja cadastrados.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
@@ -386,7 +386,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>mapaProdutos</h4>
 <pre>private&nbsp;java.util.HashMap&lt;java.lang.String,&#8203;<a href="Produto.html" title="class in saga.controlFornecedores">Produto</a>&gt; mapaProdutos</pre>
-<div class="block">Atributo que é um hashMap de objetos do tipo Produto, em que a chave do mapa é o nome do produto e a sua descrição.</div>
+<div class="block">Atributo que é um hashMap de objetos do tipo Produto, em que a chave do mapa é o nome do simples e a sua descrição.</div>
 </li>
 </ul>
 </li>
@@ -557,13 +557,13 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;addProduto&#8203;(java.lang.String&nbsp;nomeProduto,
                        java.lang.String&nbsp;descricao,
                        double&nbsp;preco)</pre>
-<div class="block">Método que cria um novo produto baseado no preço, no nome do produto e na sua descrição e o adiciona no mapa de
+<div class="block">Método que cria um novo simples baseado no preço, no nome do simples e na sua descrição e o adiciona no mapa de
  produtos.Caso o mapa não tiver uma key que será passada uma exceção será lançada.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>preco</code> - preço do produto.</dd>
-<dd><code>nomeProduto</code> - nome do produto.</dd>
-<dd><code>descricao</code> - descrição do produto.</dd>
+<dd><code>preco</code> - preço do simples.</dd>
+<dd><code>nomeProduto</code> - nome do simples.</dd>
+<dd><code>descricao</code> - descrição do simples.</dd>
 </dl>
 </li>
 </ul>
@@ -575,14 +575,14 @@ extends java.lang.Object</pre>
 <h4>exibeProduto</h4>
 <pre class="methodSignature">public&nbsp;java.lang.String&nbsp;exibeProduto&#8203;(java.lang.String&nbsp;nomeProduto,
                                      java.lang.String&nbsp;descricao)</pre>
-<div class="block">Método que retorna a representacao textual do produto que tem o nome e a descrição iguais aos parâmetros. Caso o
+<div class="block">Método que retorna a representacao textual do simples que tem o nome e a descrição iguais aos parâmetros. Caso o
  mapa não tiver uma key que será passada uma exceção será lançada.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>nomeProduto</code> - nome do produto.</dd>
-<dd><code>descricao</code> - descrição do produto.</dd>
+<dd><code>nomeProduto</code> - nome do simples.</dd>
+<dd><code>descricao</code> - descrição do simples.</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>A representação textual do produto.</dd>
+<dd>A representação textual do simples.</dd>
 </dl>
 </li>
 </ul>
@@ -609,12 +609,12 @@ extends java.lang.Object</pre>
 <pre class="methodSignature">public&nbsp;void&nbsp;editaProduto&#8203;(double&nbsp;novoPreco,
                          java.lang.String&nbsp;nomeProduto,
                          java.lang.String&nbsp;descricao)</pre>
-<div class="block">Método responsável por alterar o preço do produto, cujo nome e descrição sao iguais aos parametros.</div>
+<div class="block">Método responsável por alterar o preço do simples, cujo nome e descrição sao iguais aos parametros.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>novoPreco</code> - novo preço a ser alterado.</dd>
-<dd><code>nomeProduto</code> - nome do produto que terá o preço alterado.</dd>
-<dd><code>descricao</code> - descrição do produto que terá o preço alterado.</dd>
+<dd><code>nomeProduto</code> - nome do simples que terá o preço alterado.</dd>
+<dd><code>descricao</code> - descrição do simples que terá o preço alterado.</dd>
 </dl>
 </li>
 </ul>
@@ -626,12 +626,12 @@ extends java.lang.Object</pre>
 <h4>removeProduto</h4>
 <pre class="methodSignature">public&nbsp;void&nbsp;removeProduto&#8203;(java.lang.String&nbsp;nomeProduto,
                           java.lang.String&nbsp;descricao)</pre>
-<div class="block">Método responsável por remover um produto ja cadastrados. Se a key não existir no mapa, uma
+<div class="block">Método responsável por remover um simples ja cadastrados. Se a key não existir no mapa, uma
  exceção também será lançada.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>nomeProduto</code> - Nome do produto.</dd>
-<dd><code>descricao</code> - Descrição do produto.</dd>
+<dd><code>nomeProduto</code> - Nome do simples.</dd>
+<dd><code>descricao</code> - Descrição do simples.</dd>
 </dl>
 </li>
 </ul>

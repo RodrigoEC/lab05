@@ -1,9 +1,14 @@
 package saga.controlFornecedores;
 
 public class Combo {
-    public Combo(String nomeCombo, String descricaoCombo, double fator) {
+
+    private double preco;
+    private String descricao;
+    private String nome;
+
+    public Combo(String nomeCombo, String descricaoCombo, double preco) {
         this.nome = nomeCombo;
         this.descricao = descricaoCombo;
-        this.
+        this.preco = preco;
     }
 }

@@ -7,7 +7,8 @@ import java.util.Objects;
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
-public class Cliente {
+public class Cliente implements Comparable<Cliente> {
+
     /**
      * Atributo que representa o cpf do cliente.
      */
@@ -31,8 +32,8 @@ public class Cliente {
     /**
      * Construtor de um objeto do tipo Cliente.
      *
-     * @param cpf cpf do cliente
-     * @param nome nome do cliente
+     * @param cpf   cpf do cliente
+     * @param nome  nome do cliente
      * @param email e-mail do cliente
      * @param local local onde o cliente trabalha
      */
@@ -130,5 +131,10 @@ public class Cliente {
     @Override
     public int hashCode() {
         return Objects.hash(cpf);
+    }
+
+    @Override
+    public int compareTo(Cliente cliente) {
+        return (this.toString().compareTo(cliente.toString()));
     }
 }

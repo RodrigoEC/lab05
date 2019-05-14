@@ -125,7 +125,7 @@ class ControllerFornecedoresTest {
     @Test
     void testDadosDeTodosOsFornecedoresPadrao() {
         controller.cadastraFornecedor("pradaria", "pradaria@gmail.com", "4002-8922");
-        assertEquals("pradaria - pradaria@gmail.com - 4002-8922 | padaria - padaria@gmail.com - 4002-8922", controller.dadosTodosFornecedores());
+        assertEquals("padaria - padaria@gmail.com - 4002-8922 | pradaria - pradaria@gmail.com - 4002-8922", controller.dadosTodosFornecedores());
     }
 
     @Test
@@ -153,7 +153,7 @@ class ControllerFornecedoresTest {
         controller.addProduto("padaria","pao", "pao top", 70.00);
         controller.addProduto("palmerinha",  "sapatoDoce", "lalal", 4.00);
 
-        assertEquals("padaria - tapioca - tapioca delicia - R$3,00 | padaria - pao - pao top - R$70,00 | " +
+        assertEquals("padaria - pao - pao top - R$70,00 | padaria - tapioca - tapioca delicia - R$3,00 | " +
                 "palmerinha - sapatoDoce - lalal - R$4,00", controller.dadosTodosProdutos());
     }
 

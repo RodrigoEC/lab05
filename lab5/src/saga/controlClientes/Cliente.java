@@ -9,7 +9,7 @@ import java.util.Objects;
  */
 public class Cliente {
     /**
-     * Atributo que representa o cpf do cliente.jeflknelfkne
+     * Atributo que representa o cpf do cliente.
      */
     private String cpf;
 

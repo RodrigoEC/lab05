@@ -136,7 +136,7 @@ public class ControllerFornecedores {
         if (this.mapaFornecedores.containsKey(fornecedor)) {
             this.mapaFornecedores.remove(fornecedor);
         } else {
-            throw new NullPointerException("Erro na remocao de fornecedor: fornecedor nao existe.");
+            throw new NullPointerException("Erro na remocao do fornecedor: fornecedor nao existe.");
         }
     }
 
@@ -190,6 +190,11 @@ public class ControllerFornecedores {
      * @return A representação textual de todos os produtos.
      */
     public String dadosTodosProdutosFornecedor(String fornecedor) {
+        ValidaControllerFornecedor.validaEntradasDadosTodosProdutosFornecedor(fornecedor);
+
+        if (!this.mapaFornecedores.containsKey(fornecedor)) {
+            throw new NullPointerException("Erro na exibicao de produto: fornecedor nao existe.");
+        }
         return this.mapaFornecedores.get(fornecedor).dadosTodosProdutos();
     }
 
@@ -237,9 +242,16 @@ public class ControllerFornecedores {
      * @return uma string com todas as representações textuais de todos os produtos cadastrados em todos os fornecedores.
      */
     public String dadosTodosProdutos() {
+        ArrayList<Fornecedor> fornecedores = new ArrayList<>();
+        for (Fornecedor fornecedor : this.mapaFornecedores.values()) {
+            fornecedores.add(fornecedor);
+        }
+        Collections.sort(fornecedores);
+
         String stringSaida = "";
         boolean contador = true;
-        for (Fornecedor fornecedor : this.mapaFornecedores.values()) {
+        for (Fornecedor fornecedor : fornecedores) {
+
             if (contador) {
                 stringSaida += dadosTodosProdutosFornecedor(fornecedor.getNome());
                 contador = false;
@@ -253,11 +265,14 @@ public class ControllerFornecedores {
 
 
     public void addCombo(String fornecedor, String nomeCombo, String descricaoCombo, double fator, String produtos) {
-        ValidaControllerFornecedor.validaEntradasAddCombo(nomeCombo, descricaoCombo, fator, produtos);
+        ValidaControllerFornecedor.validaEntradasAddCombo(fornecedor, nomeCombo, descricaoCombo, fator, produtos);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro no cadastro de combo: fornecedor nao existe.");
         }
         this.mapaFornecedores.get(fornecedor).addCombo(nomeCombo, descricaoCombo, fator, produtos);
     }
+
+
+
 }

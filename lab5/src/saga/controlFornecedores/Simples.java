@@ -7,6 +7,8 @@ package saga.controlFornecedores;
  */
 public class Simples extends Produto {
 
+    private Enum<TipoProduto> tipoProdutoEnum;
+
     /**
      * Construtor responsável por criar o objeto baseado nos parâmetros que serão passados.
      *
@@ -16,6 +18,7 @@ public class Simples extends Produto {
      */
     public Simples(String nomeProduto, String descricao, double preco) {
         super(nomeProduto, descricao, preco);
+        this.tipoProdutoEnum = TipoProduto.simples;
     }
 
 }

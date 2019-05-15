@@ -69,7 +69,7 @@ public class Facade {
      *
      * @return as representações textuais dos clientes.
      */
-    public String dadosTodosClientes() {
+    public String exibeClientes() {
         return controlaClientes.dadosTodosClientes();
     }
 
@@ -130,7 +130,7 @@ public class Facade {
      *
      * @return A representação textual de todos os fornecedores.
      */
-    public String dadosDeTodosFornecedores() {
+    public String exibeFornecedores() {
         return this.controlaFornecedores.dadosTodosFornecedores();
     }
 
@@ -195,7 +195,7 @@ public class Facade {
      * @param fornecedor nome do fornecedor.
      * @return A representação textual de todos os produtos.
      */
-    public String dadosDosProdutosDoFornecedor(String fornecedor) {
+    public String exibeProdutosFornecedor(String fornecedor) {
         return this.controlaFornecedores.dadosTodosProdutosFornecedor(fornecedor);
     }
 
@@ -205,7 +205,7 @@ public class Facade {
      *
      * @return uma string com todas as representações textuais de todos os produtos cadastrados em todos os fornecedores.
      */
-    public String dadosDeTodosOsProdutos() {
+    public String exibeProdutos() {
         return this.controlaFornecedores.dadosTodosProdutos();
     }
 

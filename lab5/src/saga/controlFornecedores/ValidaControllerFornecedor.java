@@ -130,10 +130,19 @@ public class ValidaControllerFornecedor {
         validadorAuxiliar(descricao, "Erro na remocao de produto: descricao nao pode ser vazia ou nula.");
     }
 
-    public static void validaEntradasAddCombo(String nomeCombo, String descricaoCombo, double fator, String produtos) {
-        validadorAuxiliar(nomeCombo, "Erro no cadastro de combo: fornecedor nao pode ser vazio ou nulo.");
-        validadorAuxiliar(descricaoCombo, "Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
-        validaFator(fator, "Erro no cadastro de combo: fator invalido.");
-        validadorAuxiliar(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
+    public static void validaEntradasDadosTodosProdutosFornecedor(String fornecedor) {
+        validadorAuxiliar(fornecedor, "Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
     }
+
+    public static void validaEntradasAddCombo(String fornecedor, String nomeCombo, String descricaoCombo, double fator, String produtos) {
+        validadorAuxiliar(fornecedor, "Erro no cadastro de combo: fornecedor nao pode ser vazio ou nulo.");
+        validadorAuxiliar(nomeCombo, "Erro no cadastro de combo: nome nao pode ser vazio ou nulo.");
+        validadorAuxiliar(descricaoCombo, "Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
+        validadorAuxiliar(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
+        validaFator(fator, "Erro no cadastro de combo: fator invalido.");
+
+    }
+
+
+
 }

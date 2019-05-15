@@ -1,5 +1,7 @@
 package saga.controlFornecedores;
 
+import saga.controlClientes.Cliente;
+
 import java.util.*;
 
 /**
@@ -139,7 +141,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
         String chave = nomeProduto + " - " + descricao;
 
         if (this.mapaProdutos.containsKey(chave)) {
-            throw new IllegalArgumentException("Erro no cadastro de simples: simples ja existe.");
+            throw new IllegalArgumentException("Erro no cadastro de produto: produto ja existe.");
         }
         this.mapaProdutos.put(chave, simples);
     }
@@ -161,15 +163,27 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método que retorna a representação textual de todos os produtos que foram adicionados ao fornecedor.
+     * Método que retorna a representação textual de todos os produtos que foram adicionados ao fornecedor em ordem
+     * alfabética.
      *
      * @return A representação textual de todos os produtos.
      */
     public String dadosTodosProdutos() {
+        ArrayList<Produto> produtos = new ArrayList<>();
+        for (Produto produto : this.mapaProdutos.values()) {
+            produtos.add(produto);
+        }
+        Collections.sort(produtos);
 
         String stringSaida = "";
         boolean contador = true;
-        for (Produto produto : this.mapaProdutos.values()) {
+        if (produtos.isEmpty()) {
+            stringSaida +=  this.nome + " -";
+            return stringSaida;
+        }
+
+        for (Produto produto : produtos) {
+
             if (contador) {
                 stringSaida += this.nome + " - " + produto.toString();
                 contador = false;
@@ -208,13 +222,21 @@ public class Fornecedor implements Comparable<Fornecedor>{
 
     public void addCombo(String nomeCombo, String descricaoCombo, double fator, String produtos) {
         String[] produtoss = produtos.split(", ");
-        double preco = calculaPrecoCombo(produtoss, fator);
+        for (String frase : produtoss) {
 
+            if (!this.mapaProdutos.containsKey(frase)) {
+
+                throw new NullPointerException("Erro no cadastro de combo: produto nao existe.");
+            }
+
+        }
+
+        double preco = calculaPrecoCombo(produtoss, fator);
         String chave = nome + " - " + descricaoCombo;
         Combo combo = new Combo(nomeCombo, descricaoCombo, preco, produtoss );
 
-        if (!mapaProdutos.containsKey(chave)) {
-            throw new NullPointerException();
+        if (mapaProdutos.containsKey(chave)) {
+            throw new NullPointerException("Erro no cadastro de combo: combo ja existe.");
         }
         this.mapaProdutos.put(chave, combo);
     }
@@ -226,6 +248,12 @@ public class Fornecedor implements Comparable<Fornecedor>{
         }
         return precoTotal * (1 - fator);
     }
+
+
+
+
+
+
 
     @Override
     public int compareTo(Fornecedor fornecedor) {

@@ -27,8 +27,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
     /**
      * Atributo que é um hashMap de objetos do tipo Simples, em que a chave do mapa é o nome do produto e a sua descrição.
      */
-    private Map<String, Simples> mapaProdutos;
-    private Map<String, Combo> mapaCombos;
+    private Map<String, Produto> mapaProdutos;
 
     /**
      * Construtor responsável por criar um objeto do tipo Fornecedor baseado nos parametros "nome", "email" e "telefone".
@@ -42,7 +41,6 @@ public class Fornecedor implements Comparable<Fornecedor>{
         this.email = email;
         this.telefone = telefone;
         this.mapaProdutos = new HashMap<>();
-        this.mapaCombos = new HashMap<>();
     }
 
     /**
@@ -68,7 +66,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
      *
      * @return O atributo mapaProdutos.
      */
-    public Map<String, Simples> getMapaProdutos() {
+    public Map<String, Produto> getMapaProdutos() {
         return mapaProdutos;
     }
 
@@ -171,12 +169,12 @@ public class Fornecedor implements Comparable<Fornecedor>{
 
         String stringSaida = "";
         boolean contador = true;
-        for (Simples simples : this.mapaProdutos.values()) {
+        for (Produto produto : this.mapaProdutos.values()) {
             if (contador) {
-                stringSaida += this.nome + " - " + simples.toString();
+                stringSaida += this.nome + " - " + produto.toString();
                 contador = false;
             } else {
-                stringSaida += " | " + this.nome + " - " + simples.toString();
+                stringSaida += " | " + this.nome + " - " + produto.toString();
             }
         }
         return stringSaida;
@@ -210,16 +208,23 @@ public class Fornecedor implements Comparable<Fornecedor>{
 
     public void addCombo(String nomeCombo, String descricaoCombo, double fator, String produtos) {
         String[] produtoss = produtos.split(", ");
+        double preco = calculaPrecoCombo(produtoss, fator);
 
-        double preco = calculaPrecoCombo(produtoss[0], produtoss[1], fator);
         String chave = nome + " - " + descricaoCombo;
-        Combo combo = new Combo(nomeCombo, descricaoCombo, preco);
+        Combo combo = new Combo(nomeCombo, descricaoCombo, preco, produtoss );
 
-        this.mapaCombos.put(chave, combo);
+        if (!mapaProdutos.containsKey(chave)) {
+            throw new NullPointerException();
+        }
+        this.mapaProdutos.put(chave, combo);
     }
 
-    private double calculaPrecoCombo(String preco1, String preco2, double fator) {
-        return (this.mapaProdutos.get(preco1).getPreco() + this.mapaProdutos.get(preco2).getPreco()) * (1 - fator);
+    private double calculaPrecoCombo(String[] produtos, double fator) {
+        double precoTotal = 0.0;
+        for (String produto : produtos) {
+            precoTotal += this.mapaProdutos.get(produto).getPreco();
+        }
+        return precoTotal * (1 - fator);
     }
 
     @Override

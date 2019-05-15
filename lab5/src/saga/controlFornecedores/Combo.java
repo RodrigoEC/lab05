@@ -1,14 +1,20 @@
 package saga.controlFornecedores;
 
-public class Combo {
+import java.util.HashSet;
 
-    private double preco;
-    private String descricao;
-    private String nome;
+public class Combo extends Produto {
 
-    public Combo(String nomeCombo, String descricaoCombo, double preco) {
-        this.nome = nomeCombo;
-        this.descricao = descricaoCombo;
-        this.preco = preco;
+    private String[] produtos;
+
+    public Combo(String nomeCombo, String descricaoCombo, double preco, String[] produtos) {
+        super(nomeCombo, descricaoCombo, preco);
+        this.produtos = produtos;
     }
+
+
+
+
+
+
+
 }

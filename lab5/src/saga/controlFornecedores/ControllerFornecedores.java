@@ -242,10 +242,7 @@ public class ControllerFornecedores {
      * @return uma string com todas as representações textuais de todos os produtos cadastrados em todos os fornecedores.
      */
     public String dadosTodosProdutos() {
-        ArrayList<Fornecedor> fornecedores = new ArrayList<>();
-        for (Fornecedor fornecedor : this.mapaFornecedores.values()) {
-            fornecedores.add(fornecedor);
-        }
+        ArrayList<Fornecedor> fornecedores = new ArrayList<>(this.mapaFornecedores.values());
         Collections.sort(fornecedores);
 
         String stringSaida = "";

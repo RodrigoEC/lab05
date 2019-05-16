@@ -169,10 +169,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
      * @return A representação textual de todos os produtos.
      */
     public String dadosTodosProdutos() {
-        ArrayList<Produto> produtos = new ArrayList<>();
-        for (Produto produto : this.mapaProdutos.values()) {
-            produtos.add(produto);
-        }
+        ArrayList<Produto> produtos = new ArrayList<>(this.mapaProdutos.values());
         Collections.sort(produtos);
 
         String stringSaida = "";

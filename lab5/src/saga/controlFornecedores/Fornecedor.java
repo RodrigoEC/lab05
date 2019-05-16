@@ -27,9 +27,9 @@ public class Fornecedor implements Comparable<Fornecedor>{
     private String telefone;
 
     /**
-     * Atributo que é um hashMap de objetos do tipo Simples, em que a chave do mapa é o nome do produto e a sua descrição.
+     * Atributo que é um hashMap de objetos do tipo Produto, em que a chave do mapa é o nome do produto e a sua descrição.
      */
-    private Map<String, Produto> mapaProdutos;
+    private Map<String, ProdutoInterface> mapaProdutos;
 
     /**
      * Construtor responsável por criar um objeto do tipo Fornecedor baseado nos parametros "nome", "email" e "telefone".
@@ -68,7 +68,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
      *
      * @return O atributo mapaProdutos.
      */
-    public Map<String, Produto> getMapaProdutos() {
+    public Map<String, ProdutoInterface> getMapaProdutos() {
         return mapaProdutos;
     }
 
@@ -137,7 +137,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
      */
     public void addProduto(String nomeProduto, String descricao, double preco) {
 
-        Simples simples = new Simples(nomeProduto, descricao, preco);
+        Produto simples = new Produto(nomeProduto, descricao, preco);
         String chave = nomeProduto + " - " + descricao;
 
         if (this.mapaProdutos.containsKey(chave)) {
@@ -169,7 +169,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
      * @return A representação textual de todos os produtos.
      */
     public String dadosTodosProdutos() {
-        ArrayList<Produto> produtos = new ArrayList<>(this.mapaProdutos.values());
+        ArrayList<ProdutoInterface> produtos = new ArrayList<>(this.mapaProdutos.values());
         Collections.sort(produtos);
 
         String stringSaida = "";
@@ -179,7 +179,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
             return stringSaida;
         }
 
-        for (Produto produto : produtos) {
+        for (ProdutoInterface produto : produtos) {
 
             if (contador) {
                 stringSaida += this.nome + " - " + produto.toString();
@@ -218,24 +218,26 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     public void addCombo(String nomeCombo, String descricaoCombo, double fator, String produtos) {
-        String[] produtoss = produtos.split(", ");
-        for (String frase : produtoss) {
+        String[] frases = produtos.split(", ");
+        for (String frase : frases) {
+
+            if (this.mapaProdutos.get(frase) instanceof Combo) {
+                throw new IllegalArgumentException("Erro no cadastro de combo: um combo nao pode possuir combos na lista de produtos.");
+            }
 
             if (!this.mapaProdutos.containsKey(frase)) {
-
                 throw new NullPointerException("Erro no cadastro de combo: produto nao existe.");
             }
 
         }
 
-        double preco = calculaPrecoCombo(produtoss, fator);
-        String chave = nome + " - " + descricaoCombo;
-        Combo combo = new Combo(nomeCombo, descricaoCombo, preco, produtoss );
+        double preco = calculaPrecoCombo(frases, fator);
+        Combo combo = new Combo(nomeCombo, descricaoCombo, preco, frases );
 
-        if (mapaProdutos.containsKey(chave)) {
+        if (mapaProdutos.containsKey(nomeCombo + " - " + descricaoCombo)) {
             throw new NullPointerException("Erro no cadastro de combo: combo ja existe.");
         }
-        this.mapaProdutos.put(chave, combo);
+        this.mapaProdutos.put(nomeCombo + " - " + descricaoCombo, combo);
     }
 
     private double calculaPrecoCombo(String[] produtos, double fator) {

@@ -6,13 +6,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-class SimplesTest {
-    private Simples simples;
+class ProdutoTest {
+    private Produto simples;
 
 
     @BeforeEach
     void produtoPadrao() {
-        simples = new Simples( "placebo", "placebo", 3.00);
+        simples = new Produto( "placebo", "placebo", 3.00);
     }
 
     @Test
@@ -22,25 +22,25 @@ class SimplesTest {
 
     @Test
     void comparaProdutosIguais() {
-        Simples simplesGemeo = new Simples( "placebo", "placebo", 3.00);
+        Produto simplesGemeo = new Produto( "placebo", "placebo", 3.00);
         assertTrue(simples.equals(simplesGemeo));
     }
 
     @Test
     void comparaProdutosDiferenca() {
-        Simples simples2 = new Simples( "lalala", "plalalal", 1.00);
+        Produto simples2 = new Produto( "lalala", "plalalal", 1.00);
         assertFalse(simples.equals(simples2));
     }
 
     @Test
     void comparaHashcodesIguais() {
-        Simples simplesGemeo = new Simples( "placebo", "placebo", 3.00);
+        Produto simplesGemeo = new Produto( "placebo", "placebo", 3.00);
         assertTrue(simples.hashCode() == simplesGemeo.hashCode());
     }
 
     @Test
     void comparaHashcodesDiferentes() {
-        Simples simples2 = new Simples( "lalala", "plalalal", 1.00);
+        Produto simples2 = new Produto( "lalala", "plalalal", 1.00);
         assertFalse(simples.hashCode() == simples2.hashCode());
     }
 }

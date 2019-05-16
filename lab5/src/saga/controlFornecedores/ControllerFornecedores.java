@@ -236,7 +236,7 @@ public class ControllerFornecedores {
     }
 
     /**
-     * Método responsável por criar uma representação texutal de todos os produtos cadastrados de todos os fornecedores
+     * Método responsável por criar uma representação textual de todos os produtos cadastrados de todos os fornecedores
      * cadastrados.
      *
      * @return uma string com todas as representações textuais de todos os produtos cadastrados em todos os fornecedores.

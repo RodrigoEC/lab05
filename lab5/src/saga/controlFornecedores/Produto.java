@@ -2,11 +2,10 @@ package saga.controlFornecedores;
 
 import java.util.Objects;
 
-public class Produto implements Comparable<Produto>{
+public class Produto implements ProdutoInterface{
     protected String descricao;
     protected String nomeProduto;
     protected double preco;
-    protected Enum<TipoProduto> tipoProduto;
 
     public Produto(String nomeProduto, String descricao, double preco) {
         this.nomeProduto = nomeProduto;
@@ -15,9 +14,7 @@ public class Produto implements Comparable<Produto>{
     }
 
 
-    public Enum<TipoProduto> getTipoProduto() {
-        return tipoProduto;
-    }
+
 
     /**
      * Método que deixa dísponível para consulta o atributo "preco".
@@ -74,8 +71,15 @@ public class Produto implements Comparable<Produto>{
         return Objects.hash(descricao, nomeProduto);
     }
 
+
+
     @Override
-    public int compareTo(Produto produto) {
-        return this.toString().compareTo(produto.toString());
+    public int compareTo(ProdutoInterface produtoInterface) {
+        return this.nomeProduto.compareTo(produtoInterface.getNome());
+    }
+
+    @Override
+    public String getNome() {
+        return nomeProduto;
     }
 }

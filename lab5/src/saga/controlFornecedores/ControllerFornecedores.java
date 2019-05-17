@@ -261,6 +261,15 @@ public class ControllerFornecedores {
     }
 
 
+    /**
+     * Método responsável por adicionar um novo Combo, se as entradas forem invalidas ou nulas uma exceção é lançada.
+     *
+     * @param fornecedor nome do fornecedor
+     * @param nomeCombo nome do combo.
+     * @param descricaoCombo descrição do combo.
+     * @param fator fator responsável por alterar o preço do combo baseado nos produtos
+     * @param produtos string com os produtos.
+     */
     public void addCombo(String fornecedor, String nomeCombo, String descricaoCombo, double fator, String produtos) {
         ValidaControllerFornecedor.validaEntradasAddCombo(fornecedor, nomeCombo, descricaoCombo, fator, produtos);
 
@@ -268,6 +277,26 @@ public class ControllerFornecedores {
             throw new NullPointerException("Erro no cadastro de combo: fornecedor nao existe.");
         }
         this.mapaFornecedores.get(fornecedor).addCombo(nomeCombo, descricaoCombo, fator, produtos);
+    }
+
+
+    /**
+     * Método que edita o fator de um combo, alterando assim o seu preço.
+     *
+     * @param nome nome do combo.
+     * @param descricao descrição do combo.
+     * @param nomeFornecedor nome do fornecedor.
+     * @param fator novo fator.
+     */
+    public void editaCombo(String nome, String descricao, String nomeFornecedor, double fator) {
+        ValidaControllerFornecedor.validaEntradasEditaCombo(nome, descricao, nomeFornecedor, fator);
+
+        if (!this.mapaFornecedores.containsKey(nomeFornecedor)) {
+            throw new NullPointerException("Erro na edicao de combo: fornecedor nao existe.");
+        }
+
+        String chave = nome + " - " + descricao;
+        this.mapaFornecedores.get(nomeFornecedor).editaCombo(chave, fator);
     }
 
 

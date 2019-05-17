@@ -240,6 +240,17 @@ public class Fornecedor implements Comparable<Fornecedor>{
         this.mapaProdutos.put(nomeCombo + " - " + descricaoCombo, combo);
     }
 
+    public void editaCombo(String chave, double fator) {
+        if (!mapaProdutos.containsKey(chave)) {
+            throw new NullPointerException("Erro na edicao de combo: produto nao existe.");
+        }
+
+        double preco = calculaPrecoCombo(this.mapaProdutos.get(chave).getProdutos(), fator);
+
+        this.mapaProdutos.get(chave).setPreco(preco);
+
+    }
+
     private double calculaPrecoCombo(String[] produtos, double fator) {
         double precoTotal = 0.0;
         for (String produto : produtos) {

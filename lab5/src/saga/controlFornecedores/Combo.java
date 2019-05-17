@@ -9,5 +9,8 @@ public class Combo extends Produto {
         this.produtos = produtos;
     }
 
-
+    @Override
+    public String[] getProdutos() {
+        return produtos;
+    }
 }

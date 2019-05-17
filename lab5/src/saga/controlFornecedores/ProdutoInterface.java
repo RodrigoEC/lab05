@@ -2,6 +2,7 @@ package saga.controlFornecedores;
 
 public interface ProdutoInterface extends Comparable<ProdutoInterface>{
 
+    String[] getProdutos();
 
     String getNome();
 

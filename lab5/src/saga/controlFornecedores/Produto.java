@@ -7,14 +7,16 @@ public class Produto implements ProdutoInterface{
     protected String nomeProduto;
     protected double preco;
 
+    /**
+     * Atributo que representa um array vazio de produtos, com o fim de que ficasse disponível
+     */
+    private String[] produtos;
+
     public Produto(String nomeProduto, String descricao, double preco) {
         this.nomeProduto = nomeProduto;
         this.descricao = descricao;
         this.preco = preco;
     }
-
-
-
 
     /**
      * Método que deixa dísponível para consulta o atributo "preco".
@@ -32,6 +34,22 @@ public class Produto implements ProdutoInterface{
      */
     public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+
+    /**
+     * Método reponsável por deixar disponível para consulta o atributo "produtos".
+     *
+     * @return Atributo produtos.
+     */
+    @Override
+    public String[] getProdutos() {
+        return this.produtos;
+    }
+
+    @Override
+    public String getNome() {
+        return nomeProduto;
     }
 
     /**
@@ -78,8 +96,5 @@ public class Produto implements ProdutoInterface{
         return this.nomeProduto.compareTo(produtoInterface.getNome());
     }
 
-    @Override
-    public String getNome() {
-        return nomeProduto;
-    }
+
 }

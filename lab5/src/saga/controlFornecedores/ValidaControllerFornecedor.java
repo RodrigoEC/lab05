@@ -31,7 +31,7 @@ public class ValidaControllerFornecedor {
     }
 
     private static void validaFator(double fator, String mensagem) {
-        if (fator < 0 || fator >= 1) {
+        if (fator <= 0 || fator >= 1) {
             throw new IllegalArgumentException(mensagem);
         }
     }
@@ -140,7 +140,13 @@ public class ValidaControllerFornecedor {
         validadorAuxiliar(descricaoCombo, "Erro no cadastro de combo: descricao nao pode ser vazia ou nula.");
         validadorAuxiliar(produtos, "Erro no cadastro de combo: combo deve ter produtos.");
         validaFator(fator, "Erro no cadastro de combo: fator invalido.");
+    }
 
+    public static void validaEntradasEditaCombo(String nome, String descricao, String nomeFornecedor, double fator) {
+        validadorAuxiliar(nome,"Erro na edicao de combo: nome nao pode ser vazio ou nulo.");
+        validadorAuxiliar(descricao, "Erro na edicao de combo: descricao nao pode ser vazia ou nula.");
+        validadorAuxiliar(nomeFornecedor, "Erro na edicao de combo: fornecedor nao pode ser vazio ou nulo.");
+        validaFator(fator, "Erro na edicao de combo: fator invalido.");
     }
 
 

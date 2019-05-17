@@ -236,7 +236,28 @@ public class Facade {
         this.controlaFornecedores.removeProduto(fornecedor, nomeProduto, descricao);
     }
 
+    /**
+     * Método responsável por adicionar um novo Combo.
+     *
+     * @param fornecedor nome do fornecedor
+     * @param nomeCombo nome do combo.
+     * @param descricaoCombo descrição do combo.
+     * @param fator fator responsável por alterar o preço do combo baseado nos produtos
+     * @param produtos string com os produtos.
+     */
     public void adicionaCombo(String fornecedor, String nomeCombo, String descricaoCombo, double fator, String produtos) {
         this.controlaFornecedores.addCombo(fornecedor, nomeCombo, descricaoCombo, fator, produtos);
+    }
+
+    /**
+     * Método que edita o fator de um combo, alterando assim o seu preço.
+     *
+     * @param nome nome do combo.
+     * @param descricao descrição do combo.
+     * @param nomeFornecedor nome do fornecedor.
+     * @param fator novo fator.
+     */
+    public void editaCombo(String nome, String descricao, String nomeFornecedor, double fator) {
+        this.controlaFornecedores.editaCombo(nome, descricao, nomeFornecedor, fator);
     }
 }

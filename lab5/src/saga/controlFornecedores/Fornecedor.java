@@ -217,11 +217,19 @@ public class Fornecedor implements Comparable<Fornecedor>{
         this.mapaProdutos.remove(nomeProduto + " - " + descricao);
     }
 
+    /**
+     * Método responsável por adicionar um novo Combo.
+     *
+     * @param nomeCombo nome do combo.
+     * @param descricaoCombo descrição do combo.
+     * @param fator Fator que definirá o preço do combo.
+     * @param produtos string que tem o nome e descrição de todos os produtos que compoem o combo.
+     */
     public void addCombo(String nomeCombo, String descricaoCombo, double fator, String produtos) {
         String[] frases = produtos.split(", ");
         for (String frase : frases) {
 
-            if (this.mapaProdutos.get(frase) instanceof Combo) {
+        if (this.mapaProdutos.get(frase) instanceof Combo) {
                 throw new IllegalArgumentException("Erro no cadastro de combo: um combo nao pode possuir combos na lista de produtos.");
             }
 
@@ -232,14 +240,38 @@ public class Fornecedor implements Comparable<Fornecedor>{
         }
 
         double preco = calculaPrecoCombo(frases, fator);
-        Combo combo = new Combo(nomeCombo, descricaoCombo, preco, frases );
+        Combo combo = new Combo(nomeCombo, descricaoCombo, preco, frases);
 
         if (mapaProdutos.containsKey(nomeCombo + " - " + descricaoCombo)) {
-            throw new NullPointerException("Erro no cadastro de combo: combo ja existe.");
+            throw new IllegalArgumentException("Erro no cadastro de combo: combo ja existe.");
         }
         this.mapaProdutos.put(nomeCombo + " - " + descricaoCombo, combo);
     }
 
+
+    /**
+     * Método que serve para calcular o preço de um combo baseado no fator que eh passado como parâmetro e o nome e
+     * descrição dos produtos que compoem o combo.
+     *
+     * @param produtos nome e descrições dos produtos que compoem o combo.
+     * @param fator fator que definirá o preço do combo baseado no preço dos produtos que o compoem.
+     * @return double que representa o preço do combo.
+     */
+    private double calculaPrecoCombo(String[] produtos, double fator) {
+        double precoTotal = 0.0;
+        for (String produto : produtos) {
+            precoTotal += this.mapaProdutos.get(produto).getPreco();
+        }
+        return precoTotal * (1 - fator);
+    }
+
+    /**
+     * Método responsável por editar o preço de um combo baseado em um novo fator que é passado como parâmetro.
+     *
+     * @param chave nome do combo + " - " + descrição do combo.
+     * @param fator fator que definirá  o novo preço do combo, baseando-se no preço dos produtos que compoem o combo que
+     * o qual a chave aponta.
+     */
     public void editaCombo(String chave, double fator) {
         if (!mapaProdutos.containsKey(chave)) {
             throw new NullPointerException("Erro na edicao de combo: produto nao existe.");
@@ -251,20 +283,26 @@ public class Fornecedor implements Comparable<Fornecedor>{
 
     }
 
-    private double calculaPrecoCombo(String[] produtos, double fator) {
-        double precoTotal = 0.0;
-        for (String produto : produtos) {
-            precoTotal += this.mapaProdutos.get(produto).getPreco();
+    /**
+     * Método que retorna o preço do produto que tem seu nome e descrição passado como paâmetro.
+     *
+     * @param nomeProd nome do produto.
+     * @param descProd descrição do produto.
+     * @return o numero double que representa o preço do produto..
+     */
+    public double getValor(String nomeProd, String descProd) {
+        if (!this.mapaProdutos.containsKey(nomeProd + " - " + descProd)) {
+            throw new NullPointerException("Erro ao cadastrar compra: produto nao existe.");
         }
-        return precoTotal * (1 - fator);
+        return this.mapaProdutos.get(nomeProd + " - " + descProd).getPreco();
     }
 
-
-
-
-
-
-
+    /**
+     * Método que determina o que será comparável entre dois objetos do tipo Fornecedor.
+     *
+     * @param fornecedor objeto do tipo fornecedor.
+     * @return um inteiro que representa a comparação dos dois objetos.
+     */
     @Override
     public int compareTo(Fornecedor fornecedor) {
         return this.toString().compareTo(fornecedor.toString());

@@ -133,6 +133,12 @@ public class Cliente implements Comparable<Cliente> {
         return Objects.hash(cpf);
     }
 
+    /**
+     * Método que determina o que será comparável entre dois objetos do tipo Cliente.
+     *
+     * @param cliente objeto do tipo Cliente.
+     * @return um inteiro que representa a comparação dos dois objetos.
+     */
     @Override
     public int compareTo(Cliente cliente) {
         return (this.toString().compareTo(cliente.toString()));

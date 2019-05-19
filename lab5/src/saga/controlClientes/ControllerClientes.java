@@ -32,6 +32,19 @@ public class ControllerClientes {
     }
 
     /**
+     * Método que mostra se um determinado cpf está cadastrado no mapa de clientes.
+     *s
+     * @param cpf numero de cpf do cliente
+     * @return true se o cliente estiver cadastrado e false se não estiver.
+     */
+    public boolean containsClient(String cpf) {
+        if (this.clientes.containsKey(cpf)) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * Método responsável por criar e cadastrar um novo cliente, cujo atributos são passados como parâmetros do método.
      * Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
      * será lançada.
@@ -139,5 +152,19 @@ public class ControllerClientes {
         } else {
             throw new NullPointerException("KEY INEXISTENTE");
         }
+    }
+
+    /**
+     * Método que retorna o nome do cliente baseado em seu cpf
+     *
+     * @param cpf cpf do cliente.
+     * @return o nome do cliente cujo cpf foi passado como parâmetro.
+     */
+    public String getNomeCliente(String cpf) {
+        if (!this.clientes.containsKey(cpf)) {
+            throw new NullPointerException("Erro ao cadastrar compra: cliente nao existe.");
+        }
+
+        return this.clientes.get(cpf).getNome();
     }
 }

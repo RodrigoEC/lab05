@@ -36,14 +36,14 @@ expect 17.00 getDebito cpf="58217738123" fornecedor="Dona Alba"
 expect 5.00 getDebito cpf="58217738123" fornecedor="Marcos"
 
 
-expectError "Erro ao recuperar debito: cliente nao exi45678919" fornecedor="Marcos"
+expectError "Erro ao recuperar debito: cliente nao existe." getDebito cpf="12345678919" fornecedor="Marcos"
 expectError "Erro ao recuperar debito: cpf invalido." getDebito cpf="98142" fornecedor="Marcos"
 expectError "Erro ao recuperar debito: fornecedor nao pode ser vazio ou nulo." getDebito cpf="64269141198" fornecedor=""
 expectError "Erro ao recuperar debito: fornecedor nao pode ser vazio ou nulo." getDebito cpf="64269141198" fornecedor=
 expectError "Erro ao recuperar debito: fornecedor nao existe." getDebito cpf="19418510068" fornecedor="Frango Feliz"
 expectError "Erro ao recuperar debito: cliente nao tem debito com fornecedor." getDebito cpf="19418510068" fornecedor="Dona Alba"
 
-## Exibindo conta cliente ##ste." getDebito cpf="123
+## Exibindo conta cliente ##
 
 expect "Cliente: Amigao Fernandes | Marcos | Coxao com batata - 03-12-2013 | Refrigerante - 03-06-2017" exibeContas cpf="19418510068" fornecedor="Marcos"
 expect "Cliente: Ana Amari | Marcos | Refrigerante - 01-11-2016 | Coxao de Frango - 01-11-2016" exibeContas cpf="64269141198" fornecedor="Marcos"

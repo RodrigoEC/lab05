@@ -34,6 +34,20 @@ public class ControllerFornecedores {
         return this.mapaFornecedores;
     }
 
+    public boolean containsFornecedor(String fornecedor) {
+        if (this.mapaFornecedores.containsKey(fornecedor)) {
+            return false;
+        } return true;
+    }
+
+    public double getValor(String fornecedor, String nomeProd, String descProd) {
+        if (!this.mapaFornecedores.containsKey(fornecedor)) {
+            throw new NullPointerException("Erro ao cadastrar compra: fornecedor nao existe.");
+        }
+
+        return this.mapaFornecedores.get(fornecedor).getValor(nomeProd, descProd);
+    }
+
     /**
      * Método responsável por criar e cadastrar um objeto do tipo Fornecedor e adiciona-lo ao mapa de Fornecedores.
      * Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
@@ -262,7 +276,8 @@ public class ControllerFornecedores {
 
 
     /**
-     * Método responsável por adicionar um novo Combo, se as entradas forem invalidas ou nulas uma exceção é lançada.
+     * Método responsável por adicionar um novo Combo, se as entradas forem invalidas ou nulas uma exceção é lançada.Caso
+     * algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
      *
      * @param fornecedor nome do fornecedor
      * @param nomeCombo nome do combo.
@@ -281,7 +296,8 @@ public class ControllerFornecedores {
 
 
     /**
-     * Método que edita o fator de um combo, alterando assim o seu preço.
+     * Método que edita o fator de um combo, alterando assim o seu preço.Caso algum dos parâmetros passados seja uma
+     * string vazia, apenas de espaços ou um valor null uma exceção será lançada.
      *
      * @param nome nome do combo.
      * @param descricao descrição do combo.
@@ -298,7 +314,4 @@ public class ControllerFornecedores {
         String chave = nome + " - " + descricao;
         this.mapaFornecedores.get(nomeFornecedor).editaCombo(chave, fator);
     }
-
-
-
 }

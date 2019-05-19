@@ -1,5 +1,10 @@
 package saga.controlClientes;
 
+/**
+ * Classe que eh um validador dos parâmetros que são passados em todos os métodos da classe "ControllerCLientes".
+ *
+ * @author Rodrigo Eloy Cavalcanti - 118210111
+ */
 public class ValidaControllerCliente {
 
     /**
@@ -24,10 +29,11 @@ public class ValidaControllerCliente {
      * @param cpf cpf que será validado
      * @param mensagem mensagem que será mostrado quando a exceção for lançada.
      */
-    private static void validaCPF(String cpf, String mensagem) {
+    public static void validaCPF(String cpf, String mensagem) {
         if (cpf.length() != 11) {
             throw new IllegalArgumentException(mensagem);
         }
+
     }
     /**
      * Método que serve para validas as entradas do método "cadastraCliente".
@@ -74,5 +80,14 @@ public class ValidaControllerCliente {
      */
     public static void validaEntradasRemoveCliente(String cpf) {
         validaCPF(cpf, "Erro na remocao do cliente: cpf invalido.");
+    }
+
+    /**
+     * Método responsável por validar o parâmetro do método "exibeContasCliente".
+     *
+     * @param cpf cpf do cliente.
+     */
+    public static void validaEntradaExibeContasCliente(String cpf) {
+        ValidaControllerCliente.validaCPF(cpf, "Erro ao exibir contas do cliente: cpf invalido.");
     }
 }

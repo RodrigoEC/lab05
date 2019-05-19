@@ -196,4 +196,26 @@ class ValidaControllerClienteTest {
             iae.printStackTrace();
         }
     }
+
+    // TESTANDO O METODO "ValidaEntradaExibeContasCliente"
+
+    @Test
+    void testValidaEntradaNulaExibeContasCliente() {
+        try {
+            ValidaControllerCliente.validaEntradaExibeContasCliente(null);
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+        }
+    }
+
+    @Test
+    void testValidaEntradaInvalidaExibeContasCliente() {
+        try {
+            ValidaControllerCliente.validaEntradaExibeContasCliente("  ");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException npe) {
+            npe.printStackTrace();
+        }
+    }
 }

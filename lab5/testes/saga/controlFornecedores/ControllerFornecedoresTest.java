@@ -346,4 +346,144 @@ class ControllerFornecedoresTest {
              npe.printStackTrace();
         }
     }
+
+    // TESTANDO METODO "addCombo"
+    @Test
+    void testAddComboPadrao() {
+        controller.addProduto("padaria", "2:50(yep)", "horario", 2.50);
+        controller.addCombo("padaria", "2:48(acordado)", "hoario que eu to acordado", 0.3, "2:50(yep) - horario");
+    }
+
+    @Test
+    void testAddComboParametrosInvalidos() {
+        controller.addProduto("padaria", "2:50(yep)", "horario", 2.50);
+
+        try {
+            controller.addCombo("pada", "2:53(help)", "horario", 0.5, "2:50(yep) - horario");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+        }
+
+        try {
+            controller.addCombo("padaria", " ", "horario", 0.5, "2:50(yep) - horario");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException npe) {
+            npe.printStackTrace();
+        }
+
+        try {
+            controller.addCombo("padaria", "2:53(help)", " ", 1, "2:50(yep) - horario");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException npe) {
+            npe.printStackTrace();
+        }
+
+        try {
+            controller.addCombo("padaria", "2:53(help)", "horario", 0, "2:50(yep) - horario");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException npe) {
+            npe.printStackTrace();
+        }
+
+        try {
+            controller.addCombo("padaria", "2:53(help)", "horario", 0.5, "2:50(yep) - ");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+        }
+        controller.addCombo("padaria", "2:53(help)", "horario", 0.5, "2:50(yep) - horario");
+    }
+
+    @Test
+    void testAddComboParametrosNulos() {
+        controller.addProduto("padaria", "2:50(yep)", "horario", 2.50);
+
+        try {
+            controller.addCombo(null, "2:53(help)", "horario", 0.5, "2:50(yep) - horario");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+        }
+
+        try {
+            controller.addCombo("padaria", null, "horario", 0.5, "2:50(yep) - horario");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+        }
+
+        try {
+            controller.addCombo("padaria", "2:53(help)", null, 0.7, "2:50(yep) - horario");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+        }
+
+
+        try {
+            controller.addCombo("padaria", "2:53(help)", "horario", 0.5, null);
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+        }
+    }
+
+    // TESTANDO METODO "editaCombo"
+
+    @Test
+    void testEditaComboParametrosInvalidos() {
+        controller.addProduto("padaria", "2:50(yep)", "horario", 2.50);
+        try {
+            controller.editaCombo("2:50(yep)", "horar", "padaria", 0.5);
+            fail("era pra dar ruim");
+        } catch ( NullPointerException npe) {
+        }
+
+        try {
+            controller.editaCombo("2:50(yep)", "horario", "pada", 0.5);
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
+
+        try {
+            controller.editaCombo("2:50(ye", "horario", "padaria", 0.5);
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
+
+        try {
+            controller.editaCombo("2:50(yep)", "horario", "padaria", 1);
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
+
+        try {
+            controller.editaCombo("2:50(yep)", "horario", "padaria", 0);
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
+    }
+
+    @Test
+    void testEditaComboParametrosNulos() {
+        controller.addProduto("padaria", "2:50(yep)", "horario", 2.50);
+        try {
+            controller.editaCombo("2:50(yep)", null, "padaria", 0.5);
+            fail("era pra dar ruim");
+        } catch ( NullPointerException npe) {
+        }
+
+        try {
+            controller.editaCombo(null, "horario", "pada", 0.5);
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
+
+        try {
+            controller.editaCombo("2:50(ye", "horario", null, 0.5);
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
+    }
 }

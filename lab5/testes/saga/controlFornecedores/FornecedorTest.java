@@ -91,7 +91,38 @@ class FornecedorTest {
         }
     }
 
+    // TESTANDO O METODO "addCombo"
 
+    @Test
+    void testAddComboParametrosProdutoInvalido() {
+        fornecedor.addProduto("tapioca", "tapioca so", 3.50);
+        fornecedor.addCombo("3:18(essa merda n acaba)", "alaa", 0.3, "tapioca - tapioca so");
+
+        try {
+            fornecedor.addCombo("3:18(essa merda n acaba)", "alaa", 0.3, "tapioca - tapioso");
+            fail("era pra dar ruim");
+        }   catch (NullPointerException npe) {
+        }
+
+        try {
+            fornecedor.addCombo("3:18(essa merda n acaba)", "alaa", 0.3, "tapioca - tapioca so");
+            fail("era pra dar ruim");
+        } catch (IllegalArgumentException iae) {
+        }
+    }
+
+    // TESTANDO O METODO "getValor"
+
+    @Test
+    void testGetValor() {
+        try {
+            fornecedor.getValor("3:30", "ta tarde ou cedo?");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+        }
+    }
+
+    // TESTANDO O METODO "equals"
     @Test
     void testFornecedoresIguais() {
         Fornecedor fornecedorGemeo = new Fornecedor("padaria","padaria@gmail.com", "4002-8922");

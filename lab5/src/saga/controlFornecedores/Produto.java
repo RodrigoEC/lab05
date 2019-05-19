@@ -1,10 +1,25 @@
 package saga.controlFornecedores;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
+/**
+ * Classe que representa a construção de um produto que possui nome, descrição e preco.
+ */
 public class Produto implements ProdutoInterface{
+    /**
+     * descrição do produto
+     */
     protected String descricao;
+
+    /**
+     * nome do produto.
+     */
     protected String nomeProduto;
+
+    /**
+     * preço do produto.
+     */
     protected double preco;
 
     /**
@@ -12,6 +27,14 @@ public class Produto implements ProdutoInterface{
      */
     private String[] produtos;
 
+    /**
+     * Construtor responsável por construir um objeto do tipo "Produto" a partir de um nome, descrição e preço que são
+     * passados como parâmetro.
+     *
+     * @param nomeProduto nome do produto.
+     * @param descricao descrição.
+     * @param preco preço do produto.
+     */
     public Produto(String nomeProduto, String descricao, double preco) {
         this.nomeProduto = nomeProduto;
         this.descricao = descricao;
@@ -47,6 +70,11 @@ public class Produto implements ProdutoInterface{
         return this.produtos;
     }
 
+    /**
+     * Método reponsável por deixar disponível para consulta o atributo nomeProduto.
+     *
+     * @return Atributo nomeProduto.
+     */
     @Override
     public String getNome() {
         return nomeProduto;
@@ -90,7 +118,12 @@ public class Produto implements ProdutoInterface{
     }
 
 
-
+    /**
+     * Método que determina o que será comparável entre dois objetos do tipo Cliente.
+     *
+     * @param produtoInterface interface de objetos do tipo Produto.
+     * @return um inteiro que representa a comparação dos dois objetos.
+     */
     @Override
     public int compareTo(ProdutoInterface produtoInterface) {
         return this.nomeProduto.compareTo(produtoInterface.getNome());

@@ -1,8 +1,8 @@
 package saga;
 
 import easyaccept.EasyAccept;
-import saga.controlClientes.ControllerClientes;
-import saga.controlFornecedores.ControllerFornecedores;
+
+import java.util.Locale;
 
 /**
  * Essa classe é responsável por reunir em uma fachada os controllers das outras classes.
@@ -11,22 +11,13 @@ import saga.controlFornecedores.ControllerFornecedores;
  */
 public class Facade {
 
-    /**
-     * Controller da classe Cliente.
-     */
-    private ControllerClientes controlaClientes;
-
-    /**
-     * Controller da classe Fornecedor
-     */
-    private ControllerFornecedores controlaFornecedores;
+    ControllerGeral controllerGeral;
 
     /**
      * Construtor responsável por criar o objeto do tipo Facade e  incializar seus atributos.
      */
     public Facade() {
-        this.controlaClientes  = new ControllerClientes();
-        this.controlaFornecedores = new ControllerFornecedores();
+        controllerGeral = new ControllerGeral();
     }
 
     public static void main(String[] args) {
@@ -50,7 +41,7 @@ public class Facade {
      * @return o cpf do cliente.
      */
     public String adicionaCliente(String cpf, String nome, String email, String local) {
-        return controlaClientes.cadastraCliente(cpf, nome, email, local);
+        return controllerGeral.adicionaCliente(cpf, nome, email, local);
     }
 
     /**
@@ -61,7 +52,7 @@ public class Facade {
      * @return representação textual do cliente.
      */
     public String exibeCliente(String cpf) {
-        return this.controlaClientes.dadosCliente(cpf);
+        return this.controllerGeral.exibeCliente(cpf);
     }
 
     /**
@@ -70,7 +61,7 @@ public class Facade {
      * @return as representações textuais dos clientes.
      */
     public String exibeClientes() {
-        return controlaClientes.dadosTodosClientes();
+        return controllerGeral.exibeClientes();
     }
 
 
@@ -82,7 +73,7 @@ public class Facade {
      * @param novoValor valor que será colocado no atributo.
      */
     public void editaCliente(String cpf, String atributo, String novoValor) {
-        this.controlaClientes.editaCliente(cpf, atributo, novoValor);
+        this.controllerGeral.editaCliente(cpf, atributo, novoValor);
     }
 
 
@@ -95,7 +86,7 @@ public class Facade {
      * @param cpf cpf do cliente que será removido.
      */
     public void removeCliente(String cpf) {
-        this.controlaClientes.removeCliente(cpf);
+        this.controllerGeral.removeCliente(cpf);
     }
 
     // PARTE DO CONTROLLER DOS FORNECEDORES
@@ -111,7 +102,7 @@ public class Facade {
      * @param telefone Telefone do fornecedor.
      */
     public String adicionaFornecedor(String nome, String email, String telefone) {
-        return this.controlaFornecedores.cadastraFornecedor(nome, email, telefone);
+        return this.controllerGeral.adicionaFornecedor(nome, email, telefone);
     }
 
     /**
@@ -122,7 +113,7 @@ public class Facade {
      * @return A representação textual do fornecedor.
      */
     public String exibeFornecedor(String nome) {
-        return this.controlaFornecedores.dadosFornecedor(nome);
+        return this.controllerGeral.exibeFornecedor(nome);
     }
 
     /**
@@ -131,7 +122,7 @@ public class Facade {
      * @return A representação textual de todos os fornecedores.
      */
     public String exibeFornecedores() {
-        return this.controlaFornecedores.dadosTodosFornecedores();
+        return this.controllerGeral.exibeFornecedores();
     }
 
 
@@ -144,7 +135,7 @@ public class Facade {
      * @param novoValor valor a ser atribuito ao atributo
      */
     public void editaFornecedor(String nome, String atributo, String novoValor) {
-        this.controlaFornecedores.editaFornecedor(nome, atributo, novoValor);
+        this.controllerGeral.editaFornecedor(nome, atributo, novoValor);
     }
 
 
@@ -156,7 +147,7 @@ public class Facade {
      * @param fornecedor Nome do fornecedor.
      */
     public void removeFornecedor(String fornecedor) {
-        this.controlaFornecedores.removeFornecedor(fornecedor);
+        this.controllerGeral.removeFornecedor(fornecedor);
     }
 
     /**
@@ -170,7 +161,7 @@ public class Facade {
      * @param descricao descrição do produto.
      */
     public void adicionaProduto(String fornecedor, String nomeProduto, String descricao, double preco) {
-        this.controlaFornecedores.addProduto(fornecedor, nomeProduto, descricao, preco);
+        this.controllerGeral.adicionaProduto(fornecedor, nomeProduto, descricao, preco);
     }
 
     /**
@@ -185,7 +176,7 @@ public class Facade {
      * @return Os dados do produto de um fornecedor específico.
      */
     public String exibeProduto(String nomeProduto, String descricao, String fornecedor) {
-        return this.controlaFornecedores.exibeProduto(fornecedor, nomeProduto, descricao);
+        return this.controllerGeral.exibeProduto(fornecedor, nomeProduto, descricao);
     }
 
     /**
@@ -196,7 +187,7 @@ public class Facade {
      * @return A representação textual de todos os produtos.
      */
     public String exibeProdutosFornecedor(String fornecedor) {
-        return this.controlaFornecedores.dadosTodosProdutosFornecedor(fornecedor);
+        return this.controllerGeral.exibeProdutosFornecedor(fornecedor);
     }
 
     /**
@@ -206,7 +197,7 @@ public class Facade {
      * @return uma string com todas as representações textuais de todos os produtos cadastrados em todos os fornecedores.
      */
     public String exibeProdutos() {
-        return this.controlaFornecedores.dadosTodosProdutos();
+        return this.controllerGeral.exibeProdutos();
     }
 
     /**
@@ -220,7 +211,7 @@ public class Facade {
      * @param descricao descrição do produto que terá o preço alterado.
      */
     public void editaProduto(String nomeProduto, String descricao, String fornecedor, double novoPreco)   {
-        this.controlaFornecedores.editaProduto(fornecedor, nomeProduto, descricao, novoPreco);
+        this.controllerGeral.editaProduto(fornecedor, nomeProduto, descricao, novoPreco);
     }
 
     /**
@@ -233,7 +224,7 @@ public class Facade {
      * @param descricao Descrição do produto.
      */
     public void removeProduto(String nomeProduto, String descricao, String fornecedor) {
-        this.controlaFornecedores.removeProduto(fornecedor, nomeProduto, descricao);
+        this.controllerGeral.removeProduto(fornecedor, nomeProduto, descricao);
     }
 
     /**
@@ -246,7 +237,7 @@ public class Facade {
      * @param produtos string com os produtos.
      */
     public void adicionaCombo(String fornecedor, String nomeCombo, String descricaoCombo, double fator, String produtos) {
-        this.controlaFornecedores.addCombo(fornecedor, nomeCombo, descricaoCombo, fator, produtos);
+        this.controllerGeral.adicionaCombo(fornecedor, nomeCombo, descricaoCombo, fator, produtos);
     }
 
     /**
@@ -258,6 +249,52 @@ public class Facade {
      * @param fator novo fator.
      */
     public void editaCombo(String nome, String descricao, String nomeFornecedor, double fator) {
-        this.controlaFornecedores.editaCombo(nome, descricao, nomeFornecedor, fator);
+        this.controllerGeral.editaCombo(nome, descricao, nomeFornecedor, fator);
+    }
+
+    /**
+     * Método responsável por adicionar uma nova compra.
+     *
+     * @param cpf cpf do cliente.
+     * @param fornecedor nome do fornecedor.
+     * @param data data da compra.
+     * @param nomeProd nome do produto.
+     * @param descProd descrição do produto.
+     */
+    public void adicionaCompra(String cpf, String fornecedor, String data, String nomeProd, String descProd) {
+        this.controllerGeral.adicionaCompra(cpf, fornecedor, data, nomeProd, descProd);
+    }
+
+    /**
+     * Método responsável por retornar o número double que representa o debito de um cliente para um fornecedor.
+     *
+     * @param cpf cpf do cliente.
+     * @param fornecedor nome do fornecedor.
+     *
+     * @return debito de um cliente com um determinado fornecedor.
+     */
+    public String getDebito(String cpf, String fornecedor) {
+        return String.format(Locale.ENGLISH,"%.2f", this.controllerGeral.getDebito(cpf, fornecedor));
+    }
+
+    /**
+     * Método reponsável por retornar a representação textual de um determinado cpf em determinado fornecedor.
+     *
+     * @param cpf cpf do cliente.
+     * @param fornecedor nome do fornecedor.
+     * @return representação textual de um cliente em determinado fornecedor.
+     */
+    public String exibeContas(String cpf, String fornecedor) {
+        return this.controllerGeral.exibeContas(cpf, fornecedor);
+    }
+
+    /**
+     * Método responsável por exibir a representação textual de todas as contas de um determinado cliente.
+     *
+     * @param cpf cpf do cliente.
+     * @return a representação textual das contas de determinado cliente.
+     */
+    public String exibeContasClientes(String cpf) {
+        return this.controllerGeral.exibeContasClientes(cpf);
     }
 }

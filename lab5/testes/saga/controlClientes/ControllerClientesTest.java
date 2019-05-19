@@ -270,4 +270,38 @@ class ControllerClientesTest {
 
         }
     }
+
+    // TESTANDO O METODO "containsClient"
+
+    @Test
+    void testContaisClientFalse() {
+        clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
+        assertFalse(clientes.containsClient("07345161425"));
+    }
+
+    @Test
+    void testContaisClietnTrue() {
+        clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
+        assertTrue(clientes.containsClient("07345161420"));
+    }
+
+    // TESTANDO O METODO "GetNomeCliente"
+
+    @Test
+    void testGetNomeClienteValido() {
+        clientes.cadastraCliente("07345161420", "rodrigo", "rodrigo.cavalcanti@ccc.ufcg.edu.br", "lcc3");
+        assertEquals("rodrigo", clientes.getNomeCliente("07345161420"));
+    }
+
+    @Test
+    void testGetNomeClienteExcecao() {
+        try {
+            clientes.getNomeCliente("07345161422");
+            fail("era pra dar ruim");
+        } catch (NullPointerException npe) {
+            npe.printStackTrace();
+        }
+    }
+
+
 }

@@ -2,18 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6103720-77bc-48cd-98ff-16468a689d4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/saga/ControllerGeral.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/saga/contasControl/Compra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/saga/contasControl/Conta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testes/saga/controlFornecedores/ProdutoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testes/saga/ControllerGeralTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/acceptance_test/use_case_6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/acceptance_test/use_case_6.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/allclasses-index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/allclasses.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/allpackages-index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/constant-values.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/doc/element-list" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/help-doc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index-files/index-1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index-files/index-10.html" afterDir="false" />
@@ -36,9 +31,13 @@
       <change beforePath="$PROJECT_DIR$/doc/member-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/doc/member-search-index.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/overview-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-search-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/package-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/doc/package-search-index.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/saga/ControllerGeral.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/ControllerGeral.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/Facade.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/Facade.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/saga/contasControl/Compra.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/contasControl/Compra.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/saga/contasControl/Conta.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/contasControl/Conta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/saga/contasControl/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/contasControl/package-summary.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/saga/contasControl/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/contasControl/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlClientes/Cliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlClientes/Cliente.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlClientes/ClienteTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlClientes/ClienteTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlClientes/ControllerClientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlClientes/ControllerClientes.html" afterDir="false" />
@@ -47,11 +46,13 @@
       <change beforePath="$PROJECT_DIR$/doc/saga/controlClientes/ValidaControllerClienteTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlClientes/ValidaControllerClienteTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlClientes/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlClientes/package-summary.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlClientes/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlClientes/package-tree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/saga/controlFornecedores/Combo.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlFornecedores/Combo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlFornecedores/ControllerFornecedores.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlFornecedores/ControllerFornecedores.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlFornecedores/ControllerFornecedoresTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlFornecedores/ControllerFornecedoresTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlFornecedores/Fornecedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlFornecedores/Fornecedor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlFornecedores/FornecedorTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlFornecedores/FornecedorTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlFornecedores/Produto.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlFornecedores/Produto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/saga/controlFornecedores/ProdutoInterface.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlFornecedores/ProdutoInterface.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlFornecedores/ProdutoTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlFornecedores/ProdutoTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlFornecedores/ValidaControllerFornecedor.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlFornecedores/ValidaControllerFornecedor.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/saga/controlFornecedores/ValidaControllerFornecedorTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/controlFornecedores/ValidaControllerFornecedorTest.html" afterDir="false" />
@@ -61,34 +62,10 @@
       <change beforePath="$PROJECT_DIR$/doc/saga/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/saga/package-tree.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/doc/type-search-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/type-search-index.zip" beforeDir="false" afterPath="$PROJECT_DIR$/doc/type-search-index.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/Facade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlClientes/Cliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlClientes/Cliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlClientes/ControllerClientes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlClientes/ControllerClientes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlClientes/ValidaControllerCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlClientes/ValidaControllerCliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/Combo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/Combo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/ControllerFornecedores.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/ControllerFornecedores.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/Fornecedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/Fornecedor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/Produto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/ValidaControllerFornecedor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/controlFornecedores/ValidaControllerFornecedor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/controlClientes/ControllerClientesTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/lab05/saga/controlClientes/ControllerClientesTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/controlClientes/ValidaControllerClienteTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/lab05/saga/controlClientes/ValidaControllerClienteTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/controlFornecedores/ControllerFornecedoresTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/lab05/saga/controlFornecedores/ControllerFornecedoresTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/lab05/saga/controlFornecedores/FornecedorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/lab05/saga/controlFornecedores/FornecedorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/Facade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/Facade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlClientes/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlClientes/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlClientes/ControllerClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlClientes/ControllerClientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlClientes/ValidaControllerCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlClientes/ValidaControllerCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlFornecedores/Combo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlFornecedores/Combo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlFornecedores/Fornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlFornecedores/Fornecedor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlFornecedores/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlFornecedores/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/saga/controlFornecedores/ProdutoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlFornecedores/ProdutoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/saga/controlFornecedores/ValidaControllerFornecedor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/controlFornecedores/ValidaControllerFornecedor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testes/saga/controlClientes/ControllerClientesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/controlClientes/ControllerClientesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/saga/controlClientes/ValidaControllerClienteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/controlClientes/ValidaControllerClienteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/saga/controlFornecedores/ControllerFornecedoresTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/controlFornecedores/ControllerFornecedoresTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/saga/controlFornecedores/FornecedorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/controlFornecedores/FornecedorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testes/saga/controlFornecedores/SimplesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/saga/controlFornecedores/ProdutoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/controlFornecedores/ProdutoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testes/saga/controlFornecedores/ValidaControllerFornecedorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/testes/saga/controlFornecedores/ValidaControllerFornecedorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -105,17 +82,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ValidaControllerFornecedorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="325" column="37" lean-forward="true" selection-start-line="325" selection-start-column="37" selection-end-line="325" selection-end-column="37" />
+            <state relative-caret-position="443">
+              <caret line="344" column="5" selection-start-line="344" selection-start-column="5" selection-end-line="344" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/ValidaControllerFornecedor.java">
+        <entry file="file://$PROJECT_DIR$/testes/saga/ControllerGeralTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1837">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="458">
+              <caret line="198" selection-start-line="198" selection-end-line="198" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/FornecedorTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ProdutoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="457">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testes/saga/ControllerClientesTest.java" />
         <option value="$PROJECT_DIR$/src/saga/controlProdutos/ControllerProdutos.java" />
         <option value="$PROJECT_DIR$/testes/saga/controlProdutos/ControllerProdutosTest.java" />
         <option value="$PROJECT_DIR$/testes/saga/FornecedorTest.java" />
@@ -165,7 +168,6 @@
         <option value="$PROJECT_DIR$/acceptance_test/use_case_3.txt" />
         <option value="$PROJECT_DIR$/testes/saga/ValidadorTest.java" />
         <option value="$PROJECT_DIR$/src/saga/Validador.java" />
-        <option value="$PROJECT_DIR$/testes/saga/controlFornecedores/ValidaControllerFornecedorTest.java" />
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/ProdutoAbstract.java" />
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/TipoConta.java" />
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/Simples.java" />
@@ -181,21 +183,23 @@
         <option value="$PROJECT_DIR$/src/saga/Facade.java" />
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/Combo.java" />
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/ProdutoInterface.java" />
-        <option value="$PROJECT_DIR$/src/saga/controlFornecedores/ValidaControllerFornecedor.java" />
         <option value="$PROJECT_DIR$/src/saga/Compra.java" />
         <option value="$PROJECT_DIR$/src/saga/Conta.java" />
         <option value="$PROJECT_DIR$/src/saga/controlClientes/ValidaControllerCliente.java" />
         <option value="$PROJECT_DIR$/testes/saga/controlClientes/ClienteTest.java" />
         <option value="$PROJECT_DIR$/src/saga/controlClientes/ControllerClientes.java" />
-        <option value="$PROJECT_DIR$/testes/saga/controlClientes/ControllerClientesTest.java" />
         <option value="$PROJECT_DIR$/testes/saga/controlClientes/ValidaControllerClienteTest.java" />
         <option value="$PROJECT_DIR$/testes/saga/controlFornecedores/ComboTest.java" />
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java" />
         <option value="$PROJECT_DIR$/testes/saga/controlFornecedores/ControllerFornecedoresTest.java" />
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/Fornecedor.java" />
         <option value="$PROJECT_DIR$/testes/saga/controlFornecedores/FornecedorTest.java" />
-        <option value="$PROJECT_DIR$/testes/saga/controlFornecedores/ProdutoTest.java" />
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/Produto.java" />
+        <option value="$PROJECT_DIR$/src/saga/controlFornecedores/ValidaControllerFornecedor.java" />
+        <option value="$PROJECT_DIR$/testes/saga/controlClientes/ControllerClientesTest.java" />
+        <option value="$PROJECT_DIR$/testes/saga/controlFornecedores/ProdutoTest.java" />
+        <option value="$PROJECT_DIR$/testes/saga/controlFornecedores/ValidaControllerFornecedorTest.java" />
+        <option value="$PROJECT_DIR$/testes/saga/ControllerGeralTest.java" />
       </list>
     </option>
   </component>
@@ -216,6 +220,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -269,14 +275,19 @@
               <item name="lab5" type="462c0819:PsiDirectoryNode" />
               <item name="testes" type="462c0819:PsiDirectoryNode" />
               <item name="saga" type="462c0819:PsiDirectoryNode" />
+              <item name="controlClientes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lab5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lab5" type="462c0819:PsiDirectoryNode" />
+              <item name="testes" type="462c0819:PsiDirectoryNode" />
+              <item name="saga" type="462c0819:PsiDirectoryNode" />
               <item name="controlFornecedores" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,9 +304,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="saga" />
       <recent name="saga.controlFornecedores" />
       <recent name="saga.controlClientes" />
-      <recent name="saga" />
       <recent name="saga.controlProdutos" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -324,20 +335,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Facade">
-    <configuration name="Facade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="saga.Facade" />
-      <module name="lab05" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="saga.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ControllerGeralTest.testExibeContasEntradasInvalidas">
     <configuration name="ControllerFornecedoresTest.testDadosFornecedorInexistente" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="lab05" />
       <extension name="coverage">
@@ -354,65 +352,81 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerFornecedoresTest.testEditaComboParametrosNulos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControllerGeralTest.testExibeContasEntradasInvalidas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lab05" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="saga.controlFornecedores.*" />
+          <option name="PATTERN" value="saga.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="saga.controlFornecedores" />
-      <option name="MAIN_CLASS_NAME" value="saga.controlFornecedores.ControllerFornecedoresTest" />
-      <option name="METHOD_NAME" value="testEditaComboParametrosNulos" />
+      <option name="PACKAGE_NAME" value="saga" />
+      <option name="MAIN_CLASS_NAME" value="saga.ControllerGeralTest" />
+      <option name="METHOD_NAME" value="testExibeContasEntradasInvalidas" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FornecedorTest.testAddComboParametrosInvalidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControllerGeralTest.testExibeContasPadrao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lab05" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="saga.controlFornecedores.*" />
+          <option name="PATTERN" value="saga.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="saga.controlFornecedores" />
-      <option name="MAIN_CLASS_NAME" value="saga.controlFornecedores.FornecedorTest" />
-      <option name="METHOD_NAME" value="testAddComboParametrosInvalidos" />
+      <option name="PACKAGE_NAME" value="saga" />
+      <option name="MAIN_CLASS_NAME" value="saga.ControllerGeralTest" />
+      <option name="METHOD_NAME" value="testExibeContasPadrao" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FornecedorTest.testAddComboParametrosProdutoInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControllerGeralTest.testGetDebitoEntradasInvalidas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lab05" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="saga.controlFornecedores.*" />
+          <option name="PATTERN" value="saga.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="saga.controlFornecedores" />
-      <option name="MAIN_CLASS_NAME" value="saga.controlFornecedores.FornecedorTest" />
-      <option name="METHOD_NAME" value="testAddComboParametrosProdutoInvalido" />
+      <option name="PACKAGE_NAME" value="saga" />
+      <option name="MAIN_CLASS_NAME" value="saga.ControllerGeralTest" />
+      <option name="METHOD_NAME" value="testGetDebitoEntradasInvalidas" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FornecedorTest.testGetValor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ControllerGeralTest.testGetDebitoEntradasNulas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="lab05" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="saga.controlFornecedores.*" />
+          <option name="PATTERN" value="saga.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="saga.controlFornecedores" />
-      <option name="MAIN_CLASS_NAME" value="saga.controlFornecedores.FornecedorTest" />
-      <option name="METHOD_NAME" value="testGetValor" />
+      <option name="PACKAGE_NAME" value="saga" />
+      <option name="MAIN_CLASS_NAME" value="saga.ControllerGeralTest" />
+      <option name="METHOD_NAME" value="testGetDebitoEntradasNulas" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ControllerGeralTest.testGetDebitoPadrao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="lab05" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="saga.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="saga" />
+      <option name="MAIN_CLASS_NAME" value="saga.ControllerGeralTest" />
+      <option name="METHOD_NAME" value="testGetDebitoPadrao" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -420,19 +434,19 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ControllerFornecedoresTest.testDadosFornecedorInexistente" />
-      <item itemvalue="JUnit.ControllerFornecedoresTest.testEditaComboParametrosNulos" />
-      <item itemvalue="Application.Facade" />
-      <item itemvalue="JUnit.FornecedorTest.testAddComboParametrosInvalidos" />
-      <item itemvalue="JUnit.FornecedorTest.testAddComboParametrosProdutoInvalido" />
-      <item itemvalue="JUnit.FornecedorTest.testGetValor" />
+      <item itemvalue="JUnit.ControllerGeralTest.testGetDebitoPadrao" />
+      <item itemvalue="JUnit.ControllerGeralTest.testGetDebitoEntradasInvalidas" />
+      <item itemvalue="JUnit.ControllerGeralTest.testGetDebitoEntradasNulas" />
+      <item itemvalue="JUnit.ControllerGeralTest.testExibeContasPadrao" />
+      <item itemvalue="JUnit.ControllerGeralTest.testExibeContasEntradasInvalidas" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Facade" />
-        <item itemvalue="JUnit.FornecedorTest.testGetValor" />
-        <item itemvalue="JUnit.FornecedorTest.testAddComboParametrosProdutoInvalido" />
-        <item itemvalue="JUnit.FornecedorTest.testAddComboParametrosInvalidos" />
-        <item itemvalue="JUnit.ControllerFornecedoresTest.testEditaComboParametrosNulos" />
+        <item itemvalue="JUnit.ControllerGeralTest.testExibeContasEntradasInvalidas" />
+        <item itemvalue="JUnit.ControllerGeralTest.testExibeContasPadrao" />
+        <item itemvalue="JUnit.ControllerGeralTest.testGetDebitoEntradasNulas" />
+        <item itemvalue="JUnit.ControllerGeralTest.testGetDebitoEntradasInvalidas" />
+        <item itemvalue="JUnit.ControllerGeralTest.testGetDebitoPadrao" />
       </list>
     </recent_temporary>
   </component>
@@ -465,35 +479,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ControllerFornecedoresTest_testEditaComboParametrosInvalidos - 2019.05.19 at 03h 12m 04s.xml">
-      <configuration name="ControllerFornecedoresTest.testEditaComboParametrosInvalidos" configurationId="JUnit" />
+    <history-entry file="ControllerGeralTest_testAdicionaProdutoPadrao - 2019.05.19 at 20h 33m 20s.xml">
+      <configuration name="ControllerGeralTest.testAdicionaProdutoPadrao" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ControllerFornecedoresTest_testEditaComboParametrosNulos - 2019.05.19 at 03h 13m 06s.xml">
-      <configuration name="ControllerFornecedoresTest.testEditaComboParametrosNulos" configurationId="JUnit" />
+    <history-entry file="ControllerGeralTest_testAdicionaProdutoPadrao - 2019.05.19 at 20h 34m 17s.xml">
+      <configuration name="ControllerGeralTest.testAdicionaProdutoPadrao" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testAddComboParametrosInvalidos - 2019.05.19 at 03h 21m 00s.xml">
-      <configuration name="FornecedorTest.testAddComboParametrosInvalidos" configurationId="JUnit" />
+    <history-entry file="ControllerGeralTest_testAdicionaProdutoEntradasInvalidas - 2019.05.19 at 20h 39m 47s.xml">
+      <configuration name="ControllerGeralTest.testAdicionaProdutoEntradasInvalidas" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testAddComboParametrosInvalidos - 2019.05.19 at 03h 22m 18s.xml">
-      <configuration name="FornecedorTest.testAddComboParametrosInvalidos" configurationId="JUnit" />
+    <history-entry file="ControllerGeralTest_testAdicionaProdutoEntradasInvalidas - 2019.05.19 at 20h 40m 34s.xml">
+      <configuration name="ControllerGeralTest.testAdicionaProdutoEntradasInvalidas" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testAddComboParametrosInvalidos - 2019.05.19 at 03h 22m 24s.xml">
-      <configuration name="FornecedorTest.testAddComboParametrosInvalidos" configurationId="JUnit" />
+    <history-entry file="ControllerGeralTest_testAdicionaCompraParametrosNulos - 2019.05.19 at 20h 46m 10s.xml">
+      <configuration name="ControllerGeralTest.testAdicionaCompraParametrosNulos" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testAddComboParametrosInvalidos - 2019.05.19 at 03h 23m 29s.xml">
-      <configuration name="FornecedorTest.testAddComboParametrosInvalidos" configurationId="JUnit" />
+    <history-entry file="ControllerGeralTest_testGetDebitoPadrao - 2019.05.19 at 20h 51m 13s.xml">
+      <configuration name="ControllerGeralTest.testGetDebitoPadrao" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testAddComboParametrosInvalidos - 2019.05.19 at 03h 23m 46s.xml">
-      <configuration name="FornecedorTest.testAddComboParametrosInvalidos" configurationId="JUnit" />
+    <history-entry file="ControllerGeralTest_testGetDebitoEntradasInvalidas - 2019.05.19 at 20h 55m 45s.xml">
+      <configuration name="ControllerGeralTest.testGetDebitoEntradasInvalidas" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testAddComboParametrosInvalidos - 2019.05.19 at 03h 24m 24s.xml">
-      <configuration name="FornecedorTest.testAddComboParametrosInvalidos" configurationId="JUnit" />
+    <history-entry file="ControllerGeralTest_testGetDebitoEntradasNulas - 2019.05.19 at 21h 03m 27s.xml">
+      <configuration name="ControllerGeralTest.testGetDebitoEntradasNulas" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testAddComboParametrosProdutoInvalido - 2019.05.19 at 03h 27m 30s.xml">
-      <configuration name="FornecedorTest.testAddComboParametrosProdutoInvalido" configurationId="JUnit" />
+    <history-entry file="ControllerGeralTest_testExibeContasPadrao - 2019.05.19 at 21h 08m 30s.xml">
+      <configuration name="ControllerGeralTest.testExibeContasPadrao" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FornecedorTest_testGetValor - 2019.05.19 at 03h 31m 10s.xml">
-      <configuration name="FornecedorTest.testGetValor" configurationId="JUnit" />
+    <history-entry file="ControllerGeralTest_testExibeContasEntradasInvalidas - 2019.05.19 at 21h 09m 59s.xml">
+      <configuration name="ControllerGeralTest.testExibeContasEntradasInvalidas" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -505,14 +519,14 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.26363635" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.26818183" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32899022" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32736155" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.95114005" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.95114005" />
       <window_info anchor="bottom" id="Debug" order="6" weight="0.39576548" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
@@ -632,41 +646,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_6.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_5.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-480">
           <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/saga/ControllerGeral.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="907">
-          <caret line="277" column="61" selection-start-line="277" selection-start-column="61" selection-end-line="277" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2079#2080#0" expanded="true" />
-            <element signature="e#2141#2142#0" expanded="true" />
-            <element signature="e#2357#2358#0" expanded="true" />
-            <element signature="e#2417#2418#0" expanded="true" />
-            <element signature="e#3205#3206#0" expanded="true" />
-            <element signature="e#3261#3262#0" expanded="true" />
-            <element signature="e#4269#4270#0" expanded="true" />
-            <element signature="e#4339#4340#0" expanded="true" />
-            <element signature="e#4572#4573#0" expanded="true" />
-            <element signature="e#4645#4646#0" expanded="true" />
-            <element signature="e#5596#5597#0" expanded="true" />
-            <element signature="e#5666#5667#0" expanded="true" />
-            <element signature="e#7873#7874#0" expanded="true" />
-            <element signature="e#7942#7943#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -683,13 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
           <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlClientes/ClienteTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -718,13 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlClientes/ControllerClientesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="305" column="4" selection-start-line="305" selection-start-column="4" selection-end-line="305" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/saga/controlClientes/ValidaControllerCliente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -732,45 +701,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlClientes/ValidaControllerClienteTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="216" column="41" selection-start-line="216" selection-start-column="41" selection-end-line="216" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ComboTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ComboTest.java" />
     <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/Combo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ControllerFornecedoresTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="938">
-          <caret line="487" column="5" selection-start-line="487" selection-start-column="5" selection-end-line="487" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-488">
-          <caret line="253" column="19" selection-start-line="253" selection-start-column="19" selection-end-line="253" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#692#693#0" expanded="true" />
-            <element signature="e#747#748#0" expanded="true" />
-            <element signature="e#940#941#0" expanded="true" />
-            <element signature="e#984#985#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -790,33 +725,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/FornecedorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/SimplesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="44" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ProdutoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/SimplesTest.java" />
     <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/Produto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1073">
@@ -827,17 +736,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ValidaControllerFornecedorTest.java">
+    <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="325" column="37" lean-forward="true" selection-start-line="325" selection-start-column="37" selection-end-line="325" selection-end-column="37" />
+        <state relative-caret-position="15">
+          <caret line="253" column="19" selection-start-line="253" selection-start-column="19" selection-end-line="253" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#692#693#0" expanded="true" />
+            <element signature="e#747#748#0" expanded="true" />
+            <element signature="e#940#941#0" expanded="true" />
+            <element signature="e#984#985#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/ValidaControllerFornecedor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1837">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="68">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/saga/ControllerGeral.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-173">
+          <caret line="328" column="9" lean-forward="true" selection-start-line="328" selection-start-column="9" selection-end-line="328" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2079#2080#0" expanded="true" />
+            <element signature="e#2141#2142#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2417#2418#0" expanded="true" />
+            <element signature="e#3205#3206#0" expanded="true" />
+            <element signature="e#3261#3262#0" expanded="true" />
+            <element signature="e#4269#4270#0" expanded="true" />
+            <element signature="e#4339#4340#0" expanded="true" />
+            <element signature="e#4572#4573#0" expanded="true" />
+            <element signature="e#4645#4646#0" expanded="true" />
+            <element signature="e#5596#5597#0" expanded="true" />
+            <element signature="e#5666#5667#0" expanded="true" />
+            <element signature="e#7873#7874#0" expanded="true" />
+            <element signature="e#7942#7943#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_6.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/controlClientes/ClienteTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="43" column="5" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/controlClientes/ControllerClientesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="303" column="5" selection-start-line="303" selection-start-column="5" selection-end-line="303" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/controlClientes/ValidaControllerClienteTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="216" column="41" selection-start-line="216" selection-start-column="41" selection-end-line="216" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ControllerFornecedoresTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="487" column="5" selection-start-line="487" selection-start-column="5" selection-end-line="487" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/FornecedorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="124" column="33" selection-start-line="124" selection-start-column="33" selection-end-line="124" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ProdutoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="457">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ValidaControllerFornecedorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="344" column="5" selection-start-line="344" selection-start-column="5" selection-end-line="344" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testes/saga/ControllerGeralTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

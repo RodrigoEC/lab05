@@ -43,5 +43,4 @@ class ProdutoTest {
         Produto simples2 = new Produto( "lalala", "plalalal", 1.00);
         assertFalse(simples.hashCode() == simples2.hashCode());
     }
-
 }

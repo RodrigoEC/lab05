@@ -302,6 +302,4 @@ class ControllerClientesTest {
             npe.printStackTrace();
         }
     }
-
-
 }

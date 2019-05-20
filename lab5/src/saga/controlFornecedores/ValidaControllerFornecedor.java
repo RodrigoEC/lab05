@@ -61,6 +61,10 @@ public class ValidaControllerFornecedor {
         if (dadosData[0].length() != 2 || dadosData[1].length() != 2 || dadosData[2].length() != 4) {
             throw new IllegalArgumentException("Erro ao cadastrar compra: data invalida.");
         }
+
+        if (Integer.parseInt(dadosData[0]) > 31 || Integer.parseInt(dadosData[1]) > 12) {
+            throw new IllegalArgumentException("Erro ao cadastrar compra: data invalida.");
+        }
     }
 
 

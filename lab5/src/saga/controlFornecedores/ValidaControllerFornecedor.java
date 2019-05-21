@@ -89,7 +89,7 @@ public class ValidaControllerFornecedor {
      * @param novoValor valor a ser atribuido ao atributo passado como parâmetro.
      */
     public static void validaEntradasEditaFornecedor(String nome, String atributo, String novoValor) {
-        validadorAuxiliar(nome, "Erro na edicao do fornecedor: nome nao pode ser editado.");
+        validadorAuxiliar(nome, "Erro na edicao do fornecedor: nome nao pode ser vazio ou nulo.");
         validadorAuxiliar(atributo, "Erro na edicao do fornecedor: atributo nao pode ser vazio ou nulo.");
         validadorAuxiliar(novoValor, "Erro na edicao do fornecedor: novo valor nao pode ser vazio ou nulo.");
     }
@@ -212,6 +212,7 @@ public class ValidaControllerFornecedor {
      * @param descProd descrição do produto que será comprado.
      */
     public static void validaEntradasAddCompra(String cpf, String fornecedor, String data, String nomeProd, String descProd) {
+        validadorAuxiliar(cpf, "Erro ao cadastrar compra: cpf nao pode ser vazio ou nulo.");
         ValidaControllerCliente.validaCPF(cpf, "Erro ao cadastrar compra: cpf invalido.");
         validadorAuxiliar(fornecedor, "Erro ao cadastrar compra: fornecedor nao pode ser vazio ou nulo.");
         validadorAuxiliar(nomeProd, "Erro ao cadastrar compra: nome do produto nao pode ser vazio ou nulo.");
@@ -226,6 +227,7 @@ public class ValidaControllerFornecedor {
      * @param fornecedor nome do fornecedor.
      */
     public static void validaEntradasGetDebito(String cpf, String fornecedor) {
+        validadorAuxiliar(cpf, "Erro ao recuperar debito: cpf nao pode ser vazio ou nulo.");
         validadorAuxiliar(fornecedor, "Erro ao recuperar debito: fornecedor nao pode ser vazio ou nulo.");
         ValidaControllerCliente.validaCPF(cpf,"Erro ao recuperar debito: cpf invalido.");
     }
@@ -237,6 +239,7 @@ public class ValidaControllerFornecedor {
      * @param fornecedor nome do fornecedor.
      */
     public static void validaEntradasExibeContas(String cpf, String fornecedor) {
+        validadorAuxiliar(cpf, "Erro ao exibir conta do cliente: cpf nao pode ser vazio ou nulo.");
         validadorAuxiliar(fornecedor, "Erro ao exibir conta do cliente: fornecedor nao pode ser vazio ou nulo.");
         ValidaControllerCliente.validaCPF(cpf, "Erro ao exibir conta do cliente: cpf invalido.");
     }

@@ -199,6 +199,9 @@ public class Fornecedor implements Comparable<Fornecedor>{
      * @param descricao descrição do produto que terá o preço alterado.
      */
     public void editaProduto(double novoPreco, String nomeProduto, String descricao) {
+        if (!this.mapaProdutos.containsKey(nomeProduto + " - " + descricao)) {
+            throw new NullPointerException("Erro na edicao de produto: produto nao existe.");
+        }
         this.mapaProdutos.get(nomeProduto + " - " + descricao).setPreco(novoPreco);
     }
 

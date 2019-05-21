@@ -131,6 +131,9 @@ public class ControllerClientes {
 
         } else if ("localizacao".equals(atributo.toLowerCase())) {
             this.clientes.get(cpf).setLocalizacao(novoValor);
+
+        } else if ("cpf".equals(atributo.toLowerCase())){
+            throw new IllegalArgumentException("Erro na edicao do cliente: cpf nao pode ser editado.");
         } else {
             throw new IllegalArgumentException("Erro na edicao do cliente: atributo nao existe.");
         }
@@ -150,8 +153,10 @@ public class ControllerClientes {
         if (this.clientes.containsKey(cpf)) {
             clientes.remove(cpf, clientes.get((cpf)));
         } else {
-            throw new NullPointerException("KEY INEXISTENTE");
+            throw new NullPointerException("Erro na remocao do cliente: cliente nao existe.");
         }
+
+
     }
 
     /**

@@ -34,6 +34,7 @@ public class ValidaControllerCliente {
             throw new IllegalArgumentException(mensagem);
         }
 
+
     }
     /**
      * Método que serve para validas as entradas do método "cadastraCliente".
@@ -44,6 +45,7 @@ public class ValidaControllerCliente {
      * @param local local de trabalho do cliente.
      */
     public static void validaEntradasCadastraCliente(String cpf, String nome, String email, String local) {
+        validadorAuxiliar(cpf, "Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo.");
         validaCPF(cpf, "Erro no cadastro do cliente: cpf invalido.");
         validadorAuxiliar(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
         validadorAuxiliar(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
@@ -56,6 +58,7 @@ public class ValidaControllerCliente {
      * @param cpf cpf do cliente.
      */
     public static void validaEntradasDadosCliente(String cpf) {
+        validadorAuxiliar(cpf, "Erro na exibicao do cliente: cpf nao pode ser vazio ou nulo.");
         validaCPF(cpf,"Erro na exibicao do cliente: cpf invalido.");
     }
 
@@ -67,6 +70,7 @@ public class ValidaControllerCliente {
      * @param novoValor valor que será atribuido ao atributo.
      */
     public static void validaEntradasEditaCliente(String cpf, String atributo, String novoValor) {
+        validadorAuxiliar(cpf, "Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.");
         validaCPF(cpf, "Erro na edicao do cliente: cpf invalido.");
         validadorAuxiliar(atributo, "Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
         validadorAuxiliar(novoValor, "Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
@@ -79,7 +83,7 @@ public class ValidaControllerCliente {
      * @param cpf nome do cliente.
      */
     public static void validaEntradasRemoveCliente(String cpf) {
-        validaCPF(cpf, "Erro na remocao do cliente: cpf invalido.");
+        validadorAuxiliar(cpf, "Erro na remocao do cliente: cpf nao pode ser vazio ou nulo");
     }
 
     /**
@@ -88,6 +92,13 @@ public class ValidaControllerCliente {
      * @param cpf cpf do cliente.
      */
     public static void validaEntradaExibeContasCliente(String cpf) {
+        validadorAuxiliar(cpf, "Erro ao exibir contas do cliente: cpf nao pode ser vazio ou nulo.");
         ValidaControllerCliente.validaCPF(cpf, "Erro ao exibir contas do cliente: cpf invalido.");
+    }
+
+    public static void validaEntradasRealizaPagamento(String cpf, String fornecedor) {
+        validadorAuxiliar(cpf, "Erro no pagamento de conta: cpf nao pode ser vazio ou nulo.");
+        validaCPF(cpf, "Erro no pagamento de conta: cpf invalido.");
+        validadorAuxiliar(fornecedor, "Erro no pagamento de conta: fornecedor nao pode ser vazio ou nulo.");
     }
 }

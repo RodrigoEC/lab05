@@ -368,4 +368,22 @@ public class ControllerGeral {
 
         return representaContas;
     }
+
+    public void realizaPagamento(String cpf, String fornecedor) {
+        ValidaControllerCliente.validaEntradasRealizaPagamento(cpf, fornecedor);
+
+        if (!this.controlaClientes.containsClient(cpf)) {
+            throw new NullPointerException("Erro no pagamento de conta: cliente nao existe.");
+        }
+
+        if (this.controlaFornecedores.containsFornecedor(fornecedor)) {
+            throw new NullPointerException("Erro no pagamento de conta: fornecedor nao existe.");
+        }
+
+        if (!this.contas.containsKey(cpf + " - " + fornecedor)) {
+            throw new NullPointerException("Erro no pagamento de conta: nao ha debito do cliente associado a este fornecedor.");
+        }
+
+        this.contas.remove(cpf + " - " + fornecedor);
+    }
 }

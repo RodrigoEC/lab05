@@ -23,7 +23,7 @@ public class Facade {
     public static void main(String[] args) {
         args = new String[] {"saga.Facade", "acceptance_test/use_case_1.txt", "acceptance_test/use_case_2.txt",
                 "acceptance_test/use_case_3.txt", "acceptance_test/use_case_4.txt", "acceptance_test/use_case_5.txt",
-                "acceptance_test/use_case_6.txt"};
+                "acceptance_test/use_case_6.txt", "acceptance_test/use_case_7.txt", "acceptance_test/use_case_8.txt"};
         EasyAccept.main(args);
     }
 
@@ -297,4 +297,10 @@ public class Facade {
     public String exibeContasClientes(String cpf) {
         return this.controllerGeral.exibeContasClientes(cpf);
     }
+
+    public void realizaPagamento(String cpf, String fornecedor) {
+        this.controllerGeral.realizaPagamento(cpf, fornecedor);
+
+    }
+
 }

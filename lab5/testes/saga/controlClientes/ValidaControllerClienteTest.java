@@ -2,16 +2,17 @@ package saga.controlClientes;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import saga.ValidaEntradasDeMetodos;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ValidaControllerClienteTest {
 
-    private ValidaControllerCliente validador;
+    private ValidaEntradasDeMetodos validador;
 
     @BeforeEach
     void validadorPadrao() {
-        validador = new ValidaControllerCliente();
+        validador = new ValidaEntradasDeMetodos();
         validador.validaEntradasCadastraCliente("07345161420", "rodrigo", "rodrigoeloy99@hotmail.com", "lcc2");
 
     }
@@ -202,7 +203,7 @@ class ValidaControllerClienteTest {
     @Test
     void testValidaEntradaNulaExibeContasCliente() {
         try {
-            ValidaControllerCliente.validaEntradaExibeContasCliente(null);
+            validador.validaEntradaExibeContasCliente(null);
             fail("era pra dar ruim");
         } catch (NullPointerException npe) {
             npe.printStackTrace();
@@ -212,7 +213,7 @@ class ValidaControllerClienteTest {
     @Test
     void testValidaEntradaInvalidaExibeContasCliente() {
         try {
-            ValidaControllerCliente.validaEntradaExibeContasCliente("  ");
+            validador.validaEntradaExibeContasCliente("  ");
             fail("era pra dar ruim");
         } catch (IllegalArgumentException npe) {
             npe.printStackTrace();

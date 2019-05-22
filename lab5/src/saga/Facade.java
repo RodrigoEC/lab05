@@ -300,7 +300,14 @@ public class Facade {
 
     public void realizaPagamento(String cpf, String fornecedor) {
         this.controllerGeral.realizaPagamento(cpf, fornecedor);
+    }
 
+    public void ordenaPor(String criterio) {
+        this.controllerGeral.ordenaPor(criterio);
+    }
+
+    public String listarCompras() {
+        return this.controllerGeral.listarCompras();
     }
 
 }

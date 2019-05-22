@@ -46,7 +46,7 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>
     </display>
   </class>
-  <class id="6" language="java" name="saga.controlFornecedores.ValidaControllerFornecedor" project="lab5"
+  <class id="6" language="java" name="saga.ValidaEntradasDeMetodos" project="lab5"
     file="/lab5/src/saga/controlFornecedores/ValidaControllerFornecedor.java" binary="false" corner="BOTTOM_RIGHT">
     <position height="-1" width="-1" x="133" y="1151"/>
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true"

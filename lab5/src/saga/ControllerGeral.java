@@ -2,9 +2,7 @@ package saga;
 
 import saga.contasControl.Conta;
 import saga.controlClientes.ControllerClientes;
-import saga.controlClientes.ValidaControllerCliente;
 import saga.controlFornecedores.ControllerFornecedores;
-import saga.controlFornecedores.ValidaControllerFornecedor;
 
 import java.util.*;
 
@@ -16,6 +14,8 @@ import java.util.*;
 public class ControllerGeral {
 
     private Map<String, Conta> contas;
+
+    private String tipoOrdenação;
     /**
      * Controller da classe Cliente.
      */
@@ -270,7 +270,7 @@ public class ControllerGeral {
      * @param descProd descrição do produto.
      */
     public void adicionaCompra(String cpf, String fornecedor, String data, String nomeProd, String descProd) {
-        ValidaControllerFornecedor.validaEntradasAddCompra(cpf, fornecedor, data, nomeProd, descProd);
+        ValidaEntradasDeMetodos.validaEntradasAddCompra(cpf, fornecedor, data, nomeProd, descProd);
 
         double precoCompra  = this.controlaFornecedores.getValor(fornecedor, nomeProd, descProd);
         String nomeCliente = this.controlaClientes.getNomeCliente(cpf);
@@ -294,7 +294,7 @@ public class ControllerGeral {
      * @return debito de um cliente com um determinado fornecedor.
      */
     public double getDebito(String cpf, String fornecedor) {
-        ValidaControllerFornecedor.validaEntradasGetDebito(cpf, fornecedor);
+        ValidaEntradasDeMetodos.validaEntradasGetDebito(cpf, fornecedor);
 
         if (!this.controlaClientes.containsClient(cpf)) {
             throw new NullPointerException("Erro ao recuperar debito: cliente nao existe.");
@@ -318,7 +318,7 @@ public class ControllerGeral {
      * @return representação textual de um cliente em determinado fornecedor.
      */
     public String exibeContas(String cpf, String fornecedor) {
-        ValidaControllerFornecedor.validaEntradasExibeContas(cpf, fornecedor);
+        ValidaEntradasDeMetodos.validaEntradasExibeContas(cpf, fornecedor);
 
         if (!this.controlaClientes.containsClient(cpf)) {
             throw new NullPointerException("Erro ao exibir conta do cliente: cliente nao existe.");
@@ -342,7 +342,7 @@ public class ControllerGeral {
      * @return a representação textual das contas de determinado cliente.
      */
     public String exibeContasClientes(String cpf) {
-        ValidaControllerCliente.validaEntradaExibeContasCliente(cpf);
+        ValidaEntradasDeMetodos.validaEntradaExibeContasCliente(cpf);
 
         if (!this.controlaClientes.containsClient(cpf)) {
             throw new NullPointerException("Erro ao exibir contas do cliente: cliente nao existe.");
@@ -370,7 +370,7 @@ public class ControllerGeral {
     }
 
     public void realizaPagamento(String cpf, String fornecedor) {
-        ValidaControllerCliente.validaEntradasRealizaPagamento(cpf, fornecedor);
+        ValidaEntradasDeMetodos.validaEntradasRealizaPagamento(cpf, fornecedor);
 
         if (!this.controlaClientes.containsClient(cpf)) {
             throw new NullPointerException("Erro no pagamento de conta: cliente nao existe.");
@@ -385,5 +385,23 @@ public class ControllerGeral {
         }
 
         this.contas.remove(cpf + " - " + fornecedor);
+    }
+
+    public void ordenaPor(String criterio) {
+
+        if ("cliente".equals(criterio.toLowerCase())) {
+            this.tipoOrdenação = "Cliente";
+        } else if ("fornecedor".equals(criterio.toLowerCase())) {
+            this.tipoOrdenação = "Fornecedor";
+        } else if ("data".equals(criterio.toLowerCase())) {
+            this.tipoOrdenação = "Data";
+        }
+    }
+
+    public String listarCompras() {
+        if (tipoOrdenação == null) {
+            throw new NullPointerException("Erro na listagem de compras: criterio ainda nao definido pelo sistema.");
+        }
+        
     }
 }

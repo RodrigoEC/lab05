@@ -1,13 +1,11 @@
-package saga.controlFornecedores;
-
-import saga.controlClientes.ValidaControllerCliente;
+package saga;
 
 /**
  * Classe que eh um validador dos parâmetros que são passados em todos os métodos da classe "ControllerFornecedor".
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
-public class ValidaControllerFornecedor {
+public class ValidaEntradasDeMetodos {
 
 
     /**
@@ -21,6 +19,18 @@ public class ValidaControllerFornecedor {
             throw new NullPointerException(mensagem);
         }
         if ("".equals(parametro.trim())) {
+            throw new IllegalArgumentException(mensagem);
+        }
+    }
+
+    /**
+     * Método responsável por validar um CPF baseado no tamanho do CPF.
+     *
+     * @param cpf cpf que será validado
+     * @param mensagem mensagem que será mostrado quando a exceção for lançada.
+     */
+    public static void validaCPF(String cpf, String mensagem) {
+        if (cpf.length() != 11) {
             throw new IllegalArgumentException(mensagem);
         }
     }
@@ -213,7 +223,7 @@ public class ValidaControllerFornecedor {
      */
     public static void validaEntradasAddCompra(String cpf, String fornecedor, String data, String nomeProd, String descProd) {
         validadorAuxiliar(cpf, "Erro ao cadastrar compra: cpf nao pode ser vazio ou nulo.");
-        ValidaControllerCliente.validaCPF(cpf, "Erro ao cadastrar compra: cpf invalido.");
+        validaCPF(cpf, "Erro ao cadastrar compra: cpf invalido.");
         validadorAuxiliar(fornecedor, "Erro ao cadastrar compra: fornecedor nao pode ser vazio ou nulo.");
         validadorAuxiliar(nomeProd, "Erro ao cadastrar compra: nome do produto nao pode ser vazio ou nulo.");
         validadorAuxiliar(descProd, "Erro ao cadastrar compra: descricao do produto nao pode ser vazia ou nula.");
@@ -229,7 +239,7 @@ public class ValidaControllerFornecedor {
     public static void validaEntradasGetDebito(String cpf, String fornecedor) {
         validadorAuxiliar(cpf, "Erro ao recuperar debito: cpf nao pode ser vazio ou nulo.");
         validadorAuxiliar(fornecedor, "Erro ao recuperar debito: fornecedor nao pode ser vazio ou nulo.");
-        ValidaControllerCliente.validaCPF(cpf,"Erro ao recuperar debito: cpf invalido.");
+        validaCPF(cpf,"Erro ao recuperar debito: cpf invalido.");
     }
 
     /**
@@ -241,6 +251,83 @@ public class ValidaControllerFornecedor {
     public static void validaEntradasExibeContas(String cpf, String fornecedor) {
         validadorAuxiliar(cpf, "Erro ao exibir conta do cliente: cpf nao pode ser vazio ou nulo.");
         validadorAuxiliar(fornecedor, "Erro ao exibir conta do cliente: fornecedor nao pode ser vazio ou nulo.");
-        ValidaControllerCliente.validaCPF(cpf, "Erro ao exibir conta do cliente: cpf invalido.");
+        validaCPF(cpf, "Erro ao exibir conta do cliente: cpf invalido.");
+    }
+
+
+    // Parte relacionada a Clientes
+
+    /**
+     * Método que serve para validas as entradas do método "cadastraCliente".
+     *
+     * @param cpf cpf do cliente.
+     * @param nome nome do cliente.
+     * @param email email do cliente.
+     * @param local local de trabalho do cliente.
+     */
+    public static void validaEntradasCadastraCliente(String cpf, String nome, String email, String local) {
+        validadorAuxiliar(cpf, "Erro no cadastro do cliente: cpf nao pode ser vazio ou nulo.");
+        validaCPF(cpf, "Erro no cadastro do cliente: cpf invalido.");
+        validadorAuxiliar(nome, "Erro no cadastro do cliente: nome nao pode ser vazio ou nulo.");
+        validadorAuxiliar(email, "Erro no cadastro do cliente: email nao pode ser vazio ou nulo.");
+        validadorAuxiliar(local, "Erro no cadastro do cliente: localizacao nao pode ser vazia ou nula.");
+    }
+
+    /**
+     * Método responsável por validar o parâmetro do método "dadosCliente".
+     *
+     * @param cpf cpf do cliente.
+     */
+    public static void validaEntradasDadosCliente(String cpf) {
+        validadorAuxiliar(cpf, "Erro na exibicao do cliente: cpf nao pode ser vazio ou nulo.");
+        validaCPF(cpf,"Erro na exibicao do cliente: cpf invalido.");
+    }
+
+    /**
+     * Método responsável por validar os parâmetros do método "editaCliente".
+     *
+     * @param cpf nome do cliente.
+     * @param atributo atributo que será editado.
+     * @param novoValor valor que será atribuido ao atributo.
+     */
+    public static void validaEntradasEditaCliente(String cpf, String atributo, String novoValor) {
+        validadorAuxiliar(cpf, "Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.");
+        validaCPF(cpf, "Erro na edicao do cliente: cpf invalido.");
+        validadorAuxiliar(atributo, "Erro na edicao do cliente: atributo nao pode ser vazio ou nulo.");
+        validadorAuxiliar(novoValor, "Erro na edicao do cliente: novo valor nao pode ser vazio ou nulo.");
+
+    }
+
+    /**
+     * Método responsável por validar o parâmetro do método "removeCliente".
+     *
+     * @param cpf nome do cliente.
+     */
+    public static void validaEntradasRemoveCliente(String cpf) {
+        validadorAuxiliar(cpf, "Erro na remocao do cliente: cpf nao pode ser vazio ou nulo");
+    }
+
+    /**
+     * Método responsável por validar o parâmetro do método "exibeContasCliente".
+     *
+     * @param cpf cpf do cliente.
+     */
+    public static void validaEntradaExibeContasCliente(String cpf) {
+        validadorAuxiliar(cpf, "Erro ao exibir contas do cliente: cpf nao pode ser vazio ou nulo.");
+        validaCPF(cpf, "Erro ao exibir contas do cliente: cpf invalido.");
+    }
+
+    public static void validaEntradasRealizaPagamento(String cpf, String fornecedor) {
+        validadorAuxiliar(cpf, "Erro no pagamento de conta: cpf nao pode ser vazio ou nulo.");
+        validaCPF(cpf, "Erro no pagamento de conta: cpf invalido.");
+        validadorAuxiliar(fornecedor, "Erro no pagamento de conta: fornecedor nao pode ser vazio ou nulo.");
+    }
+
+    public static void validaEntradaOrdenaPor(String criterio) {
+        validadorAuxiliar(criterio, "Erro na listagem de compras: criterio nao pode ser vazio ou nulo.");
+
+        if (!"cliente".equals(criterio.toLowerCase()) && !"data".equals(criterio.toLowerCase()) && !"fornecedor".equals(criterio.toLowerCase())) {
+            throw new IllegalArgumentException("Erro na listagem de compras: criterio nao oferecido pelo sistema.");
+        }
     }
 }

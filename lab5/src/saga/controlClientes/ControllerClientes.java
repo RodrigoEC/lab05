@@ -1,5 +1,7 @@
 package saga.controlClientes;
 
+import saga.ValidaEntradasDeMetodos;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -56,7 +58,7 @@ public class ControllerClientes {
      * @return o cpf do cliente.
      */
     public String cadastraCliente(String cpf, String nome, String email, String local) {
-        ValidaControllerCliente.validaEntradasCadastraCliente(cpf, nome, email, local);
+        ValidaEntradasDeMetodos.validaEntradasCadastraCliente(cpf, nome, email, local);
 
         if (!this.clientes.containsKey(cpf)) {
             Cliente cliente = new Cliente(cpf, nome, email, local);
@@ -75,7 +77,7 @@ public class ControllerClientes {
      * @return representação textual do cliente.
      */
     public String dadosCliente(String cpf) {
-        ValidaControllerCliente.validaEntradasDadosCliente(cpf);
+        ValidaEntradasDeMetodos.validaEntradasDadosCliente(cpf);
 
         if (!this.clientes.containsKey(cpf)) {
             throw new NullPointerException("Erro na exibicao do cliente: cliente nao existe.");
@@ -117,7 +119,7 @@ public class ControllerClientes {
      * @param novoValor valor que será colocado no atributo
      */
     public void editaCliente(String cpf, String atributo, String novoValor) {
-        ValidaControllerCliente.validaEntradasEditaCliente(cpf, atributo, novoValor);
+        ValidaEntradasDeMetodos.validaEntradasEditaCliente(cpf, atributo, novoValor);
 
         if (!this.clientes.containsKey(cpf)) {
             throw new NullPointerException("Erro na edicao do cliente: cliente nao existe.");
@@ -148,7 +150,7 @@ public class ControllerClientes {
      * @param cpf cpf do cliente que será removido.
      */
     public void removeCliente(String cpf) {
-        ValidaControllerCliente.validaEntradasRemoveCliente(cpf);
+        ValidaEntradasDeMetodos.validaEntradasRemoveCliente(cpf);
 
         if (this.clientes.containsKey(cpf)) {
             clientes.remove(cpf, clientes.get((cpf)));

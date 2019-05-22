@@ -8,7 +8,7 @@ import java.util.*;
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
-public class Conta implements Comparable<Conta> {
+public class Conta implements Comparator<Conta> {
     /**
      * Nome do cliente.
      */
@@ -127,7 +127,7 @@ public class Conta implements Comparable<Conta> {
      * @return um inteiro que representa a comparação dos dois objetos.
      */
     @Override
-    public int compareTo(Conta conta) {
-        return this.exibeConta().compareTo(conta.exibeConta());
+    public int compare(Conta conta, Conta t1) {
+        return conta.toString().compareTo(t1.toString());
     }
 }

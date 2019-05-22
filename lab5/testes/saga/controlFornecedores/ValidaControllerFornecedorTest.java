@@ -2,17 +2,17 @@ package saga.controlFornecedores;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import saga.controlClientes.ValidaControllerCliente;
+import saga.ValidaEntradasDeMetodos;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ValidaControllerFornecedorTest {
 
-    private ValidaControllerFornecedor validador;
+    private ValidaEntradasDeMetodos validador;
 
     @BeforeEach
     void validadorPadrao() {
-        validador = new ValidaControllerFornecedor();
+        validador = new ValidaEntradasDeMetodos();
     }
 
     @Test

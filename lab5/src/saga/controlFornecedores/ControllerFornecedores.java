@@ -1,6 +1,6 @@
 package saga.controlFornecedores;
 
-import saga.controlClientes.Cliente;
+import saga.ValidaEntradasDeMetodos;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -58,7 +58,7 @@ public class ControllerFornecedores {
      * @param telefone Telefone do fornecedor.
  */
     public String cadastraFornecedor(String fornecedor, String email, String telefone) {
-        ValidaControllerFornecedor.validaEntradasCadastraFornecedor(fornecedor, email, telefone);
+        ValidaEntradasDeMetodos.validaEntradasCadastraFornecedor(fornecedor, email, telefone);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             Fornecedor novoFornecedor = new Fornecedor(fornecedor, email, telefone);
@@ -118,7 +118,7 @@ public class ControllerFornecedores {
      * @param novoValor valor que será colocado no atributo
      */
     public void editaFornecedor(String nome, String atributo, String novoValor) {
-        ValidaControllerFornecedor.validaEntradasEditaFornecedor(nome, atributo, novoValor);
+        ValidaEntradasDeMetodos.validaEntradasEditaFornecedor(nome, atributo, novoValor);
 
         if (!this.mapaFornecedores.containsKey(nome)) {
             throw new NullPointerException("Erro na edicao do fornecedor: fornecedor nao existe.");
@@ -145,7 +145,7 @@ public class ControllerFornecedores {
      * @param fornecedor Nome do fornecedor.
      */
     public void removeFornecedor(String fornecedor) {
-        ValidaControllerFornecedor.validaEntradaRemoveFornecedor(fornecedor);
+        ValidaEntradasDeMetodos.validaEntradaRemoveFornecedor(fornecedor);
 
         if (this.mapaFornecedores.containsKey(fornecedor)) {
             this.mapaFornecedores.remove(fornecedor);
@@ -167,7 +167,7 @@ public class ControllerFornecedores {
      * @param descricao descrição do produto.
      */
     public void addProduto(String fornecedor, String nomeProduto, String descricao, double preco) {
-        ValidaControllerFornecedor.validaEntradasAddProduto(fornecedor, nomeProduto, descricao, preco);
+        ValidaEntradasDeMetodos.validaEntradasAddProduto(fornecedor, nomeProduto, descricao, preco);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro no cadastro de produto: fornecedor nao existe.");
@@ -188,7 +188,7 @@ public class ControllerFornecedores {
      * @return Os dados do produto de um fornecedor específico.
      */
     public String exibeProduto(String fornecedor, String nomeProduto, String descricao) {
-        ValidaControllerFornecedor.validaEntradasExibeProduto(fornecedor, nomeProduto, descricao);
+        ValidaEntradasDeMetodos.validaEntradasExibeProduto(fornecedor, nomeProduto, descricao);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro na exibicao de produto: fornecedor nao existe.");
@@ -204,7 +204,7 @@ public class ControllerFornecedores {
      * @return A representação textual de todos os produtos.
      */
     public String dadosTodosProdutosFornecedor(String fornecedor) {
-        ValidaControllerFornecedor.validaEntradasDadosTodosProdutosFornecedor(fornecedor);
+        ValidaEntradasDeMetodos.validaEntradasDadosTodosProdutosFornecedor(fornecedor);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro na exibicao de produto: fornecedor nao existe.");
@@ -223,7 +223,7 @@ public class ControllerFornecedores {
      * @param descricao descrição do produto que terá o preço alterado.
      */
     public void editaProduto(String fornecedor, String nomeProduto, String descricao, double novoPreco) {
-        ValidaControllerFornecedor.validaEntradasEditaProduto(fornecedor, nomeProduto, descricao, novoPreco);
+        ValidaEntradasDeMetodos.validaEntradasEditaProduto(fornecedor, nomeProduto, descricao, novoPreco);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro na edicao de produto: fornecedor nao existe.");
@@ -241,7 +241,7 @@ public class ControllerFornecedores {
      * @param descricao Descrição do produto.
      */
     public void removeProduto(String fornecedor, String nomeProduto, String descricao) {
-        ValidaControllerFornecedor.validaEntradasRemoveProduto(fornecedor, nomeProduto, descricao);
+        ValidaEntradasDeMetodos.validaEntradasRemoveProduto(fornecedor, nomeProduto, descricao);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro na remocao de produto: fornecedor nao existe.");
@@ -286,7 +286,7 @@ public class ControllerFornecedores {
      * @param produtos string com os produtos.
      */
     public void addCombo(String fornecedor, String nomeCombo, String descricaoCombo, double fator, String produtos) {
-        ValidaControllerFornecedor.validaEntradasAddCombo(fornecedor, nomeCombo, descricaoCombo, fator, produtos);
+        ValidaEntradasDeMetodos.validaEntradasAddCombo(fornecedor, nomeCombo, descricaoCombo, fator, produtos);
 
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
             throw new NullPointerException("Erro no cadastro de combo: fornecedor nao existe.");
@@ -305,7 +305,7 @@ public class ControllerFornecedores {
      * @param fator novo fator.
      */
     public void editaCombo(String nome, String descricao, String nomeFornecedor, double fator) {
-        ValidaControllerFornecedor.validaEntradasEditaCombo(nome, descricao, nomeFornecedor, fator);
+        ValidaEntradasDeMetodos.validaEntradasEditaCombo(nome, descricao, nomeFornecedor, fator);
 
         if (!this.mapaFornecedores.containsKey(nomeFornecedor)) {
             throw new NullPointerException("Erro na edicao de combo: fornecedor nao existe.");

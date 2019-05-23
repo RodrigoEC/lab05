@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6103720-77bc-48cd-98ff-16468a689d4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/saga/comparators/FornecedorComparator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/saga/comparators/NomeComparator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/META-INF/lab05.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/ControllerGeral.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/ControllerGeral.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/Facade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/Facade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/lab05/saga/contasControl/Conta.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/lab05/saga/contasControl/Conta.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/lab05/META-INF/lab05.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/acceptance_test/use_case_8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/acceptance_test/use_case_8.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/saga/ControllerGeral.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/ControllerGeral.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/saga/contasControl/Compra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/contasControl/Compra.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/saga/contasControl/Conta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/saga/contasControl/Conta.java" afterDir="false" />
@@ -50,32 +43,48 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-120002446">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.21" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="382" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="382" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="1" />
+          <entry key="java" value="3" />
+          <entry key="txt" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="1" />
+          <entry key="JAVA" value="3" />
+          <entry key="PLAIN_TEXT" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/saga/Facade.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="308" column="4" lean-forward="true" selection-start-line="308" selection-start-column="4" selection-end-line="310" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/saga/ValidaEntradasDeMetodos.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-192">
-              <caret line="268" column="25" lean-forward="true" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/ProdutoInterface.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+            <state relative-caret-position="-3222">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -83,26 +92,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/saga/ControllerGeral.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="434" column="139" selection-start-line="434" selection-start-column="139" selection-end-line="434" selection-end-column="139" />
+            <state relative-caret-position="168">
+              <caret line="415" column="8" selection-start-line="415" selection-start-column="8" selection-end-line="415" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#14345#14346#0" expanded="true" />
-                <element signature="e#14429#14430#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/saga/comparators/FornecedorComparator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#186#187#0" expanded="true" />
-                <element signature="e#210#211#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,12 +104,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/saga/comparators/NomeComparator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+            <state>
+              <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#178#179#0" expanded="true" />
-                <element signature="e#202#203#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-662">
-              <caret line="87" column="6" lean-forward="true" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
+            <state relative-caret-position="15">
+              <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#692#693#0" expanded="true" />
@@ -141,8 +132,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/saga/contasControl/Conta.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="723">
-              <caret line="141" column="47" lean-forward="true" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
+            <state relative-caret-position="-12">
+              <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
               <folding>
                 <element signature="e#2153#2154#0" expanded="true" />
                 <element signature="e#2187#2188#0" expanded="true" />
@@ -150,20 +141,27 @@
                 <element signature="e#2265#2266#0" expanded="true" />
                 <element signature="e#2310#2311#0" expanded="true" />
                 <element signature="e#2340#2341#0" expanded="true" />
-                <element signature="e#3982#3983#0" expanded="true" />
+                <element signature="e#3994#3995#0" expanded="true" />
+                <element signature="e#4058#4059#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/Produto.java">
+        <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_8.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="74">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_6.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="614">
+              <caret line="63" column="106" selection-start-line="63" selection-start-column="106" selection-end-line="63" selection-end-column="132" />
             </state>
           </provider>
         </entry>
@@ -171,8 +169,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/saga/contasControl/Compra.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="678">
-              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="28" />
+            <state relative-caret-position="1023">
+              <caret line="85" selection-start-line="9" selection-end-line="85" />
               <folding>
                 <element signature="e#1182#1183#0" expanded="true" />
                 <element signature="e#1210#1211#0" expanded="true" />
@@ -180,6 +178,8 @@
                 <element signature="e#1274#1275#0" expanded="true" />
                 <element signature="e#1313#1314#0" expanded="true" />
                 <element signature="e#1348#1349#0" expanded="true" />
+                <element signature="e#1379#1380#0" expanded="true" />
+                <element signature="e#1406#1407#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -250,16 +250,16 @@
         <option value="$PROJECT_DIR$/testes/saga/controlClientes/ValidaControllerClienteTest.java" />
         <option value="$PROJECT_DIR$/src/TipoOrdenacao.java" />
         <option value="$PROJECT_DIR$/src/saga/TipoOrdenacao.java" />
-        <option value="$PROJECT_DIR$/acceptance_test/use_case_8.txt" />
         <option value="$PROJECT_DIR$/src/saga/ValidaEntradasDeMetodos.java" />
         <option value="$PROJECT_DIR$/src/saga/Facade.java" />
-        <option value="$PROJECT_DIR$/src/saga/contasControl/Conta.java" />
         <option value="$PROJECT_DIR$/src/saga/contasControl/NomeComparator.java" />
         <option value="$PROJECT_DIR$/src/saga/comparators/NomeComparator.java" />
         <option value="$PROJECT_DIR$/src/saga/comparators/FornecedorComparator.java" />
         <option value="$PROJECT_DIR$/src/saga/contasControl/FornecedorComparator.java" />
         <option value="$PROJECT_DIR$/src/saga/controlFornecedores/Produto.java" />
         <option value="$PROJECT_DIR$/src/saga/contasControl/Compra.java" />
+        <option value="$PROJECT_DIR$/src/saga/contasControl/Conta.java" />
+        <option value="$PROJECT_DIR$/acceptance_test/use_case_8.txt" />
         <option value="$PROJECT_DIR$/src/saga/ControllerGeral.java" />
       </list>
     </option>
@@ -283,8 +283,6 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -322,29 +320,12 @@
               <item name="saga" type="462c0819:PsiDirectoryNode" />
               <item name="contasControl" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="saga" type="462c0819:PsiDirectoryNode" />
-              <item name="controlClientes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="saga" type="462c0819:PsiDirectoryNode" />
-              <item name="controlFornecedores" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="lab5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="lab5" type="462c0819:PsiDirectoryNode" />
-              <item name="testes" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -353,12 +334,12 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558622713918" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558636681563" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../lab02" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -568,31 +549,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="UI Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.16823465" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.16989486" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32899022" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5002767" side_tool="true" weight="0.9491892" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32736155" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.32899022" />
-      <window_info anchor="bottom" id="Run" order="5" weight="0.9491892" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.39576548" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.39576548" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.4997233" weight="0.9491892" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3264865" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32899022" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="3" weight="0.32982844" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
@@ -600,6 +580,9 @@
       <window_info anchor="right" id="Maven" order="8" weight="0.32954547" />
       <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.32954547" />
     </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="&quot;adicionei umas 300 coisas&quot;" />
@@ -616,7 +599,6 @@
     </SUITE>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AvaliadorFornecedor.java" />
     <entry file="file://$PROJECT_DIR$/src/saga/ValidaFornecedor.java" />
     <entry file="file://$PROJECT_DIR$/src/saga/AvaliadorCliente.java" />
     <entry file="file://$PROJECT_DIR$/src/saga/AvaliadorFornecedor.java" />
@@ -656,21 +638,7 @@
     <entry file="file://$PROJECT_DIR$/src/saga/Conta.java" />
     <entry file="file://$PROJECT_DIR$/src/saga/Compra.java" />
     <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/ComboTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/Combo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testes/saga/controlFornecedores/SimplesTest.java" />
-    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_6.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testes/saga/controlClientes/ClienteTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
@@ -723,7 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_7.txt" />
     <entry file="file://$PROJECT_DIR$/src/saga/controlClientes/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1828">
@@ -795,8 +762,8 @@
     <entry file="file://$PROJECT_DIR$/src/saga/TipoOrdenacao.java" />
     <entry file="file://$PROJECT_DIR$/src/saga/ValidaEntradasDeMetodos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="268" column="25" lean-forward="true" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="29" />
+        <state relative-caret-position="4020">
+          <caret line="268" column="25" selection-start-line="268" selection-start-column="25" selection-end-line="268" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -807,48 +774,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_8.txt">
+    <entry file="file://$PROJECT_DIR$/src/saga/contasControl/Compra.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/saga/Facade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="308" column="4" lean-forward="true" selection-start-line="308" selection-start-column="4" selection-end-line="310" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/saga/comparators/NomeComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="1023">
+          <caret line="85" selection-start-line="9" selection-end-line="85" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#178#179#0" expanded="true" />
-            <element signature="e#202#203#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/saga/comparators/FornecedorComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#186#187#0" expanded="true" />
-            <element signature="e#210#211#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+            <element signature="e#1210#1211#0" expanded="true" />
+            <element signature="e#1244#1245#0" expanded="true" />
+            <element signature="e#1274#1275#0" expanded="true" />
+            <element signature="e#1313#1314#0" expanded="true" />
+            <element signature="e#1348#1349#0" expanded="true" />
+            <element signature="e#1379#1380#0" expanded="true" />
+            <element signature="e#1406#1407#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/ControllerFornecedores.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-662">
-          <caret line="87" column="6" lean-forward="true" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
+        <state relative-caret-position="15">
+          <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#692#693#0" expanded="true" />
@@ -859,10 +805,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/Produto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="30" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_6.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="63" column="106" selection-start-line="63" selection-start-column="106" selection-end-line="63" selection-end-column="132" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/Combo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_7.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/saga/Facade.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3222">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/easyaccept.jar!/easyaccept/EasyAccept.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/saga/contasControl/Conta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="723">
-          <caret line="141" column="47" lean-forward="true" selection-start-line="141" selection-start-column="47" selection-end-line="141" selection-end-column="47" />
+        <state relative-caret-position="-12">
+          <caret line="92" column="5" lean-forward="true" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
           <folding>
             <element signature="e#2153#2154#0" expanded="true" />
             <element signature="e#2187#2188#0" expanded="true" />
@@ -870,44 +857,46 @@
             <element signature="e#2265#2266#0" expanded="true" />
             <element signature="e#2310#2311#0" expanded="true" />
             <element signature="e#2340#2341#0" expanded="true" />
-            <element signature="e#3982#3983#0" expanded="true" />
+            <element signature="e#3994#3995#0" expanded="true" />
+            <element signature="e#4058#4059#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/saga/controlFornecedores/Produto.java">
+    <entry file="file://$PROJECT_DIR$/acceptance_test/use_case_8.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="74">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/saga/comparators/NomeComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/saga/contasControl/Compra.java">
+    <entry file="file://$PROJECT_DIR$/src/saga/comparators/FornecedorComparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="28" />
+        <state relative-caret-position="150">
+          <caret line="10" column="47" lean-forward="true" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
           <folding>
-            <element signature="e#1182#1183#0" expanded="true" />
-            <element signature="e#1210#1211#0" expanded="true" />
-            <element signature="e#1244#1245#0" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1313#1314#0" expanded="true" />
-            <element signature="e#1348#1349#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#300#301#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/saga/ControllerGeral.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="434" column="139" selection-start-line="434" selection-start-column="139" selection-end-line="434" selection-end-column="139" />
+        <state relative-caret-position="168">
+          <caret line="415" column="8" selection-start-line="415" selection-start-column="8" selection-end-line="415" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#14345#14346#0" expanded="true" />
-            <element signature="e#14429#14430#0" expanded="true" />
           </folding>
         </state>
       </provider>

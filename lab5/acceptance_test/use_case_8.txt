@@ -30,7 +30,7 @@ expectError "Erro na listagem de compras: criterio ainda nao definido pelo siste
 
 ## Listando compras ordenadas por cliente em ordem alfabética crescente. ##
 
-StackTrace ordenaPor criterio="Cliente"
+ordenaPor criterio="Cliente"
 
 expect "Amigao Fernandes, Marcos, Coxao de frango com cheddar, 08/11/2018 | \
 Ana Amari, Marcos, Coxao de frango com cheddar, 01/11/2016 | Ana Amari, Marcos, Refrigerante (lata), 01/11/2016 | \

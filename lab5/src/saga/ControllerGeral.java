@@ -413,33 +413,40 @@ public class ControllerGeral {
 
         ArrayList<Conta> listaDeContas = new ArrayList<>(contas.values());
 
-        listaDeContas = OrdenaLista(listaDeContas);
+        ordenaLista(listaDeContas);
+
 
         String stringSaida = "";
         boolean contador = true;
-        for (Conta conta :listaDeContas) {
-            if (contador) {
-                stringSaida += representaConta(conta);
-                contador = false;
-            } else {
-                stringSaida += " | " + conta.toString();
+        for (Conta conta : listaDeContas) {
+            ArrayList<String> listaRepresentacoes = representaConta(conta);
+            for (String representacao : listaRepresentacoes) {
+                if (contador) {
+                    stringSaida += representacao;
+                    contador = false;
+                } else {
+                    stringSaida += " | " + representacao;
+                }
             }
         }
-
-    return;
+        return stringSaida;
     }
 
-    private String[] representaConta(Conta conta) {
+    private ArrayList<String> representaConta(Conta conta) {
+        ArrayList<String> listaRepresentacoes = new ArrayList<>();
         if ("Cliente".equals(tipoOrdenação)) {
             for (Compra compra: conta.getCompras()) {
-                return String.format("%s, %s, %s, %s", conta.getNomeCliente(), conta.getNomeFornecedor(), compra.getDescrProduto(), compra.);
+                listaRepresentacoes.add(String.format("%s, %s, %s, %s", conta.getNomeCliente(), conta.getNomeFornecedor(), compra.getDescrProduto(), compra.getData()));
+            }
+        } else if ("Fornecedor".equals(tipoOrdenação)) {
+            for (Compra compra: conta.getCompras()) {
+                listaRepresentacoes.add(String.format("%s, %s, %s, %s", conta.getNomeFornecedor(), conta.getNomeCliente(), compra.getDescrProduto(), compra.getData()));
             }
         }
-            return String.format("%s, %s, %s, %s", conta.getNomeCliente(), conta.getNomeFornecedor(), );
-        }
+        return listaRepresentacoes;
     }
 
-    private ArrayList<Conta> OrdenaLista(ArrayList<Conta> listaDeContas) {
+    private ArrayList<Conta> ordenaLista(ArrayList<Conta> listaDeContas) {
 
         if ("Cliente".equals(tipoOrdenação)) {
             NomeComparator comparadorPorNome = new NomeComparator();
@@ -447,8 +454,10 @@ public class ControllerGeral {
 
         } else if ("Fornecedor".equals(tipoOrdenação)) {
             FornecedorComparator comparadorPorFornecedor = new FornecedorComparator();
-            Collections.sort(listaDeContas,comparadorPorFornecedor);
+            Collections.sort(listaDeContas, comparadorPorFornecedor);
         }
 
         return listaDeContas;
+    }
 }
+

@@ -59,6 +59,10 @@ public class Compra implements Comparable<Compra>{
         return descrProduto;
     }
 
+    public String getData() {
+        return data;
+    }
+
     /**
      * Método que eh a representação textual de uma compra.
      *

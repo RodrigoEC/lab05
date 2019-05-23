@@ -140,6 +140,6 @@ public class Conta implements Comparator<Conta> {
 
     @Override
     public int compare(Conta conta, Conta t1) {
-        return t1.toString().compareTo(conta.toString());
+        return t1.exibeConta().compareTo(conta.exibeConta());
     }
 }

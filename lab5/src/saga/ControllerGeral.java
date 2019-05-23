@@ -1,5 +1,8 @@
 package saga;
 
+import saga.comparators.FornecedorComparator;
+import saga.comparators.NomeComparator;
+import saga.contasControl.Compra;
 import saga.contasControl.Conta;
 import saga.controlClientes.ControllerClientes;
 import saga.controlFornecedores.ControllerFornecedores;
@@ -353,7 +356,12 @@ public class ControllerGeral {
 
         ArrayList<Conta> listaContas = new ArrayList<>(contas.values());
 
-        Collections.sort(listaContas);
+        Collections.sort(listaContas, new Comparator<Conta>() {
+            @Override
+            public int compare(Conta conta, Conta t1) {
+                return conta.exibeConta().compareTo(t1.exibeConta());
+            }
+        });
 
         int contadorContas = 0;
         for (Conta conta: listaContas) {
@@ -402,6 +410,45 @@ public class ControllerGeral {
         if (tipoOrdenação == null) {
             throw new NullPointerException("Erro na listagem de compras: criterio ainda nao definido pelo sistema.");
         }
-        
+
+        ArrayList<Conta> listaDeContas = new ArrayList<>(contas.values());
+
+        listaDeContas = OrdenaLista(listaDeContas);
+
+        String stringSaida = "";
+        boolean contador = true;
+        for (Conta conta :listaDeContas) {
+            if (contador) {
+                stringSaida += representaConta(conta);
+                contador = false;
+            } else {
+                stringSaida += " | " + conta.toString();
+            }
+        }
+
+    return;
     }
+
+    private String[] representaConta(Conta conta) {
+        if ("Cliente".equals(tipoOrdenação)) {
+            for (Compra compra: conta.getCompras()) {
+                return String.format("%s, %s, %s, %s", conta.getNomeCliente(), conta.getNomeFornecedor(), compra.getDescrProduto(), compra.);
+            }
+        }
+            return String.format("%s, %s, %s, %s", conta.getNomeCliente(), conta.getNomeFornecedor(), );
+        }
+    }
+
+    private ArrayList<Conta> OrdenaLista(ArrayList<Conta> listaDeContas) {
+
+        if ("Cliente".equals(tipoOrdenação)) {
+            NomeComparator comparadorPorNome = new NomeComparator();
+            Collections.sort(listaDeContas, comparadorPorNome);
+
+        } else if ("Fornecedor".equals(tipoOrdenação)) {
+            FornecedorComparator comparadorPorFornecedor = new FornecedorComparator();
+            Collections.sort(listaDeContas,comparadorPorFornecedor);
+        }
+
+        return listaDeContas;
 }

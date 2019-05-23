@@ -67,6 +67,17 @@ public class Conta implements Comparator<Conta> {
         return nomeCliente;
     }
 
+    public String getNomeFornecedor() {
+        return nomeFornecedor;
+    }
+
+    public ArrayList<Compra> getCompras() {
+        return compras;
+    }
+
+
+
+
     /**
      * Metodo que calculo o debito total de todas as compras da conta.
      *
@@ -126,8 +137,9 @@ public class Conta implements Comparator<Conta> {
      * @param conta objeto do tipo Conta.
      * @return um inteiro que representa a comparação dos dois objetos.
      */
+
     @Override
     public int compare(Conta conta, Conta t1) {
-        return conta.toString().compareTo(t1.toString());
+        return t1.toString().compareTo(conta.toString());
     }
 }

@@ -8,7 +8,7 @@ import java.util.*;
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
-public class Conta implements Comparator<Conta> {
+public class Conta implements Comparable<Conta> {
     /**
      * Nome do cliente.
      */
@@ -25,15 +25,15 @@ public class Conta implements Comparator<Conta> {
     private ArrayList<Compra> compras;
 
     /**
-     * Construtor responsável por construir uma conta baseada no nome do cliente, do fornecedor, no nome do produto, na
-     * sua descrição, da data da primeira compra e no preço da primeira compra;
+     * Construtor responsavel por construir uma conta baseada no nome do cliente, do fornecedor, no nome do produto, na
+     * sua descricao, da data da primeira compra e no preco da primeira compra;
      *
      * @param nomeCliente nome do cliente.
      * @param nomeFornecedor nome do fornecedor.
      * @param data data dda primeira compra;
      * @param nomeProd nome do produto que foi comprado.
-     * @param descProd descrição do produto.
-     * @param precoCompra preço da primeira compra;
+     * @param descProd descricao do produto.
+     * @param precoCompra preco da primeira compra;
      */
     public Conta(String nomeCliente, String nomeFornecedor, String data, String nomeProd, String descProd, double precoCompra) {
         this.nomeCliente = nomeCliente;
@@ -45,12 +45,12 @@ public class Conta implements Comparator<Conta> {
     }
 
     /**
-     * Método responsável por criar e cadastras uma compra.
+     * Metodo responsavel por criar e cadastras uma compra.
      *
      * @param data data da compra;
      * @param nomeProd nome do produto;
-     * @param descrProd descrição do produto;
-     * @param precoCompra preço da compra.
+     * @param descrProd descricao do produto;
+     * @param precoCompra preco da compra.
      */
     public void addCompra(String data, String nomeProd, String descrProd, double precoCompra) {
         Compra novaCompra = new Compra(data, nomeProd, descrProd, precoCompra);
@@ -59,7 +59,7 @@ public class Conta implements Comparator<Conta> {
 
 
     /**
-     * Método que deixa disponível o atributo "NomeCLiente" que representa o nome do cliente.
+     * Metodo que deixa disponvel o atributo "NomeCLiente" que representa o nome do cliente.
      *
      * @return atributo "nomeCliente".
      */
@@ -67,10 +67,20 @@ public class Conta implements Comparator<Conta> {
         return nomeCliente;
     }
 
+    /**
+     * Metodo que deixa disponvel o atributo "NomeFornecedor" que representa o nome do fornecedor.
+     *
+     * @return atributo "nomeFornecedor".
+     */
     public String getNomeFornecedor() {
         return nomeFornecedor;
     }
 
+    /**
+     * Metodo que deixa disponvel o atributo "compras" que representa as compras feitas pelo cliente.
+     *
+     * @return atributo "compras".
+     */
     public ArrayList<Compra> getCompras() {
         return compras;
     }
@@ -81,7 +91,7 @@ public class Conta implements Comparator<Conta> {
     /**
      * Metodo que calculo o debito total de todas as compras da conta.
      *
-     * @return
+     * @return o debito total d cliente com o fornecedor
      */
     public double debitoTotal() {
         double debitoTotal = 0;
@@ -94,9 +104,9 @@ public class Conta implements Comparator<Conta> {
 
 
     /**
-     * Método que cria uma representação textual da conta.
+     * Metodo que cria uma representacao textual da conta.
      *
-     * @return representação textual
+     * @return representacao textual
      */
     public String exibeConta() {
         String representacaoCompras = " | " + this.nomeFornecedor;
@@ -110,9 +120,9 @@ public class Conta implements Comparator<Conta> {
     }
 
     /**
-     * Método que cria uma representação textual da conta.
+     * Metodo que cria uma representacao textual da conta.
      *
-     * @return representação textual
+     * @return representacao textual
      */
     @Override
     public String toString() {
@@ -132,14 +142,13 @@ public class Conta implements Comparator<Conta> {
     }
 
     /**
-     * Método que determina o que será comparável entre dois objetos do tipo Conta.
+     * Metodo que determina o que sera comparavel entre dois objetos do tipo Conta.
      *
-     * @param conta objeto do tipo Conta.
-     * @return um inteiro que representa a comparação dos dois objetos.
+     * @param o objeto do tipo Conta.
+     * @return um inteiro que representa a comparacao dos dois objetos.
      */
-
     @Override
-    public int compare(Conta conta, Conta t1) {
-        return t1.exibeConta().compareTo(conta.exibeConta());
+    public int compareTo(Conta o) {
+        return this.exibeConta().compareTo(o.exibeConta());
     }
 }

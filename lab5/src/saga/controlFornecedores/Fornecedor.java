@@ -5,7 +5,7 @@ import saga.controlClientes.Cliente;
 import java.util.*;
 
 /**
- * Classer responsável por criar um objeto que representa um fornecedor de um mercado.
+ * Classer responsavel por criar um objeto que representa um fornecedor de um mercado.
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  *
@@ -27,12 +27,12 @@ public class Fornecedor implements Comparable<Fornecedor>{
     private String telefone;
 
     /**
-     * Atributo que é um hashMap de objetos do tipo Produto, em que a chave do mapa é o nome do produto e a sua descrição.
+     * Atributo que e um hashMap de objetos do tipo Produto, em que a chave do mapa e o nome do produto e a sua descricao.
      */
     private Map<String, ProdutoInterface> mapaProdutos;
 
     /**
-     * Construtor responsável por criar um objeto do tipo Fornecedor baseado nos parametros "nome", "email" e "telefone".
+     * Construtor responsavel por criar um objeto do tipo Fornecedor baseado nos parametros "nome", "email" e "telefone".
      *
      * @param nome nome do fornecedor.
      * @param email email do fornecedor.
@@ -64,7 +64,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método que deixa disponível para consulta o atributo "mapaProdutos"
+     * Metodo que deixa disponvel para consulta o atributo "mapaProdutos"
      *
      * @return O atributo mapaProdutos.
      */
@@ -73,7 +73,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método que permite a alteração do atributo email.
+     * Metodo que permite a alteracao do atributo email.
      *
      * @param email email do fornecedor.
      */
@@ -82,7 +82,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método que permite a alteração do atributo telefone.
+     * Metodo que permite a alteracao do atributo telefone.
      *
      * @param telefone Telefone do fornecedor.
      */
@@ -91,10 +91,10 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método que cria uma representação textual do objeto do tipo Fornecedor baseado nos seus atributos "nome", "email"
+     * Metodo que cria uma representacao textual do objeto do tipo Fornecedor baseado nos seus atributos "nome", "email"
      * e "telefone".
      *
-     * @return A representação textual do fornecedor.
+     * @return A representacao textual do fornecedor.
      */
     @Override
     public String toString() {
@@ -116,7 +116,7 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método que cria um novo hashCode para o objeto
+     * Metodo que cria um novo hashCode para o objeto
      *
      * @return O novo HashCode.
      */
@@ -128,12 +128,12 @@ public class Fornecedor implements Comparable<Fornecedor>{
     // PARTE RELACIONADA A CLASSE PRODUTO
 
     /**
-     * Método que cria um novo produto baseado no preço, no nome do produto e na sua descrição e o adiciona no mapa de
-     * produtos.Caso o mapa não tiver uma key que será passada uma exceção será lançada.
+     * Metodo que cria um novo produto baseado no preco, no nome do produto e na sua descricao e o adiciona no mapa de
+     * produtos.Caso o mapa nao tiver uma key que sera passada uma excecao sera lancada.
      *
-     * @param preco preço do produto.
+     * @param preco preco do produto.
      * @param nomeProduto nome do produto.
-     * @param descricao descrição do produto.
+     * @param descricao descricao do produto.
      */
     public void addProduto(String nomeProduto, String descricao, double preco) {
 
@@ -147,13 +147,13 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método que retorna a representacao textual do produto que tem o nome e a descrição iguais aos parâmetros. Caso o
-     * mapa não tiver uma key que será passada uma exceção será lançada.
+     * Metodo que retorna a representacao textual do produto que tem o nome e a descricao iguais aos parametros. Caso o
+     * mapa nao tiver uma key que sera passada uma excecao sera lancada.
      *
      * @param nomeProduto nome do produto.
-     * @param descricao descrição do produto.
+     * @param descricao descricao do produto.
      *
-     * @return A representação textual do produto.
+     * @return A representacao textual do produto.
      */
     public String exibeProduto(String nomeProduto, String descricao) {
         if (!this.mapaProdutos.containsKey(nomeProduto + " - " + descricao)) {
@@ -163,10 +163,10 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método que retorna a representação textual de todos os produtos que foram adicionados ao fornecedor em ordem
-     * alfabética.
+     * Metodo que retorna a representacao textual de todos os produtos que foram adicionados ao fornecedor em ordem
+     * alfabetica.
      *
-     * @return A representação textual de todos os produtos.
+     * @return A representacao textual de todos os produtos.
      */
     public String dadosTodosProdutos() {
         ArrayList<ProdutoInterface> produtos = new ArrayList<>(this.mapaProdutos.values());
@@ -192,11 +192,11 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método responsável por alterar o preço do produto, cujo nome e descrição sao iguais aos parametros.
+     * Metodo responsavel por alterar o preco do produto, cujo nome e descricao sao iguais aos parametros.
      *
-     * @param novoPreco novo preço a ser alterado.
-     * @param nomeProduto nome do produto que terá o preço alterado.
-     * @param descricao descrição do produto que terá o preço alterado.
+     * @param novoPreco novo preco a ser alterado.
+     * @param nomeProduto nome do produto que tera o preco alterado.
+     * @param descricao descricao do produto que tera o preco alterado.
      */
     public void editaProduto(double novoPreco, String nomeProduto, String descricao) {
         if (!this.mapaProdutos.containsKey(nomeProduto + " - " + descricao)) {
@@ -206,11 +206,11 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método responsável por remover um produto ja cadastrados. Se a key não existir no mapa, uma
-     * exceção também será lançada.
+     * Metodo responsavel por remover um produto ja cadastrados. Se a key nao existir no mapa, uma
+     * excecao tambem sera lancada.
      *
      * @param nomeProduto Nome do produto.
-     * @param descricao Descrição do produto.
+     * @param descricao Descricao do produto.
      */
     public void removeProduto(String nomeProduto, String descricao) {
         if (!this.mapaProdutos.containsKey(nomeProduto + " - " + descricao)){
@@ -221,12 +221,12 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método responsável por adicionar um novo Combo.
+     * Metodo responsavel por adicionar um novo Combo.
      *
      * @param nomeCombo nome do combo.
-     * @param descricaoCombo descrição do combo.
-     * @param fator Fator que definirá o preço do combo.
-     * @param produtos string que tem o nome e descrição de todos os produtos que compoem o combo.
+     * @param descricaoCombo descricao do combo.
+     * @param fator Fator que definira o preco do combo.
+     * @param produtos string que tem o nome e descricao de todos os produtos que compoem o combo.
      */
     public void addCombo(String nomeCombo, String descricaoCombo, double fator, String produtos) {
         String[] frases = produtos.split(", ");
@@ -253,12 +253,12 @@ public class Fornecedor implements Comparable<Fornecedor>{
 
 
     /**
-     * Método que serve para calcular o preço de um combo baseado no fator que eh passado como parâmetro e o nome e
-     * descrição dos produtos que compoem o combo.
+     * Metodo que serve para calcular o preco de um combo baseado no fator que eh passado como parametro e o nome e
+     * descricao dos produtos que compoem o combo.
      *
-     * @param produtos nome e descrições dos produtos que compoem o combo.
-     * @param fator fator que definirá o preço do combo baseado no preço dos produtos que o compoem.
-     * @return double que representa o preço do combo.
+     * @param produtos nome e descricões dos produtos que compoem o combo.
+     * @param fator fator que definira o preco do combo baseado no preco dos produtos que o compoem.
+     * @return double que representa o preco do combo.
      */
     private double calculaPrecoCombo(String[] produtos, double fator) {
         double precoTotal = 0.0;
@@ -269,10 +269,10 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método responsável por editar o preço de um combo baseado em um novo fator que é passado como parâmetro.
+     * Metodo responsavel por editar o preco de um combo baseado em um novo fator que e passado como parametro.
      *
-     * @param chave nome do combo + " - " + descrição do combo.
-     * @param fator fator que definirá  o novo preço do combo, baseando-se no preço dos produtos que compoem o combo que
+     * @param chave nome do combo + " - " + descricao do combo.
+     * @param fator fator que definira  o novo preco do combo, baseando-se no preco dos produtos que compoem o combo que
      * o qual a chave aponta.
      */
     public void editaCombo(String chave, double fator) {
@@ -287,11 +287,11 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método que retorna o preço do produto que tem seu nome e descrição passado como paâmetro.
+     * Metodo que retorna o preco do produto que tem seu nome e descricao passado como paametro.
      *
      * @param nomeProd nome do produto.
-     * @param descProd descrição do produto.
-     * @return o numero double que representa o preço do produto..
+     * @param descProd descricao do produto.
+     * @return o numero double que representa o preco do produto..
      */
     public double getValor(String nomeProd, String descProd) {
         if (!this.mapaProdutos.containsKey(nomeProd + " - " + descProd)) {
@@ -301,10 +301,10 @@ public class Fornecedor implements Comparable<Fornecedor>{
     }
 
     /**
-     * Método que determina o que será comparável entre dois objetos do tipo Fornecedor.
+     * Metodo que determina o que sera comparavel entre dois objetos do tipo Fornecedor.
      *
      * @param fornecedor objeto do tipo fornecedor.
-     * @return um inteiro que representa a comparação dos dois objetos.
+     * @return um inteiro que representa a comparacao dos dois objetos.
      */
     @Override
     public int compareTo(Fornecedor fornecedor) {

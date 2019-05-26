@@ -6,27 +6,27 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 /**
- * Classe responsável por criar um controller responsável por fazer operações sobre objetos do tipo Fornecedor.
+ * Classe responsavel por criar um controller responsavel por fazer operacões sobre objetos do tipo Fornecedor.
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
 public class ControllerFornecedores {
     /**
-     * Mapa de objetos do tipo Fornecedor, onde a chave é o nome do fornecedor.
+     * Mapa de objetos do tipo Fornecedor, onde a chave e o nome do fornecedor.
      */
     private HashMap<String, Fornecedor> mapaFornecedores;
 
 
 
     /**
-     * Construtor responsável por criar o objeto do tipo ControllerFornecedores e inicializar os atributos da classe.
+     * Construtor responsavel por criar o objeto do tipo ControllerFornecedores e inicializar os atributos da classe.
      */
     public ControllerFornecedores() {
         this.mapaFornecedores = new HashMap<>();
     }
 
     /**
-     * Método que deixa acessível o atributo mapaFornecedores.
+     * Metodo que deixa acessçvel o atributo mapaFornecedores.
      *
      * @return o hashMap mapaFornecedores.
      */
@@ -49,14 +49,15 @@ public class ControllerFornecedores {
     }
 
     /**
-     * Método responsável por criar e cadastrar um objeto do tipo Fornecedor e adiciona-lo ao mapa de Fornecedores.
-     * Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
-     * será lançada.
+     * Metodo responsavel por criar e cadastrar um objeto do tipo Fornecedor e adiciona-lo ao mapa de Fornecedores.
+     * Caso algum dos parametros passados seja uma string vazia, apenas de espacos ou um valor null uma excecao
+     * sera lancada.
      *
      * @param fornecedor Nome do fornecedor.
      * @param email E-mail do fornecedor.
      * @param telefone Telefone do fornecedor.
- */
+     * @return nome do fornecedor.
+    */
     public String cadastraFornecedor(String fornecedor, String email, String telefone) {
         ValidaEntradasDeMetodos.validaEntradasCadastraFornecedor(fornecedor, email, telefone);
 
@@ -70,11 +71,11 @@ public class ControllerFornecedores {
     }
 
     /**
-     * Método responsável por retornar a representacao textual do fornecedor, cujo nome é passado como parâmetro. Caso
-     * o parâmetro seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Metodo responsavel por retornar a representacao textual do fornecedor, cujo nome e passado como parametro. Caso
+     * o parametro seja uma string vazia, apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param fornecedor nome do fornecedor.
-     * @return A representação textual do fornecedor.
+     * @return A representacao textual do fornecedor.
      */
     public String dadosFornecedor(String fornecedor){
         if (!this.mapaFornecedores.containsKey(fornecedor)) {
@@ -84,9 +85,9 @@ public class ControllerFornecedores {
     }
 
     /**
-     * Método responsável por retornar as representações textuais de todos os fornecedores cadastrados.
+     * Metodo responsavel por retornar as representacões textuais de todos os fornecedores cadastrados.
      *
-     * @return A representação textual de todos os fornecedores.
+     * @return A representacao textual de todos os fornecedores.
      */
     public String dadosTodosFornecedores() {
         ArrayList<Fornecedor> fornecedores = new ArrayList<>();
@@ -110,12 +111,12 @@ public class ControllerFornecedores {
 
 
     /**
-     * Método responsável por alterar o atributo que é passado como parâmetro novo valor que foi passado como parâmetro.
-     * Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Metodo responsavel por alterar o atributo que e passado como parametro novo valor que foi passado como parametro.
+     * Caso algum dos parametros seja uma string vazia, apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param nome cpf do fornecedor
      * @param atributo atributo que sera alterado
-     * @param novoValor valor que será colocado no atributo
+     * @param novoValor valor que sera colocado no atributo
      */
     public void editaFornecedor(String nome, String atributo, String novoValor) {
         ValidaEntradasDeMetodos.validaEntradasEditaFornecedor(nome, atributo, novoValor);
@@ -138,9 +139,9 @@ public class ControllerFornecedores {
 
 
     /**
-     * Método responsável por remover um fornecedor, cujo nome é passado como parâmetro, do hashMap de clientes. Caso o
-     * parâmetro seja uma string vazia, apenas de espaços, um valor null  ou um nome não cadastrado uma exceção será
-     * lançada.
+     * Metodo responsavel por remover um fornecedor, cujo nome e passado como parametro, do hashMap de clientes. Caso o
+     * parametro seja uma string vazia, apenas de espacos, um valor null  ou um nome nao cadastrado uma excecao sera
+     * lancada.
      *
      * @param fornecedor Nome do fornecedor.
      */
@@ -157,14 +158,14 @@ public class ControllerFornecedores {
     // PARTE RELACIONADA A PRODUTOS
 
     /**
-     * Método que cria um novo produto baseado no preço, no nome do produto e na sua descrição e o adiciona no mapa de
-     * produtos de determinado fornecedor, cujo nome foi passado como o parâmetro "fornecedor". Caso algum dos
-     * parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Metodo que cria um novo produto baseado no preco, no nome do produto e na sua descricao e o adiciona no mapa de
+     * produtos de determinado fornecedor, cujo nome foi passado como o parametro "fornecedor". Caso algum dos
+     * parametros passados seja uma string vazia, apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param fornecedor nome do fornecedor.
-     * @param preco preço do produto.
+     * @param preco preco do produto.
      * @param nomeProduto nome do produto.
-     * @param descricao descrição do produto.
+     * @param descricao descricao do produto.
      */
     public void addProduto(String fornecedor, String nomeProduto, String descricao, double preco) {
         ValidaEntradasDeMetodos.validaEntradasAddProduto(fornecedor, nomeProduto, descricao, preco);
@@ -177,15 +178,15 @@ public class ControllerFornecedores {
     }
 
     /**
-     * Método que retorna a representacao textual do produto, baseando-se no nome e na descrição, de determinado
-     * fornecedor, cujo nome foi passado como parâmetro. Caso algum dos parâmetros passados seja uma string vazia,
-     * apenas de espaços ou um valor null uma exceção será lançada.
+     * Metodo que retorna a representacao textual do produto, baseando-se no nome e na descricao, de determinado
+     * fornecedor, cujo nome foi passado como parametro. Caso algum dos parametros passados seja uma string vazia,
+     * apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param fornecedor Nome do fornecedor.
      * @param nomeProduto Nome do produto.
-     * @param descricao Descrição fo produto.
+     * @param descricao Descricao fo produto.
      *
-     * @return Os dados do produto de um fornecedor específico.
+     * @return Os dados do produto de um fornecedor especçfico.
      */
     public String exibeProduto(String fornecedor, String nomeProduto, String descricao) {
         ValidaEntradasDeMetodos.validaEntradasExibeProduto(fornecedor, nomeProduto, descricao);
@@ -197,11 +198,11 @@ public class ControllerFornecedores {
     }
 
     /**
-     * Método que retorna a representação textual de todos os produtos que foram adicionados ao fornecedor, cujo nome
-     * foi passado como parâmetro.
+     * Metodo que retorna a representacao textual de todos os produtos que foram adicionados ao fornecedor, cujo nome
+     * foi passado como parametro.
      *
      * @param fornecedor nome do fornecedor.
-     * @return A representação textual de todos os produtos.
+     * @return A representacao textual de todos os produtos.
      */
     public String dadosTodosProdutosFornecedor(String fornecedor) {
         ValidaEntradasDeMetodos.validaEntradasDadosTodosProdutosFornecedor(fornecedor);
@@ -213,14 +214,14 @@ public class ControllerFornecedores {
     }
 
     /**
-     * Método responsável por alterar o preço do produto, cujo nome e descrição sao iguais aos parametros, produto esse
-     * de um determinado forncedor cujo no é passado como parâmetro.Caso algum dos parâmetros passados seja uma string
-     * vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Metodo responsavel por alterar o preco do produto, cujo nome e descricao sao iguais aos parametros, produto esse
+     * de um determinado forncedor cujo no e passado como parametro.Caso algum dos parametros passados seja uma string
+     * vazia, apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param fornecedor Nome do fornecedor.
-     * @param novoPreco novo preço a ser alterado.
-     * @param nomeProduto nome do produto que terá o preço alterado.
-     * @param descricao descrição do produto que terá o preço alterado.
+     * @param novoPreco novo preco a ser alterado.
+     * @param nomeProduto nome do produto que tera o preco alterado.
+     * @param descricao descricao do produto que tera o preco alterado.
      */
     public void editaProduto(String fornecedor, String nomeProduto, String descricao, double novoPreco) {
         ValidaEntradasDeMetodos.validaEntradasEditaProduto(fornecedor, nomeProduto, descricao, novoPreco);
@@ -232,13 +233,13 @@ public class ControllerFornecedores {
     }
 
     /**
-     * Método responsável por remover um produto ja cadastrados de um fornecedor também ja cadastrado.Caso algum dos
-     * parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
-     * Além disso, se a key não existir no mapa, uma exceção também será lançada.
+     * Metodo responsavel por remover um produto ja cadastrados de um fornecedor tambem ja cadastrado.Caso algum dos
+     * parametros passados seja uma string vazia, apenas de espacos ou um valor null uma excecao sera lancada.
+     * Alem disso, se a key nao existir no mapa, uma excecao tambem sera lancada.
      *
      * @param fornecedor Nome do fornecedor
      * @param nomeProduto Nome do produto.
-     * @param descricao Descrição do produto.
+     * @param descricao Descricao do produto.
      */
     public void removeProduto(String fornecedor, String nomeProduto, String descricao) {
         ValidaEntradasDeMetodos.validaEntradasRemoveProduto(fornecedor, nomeProduto, descricao);
@@ -250,10 +251,10 @@ public class ControllerFornecedores {
     }
 
     /**
-     * Método responsável por criar uma representação textual de todos os produtos cadastrados de todos os fornecedores
+     * Metodo responsavel por criar uma representacao textual de todos os produtos cadastrados de todos os fornecedores
      * cadastrados.
      *
-     * @return uma string com todas as representações textuais de todos os produtos cadastrados em todos os fornecedores.
+     * @return uma string com todas as representacões textuais de todos os produtos cadastrados em todos os fornecedores.
      */
     public String dadosTodosProdutos() {
         ArrayList<Fornecedor> fornecedores = new ArrayList<>(this.mapaFornecedores.values());
@@ -274,15 +275,14 @@ public class ControllerFornecedores {
         return stringSaida;
     }
 
-
     /**
-     * Método responsável por adicionar um novo Combo, se as entradas forem invalidas ou nulas uma exceção é lançada.Caso
-     * algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Metodo responsavel por adicionar um novo Combo, se as entradas forem invalidas ou nulas uma excecao e lancada.Caso
+     * algum dos parametros passados seja uma string vazia, apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param fornecedor nome do fornecedor
      * @param nomeCombo nome do combo.
-     * @param descricaoCombo descrição do combo.
-     * @param fator fator responsável por alterar o preço do combo baseado nos produtos
+     * @param descricaoCombo descricao do combo.
+     * @param fator fator responsavel por alterar o preco do combo baseado nos produtos
      * @param produtos string com os produtos.
      */
     public void addCombo(String fornecedor, String nomeCombo, String descricaoCombo, double fator, String produtos) {
@@ -296,11 +296,11 @@ public class ControllerFornecedores {
 
 
     /**
-     * Método que edita o fator de um combo, alterando assim o seu preço.Caso algum dos parâmetros passados seja uma
-     * string vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Metodo que edita o fator de um combo, alterando assim o seu preco.Caso algum dos parametros passados seja uma
+     * string vazia, apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param nome nome do combo.
-     * @param descricao descrição do combo.
+     * @param descricao descricao do combo.
      * @param nomeFornecedor nome do fornecedor.
      * @param fator novo fator.
      */

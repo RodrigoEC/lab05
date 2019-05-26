@@ -1,7 +1,7 @@
 package saga;
 
 /**
- * Classe que eh um validador dos parâmetros que são passados em todos os métodos da classe "ControllerFornecedor".
+ * Classe que eh um validador dos parametros que sao passados em todos os metodos da classe "ControllerFornecedor".
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
@@ -9,10 +9,10 @@ public class ValidaEntradasDeMetodos {
 
 
     /**
-     * Método responsável por validar o parametro "parametro" que for passado.
+     * Metodo responsavel por validar o parametro "parametro" que for passado.
      *
-     * @param parametro frase que será validada.
-     * @param mensagem mensagem que será msotrada quando a exceção for lançada.
+     * @param parametro frase que sera validada.
+     * @param mensagem mensagem que sera msotrada quando a excecao for lancada.
      */
     private static void validadorAuxiliar(String parametro, String mensagem) {
         if (parametro == null) {
@@ -24,10 +24,10 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar um CPF baseado no tamanho do CPF.
+     * Metodo responsavel por validar um CPF baseado no tamanho do CPF.
      *
-     * @param cpf cpf que será validado
-     * @param mensagem mensagem que será mostrado quando a exceção for lançada.
+     * @param cpf cpf que sera validado
+     * @param mensagem mensagem que sera mostrado quando a excecao for lancada.
      */
     public static void validaCPF(String cpf, String mensagem) {
         if (cpf.length() != 11) {
@@ -36,10 +36,10 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar o preço do produto.
+     * Metodo responsavel por validar o preco do produto.
      *
-     * @param preco preço do produto.
-     * @param mensagem mensagem que será mostrada quando a exceção for lançada
+     * @param preco preco do produto.
+     * @param mensagem mensagem que sera mostrada quando a excecao for lancada
      */
     private static void validaPreco(double preco, String mensagem) {
         if (preco < 0) {
@@ -47,6 +47,12 @@ public class ValidaEntradasDeMetodos {
         }
     }
 
+    /**
+     * Metodo responsavel por validar o fator que determinara o preco de um combo
+     *
+     * @param fator fator que determinara o preco do produto combo.
+     * @param mensagem mensagem que sera mostrada quando a excecao for lancada.
+     */
     private static void validaFator(double fator, String mensagem) {
         if (fator <= 0 || fator >= 1) {
             throw new IllegalArgumentException(mensagem);
@@ -54,10 +60,10 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar a data da compra.
+     * Metodo responsavel por validar a data da compra.
      *
      * @param data data da compra.
-     * @param mensagem mensagem que será lançada como exceção.
+     * @param mensagem mensagem que sera lancada como excecao.
      */
     private static void validaData(String data, String mensagem) {
         if (data == null) {
@@ -77,9 +83,8 @@ public class ValidaEntradasDeMetodos {
         }
     }
 
-
     /**
-     * Método responsável por validar os parâmetros  do método "cadastraFornecedor".
+     * Metodo responsavel por validar os parametros  do metodo "cadastraFornecedor".
      *
      * @param fornecedor nome do fornecedor.
      * @param email email do fornecedor.
@@ -90,13 +95,13 @@ public class ValidaEntradasDeMetodos {
         validadorAuxiliar(email, "Erro no cadastro do fornecedor: email nao pode ser vazio ou nulo.");
         validadorAuxiliar(telefone, "Erro no cadastro do fornecedor: telefone nao pode ser vazio ou nulo.");
     }
-
+    
     /**
-     * Método responsável por validar os parâmetros  do método "editaForneedor"
+     * Metodo responsavel por validar os parametros  do metodo "editaForneedor"
      *
      * @param nome nome do fornecedor.
-     * @param atributo atributo que será editado.
-     * @param novoValor valor a ser atribuido ao atributo passado como parâmetro.
+     * @param atributo atributo que sera editado.
+     * @param novoValor valor a ser atribuido ao atributo passado como parametro.
      */
     public static void validaEntradasEditaFornecedor(String nome, String atributo, String novoValor) {
         validadorAuxiliar(nome, "Erro na edicao do fornecedor: nome nao pode ser vazio ou nulo.");
@@ -105,7 +110,7 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar o parâmetro do método "removeFornecedor".
+     * Metodo responsavel por validar o parametro do metodo "removeFornecedor".
      *
      * @param fornecedor noem do fornecedor.
      */
@@ -113,15 +118,15 @@ public class ValidaEntradasDeMetodos {
         validadorAuxiliar(fornecedor, "Erro na remocao do fornecedor: nome do fornecedor nao pode ser vazio.");
     }
 
-    // Execões que serão lançadas em métodos relacionados a produtos.
+    // Execões que serao lancadas em metodos relacionados a produtos.
 
     /**
-     * Método responsável por validar os parâmetros  do método "addProduto".
+     * Metodo responsavel por validar os parametros  do metodo "addProduto".
      *
      * @param fornecedor nome do fornecedor.
      * @param nomeProduto nome do produto.
-     * @param descricao descrição do produto.
-     * @param preco preço do produto.
+     * @param descricao descricao do produto.
+     * @param preco preco do produto.
      */
     public static void validaEntradasAddProduto(String fornecedor, String nomeProduto, String descricao, double preco) {
         validadorAuxiliar(fornecedor, "Erro no cadastro de produto: fornecedor nao pode ser vazio ou nulo.");
@@ -131,11 +136,11 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar os parâmetros  do método "exibeProduto".
+     * Metodo responsavel por validar os parametros  do metodo "exibeProduto".
      *
      * @param fornecedor nome do fornecedor.
      * @param nomeProduto nome do produto.
-     * @param descricao descrição do produto.
+     * @param descricao descricao do produto.
      */
     public static void validaEntradasExibeProduto(String fornecedor, String nomeProduto, String descricao) {
         validadorAuxiliar(fornecedor, "Erro na exibicao de produto: fornecedor nao pode ser vazio ou nulo.");
@@ -144,12 +149,12 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar os parâmetros  do método "editaProduto".
+     * Metodo responsavel por validar os parametros  do metodo "editaProduto".
      *
      * @param fornecedor nome do fornecedor.
      * @param nomeProduto nome do produto.
-     * @param descricao descrição do produto.
-     * @param novoPreco novo preço a ser editado.
+     * @param descricao descricao do produto.
+     * @param novoPreco novo preco a ser editado.
      */
     public static void validaEntradasEditaProduto(String fornecedor, String nomeProduto, String descricao, double novoPreco) {
         validadorAuxiliar(fornecedor, "Erro na edicao de produto: fornecedor nao pode ser vazio ou nulo.");
@@ -159,11 +164,11 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar o parâmetro do método "removeProduto".
+     * Metodo responsavel por validar o parametro do metodo "removeProduto".
      *
      * @param fornecedor nome do fornecedor.
      * @param nomeProduto nome do produto.
-     * @param descricao descrição do produto.
+     * @param descricao descricao do produto.
      */
     public static void validaEntradasRemoveProduto(String fornecedor, String nomeProduto, String descricao) {
         validadorAuxiliar(fornecedor, "Erro na remocao de produto: fornecedor nao pode ser vazio ou nulo.");
@@ -172,7 +177,7 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar o parâmetro do método "dadosTodosProdutosFornecedor".
+     * Metodo responsavel por validar o parametro do metodo "dadosTodosProdutosFornecedor".
      *
      * @param fornecedor nome do fornecedor.
      */
@@ -181,13 +186,13 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar os parâmetros  do método "addCombo".
+     * Metodo responsavel por validar os parametros  do metodo "addCombo".
      *
      * @param fornecedor nome do fornecedor.
      * @param nomeCombo nome do combo.
-     * @param descricaoCombo descrição do combo.
-     * @param fator fator que determinará o preço do combo.
-     * @param produtos string com nome e descrição dos produtos que compoem o combo.
+     * @param descricaoCombo descricao do combo.
+     * @param fator fator que determinara o preco do combo.
+     * @param produtos string com nome e descricao dos produtos que compoem o combo.
      */
     public static void validaEntradasAddCombo(String fornecedor, String nomeCombo, String descricaoCombo, double fator, String produtos) {
         validadorAuxiliar(fornecedor, "Erro no cadastro de combo: fornecedor nao pode ser vazio ou nulo.");
@@ -198,12 +203,12 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar os parâmetros  do método "editaCombo".
+     * Metodo responsavel por validar os parametros  do metodo "editaCombo".
      *
      * @param nome nome do combo.
-     * @param descricao descrição do combo.
+     * @param descricao descricao do combo.
      * @param nomeFornecedor nome do fornecedor.
-     * @param fator fator que desterminará o novo preço do combo.
+     * @param fator fator que desterminara o novo preco do combo.
      */
     public static void validaEntradasEditaCombo(String nome, String descricao, String nomeFornecedor, double fator) {
         validadorAuxiliar(nome,"Erro na edicao de combo: nome nao pode ser vazio ou nulo.");
@@ -213,13 +218,13 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar os parâmetros  do método "addCompra".
+     * Metodo responsavel por validar os parametros  do metodo "addCompra".
      *
      * @param cpf cpf do cliente.
      * @param fornecedor nome do fornecedor.
-     * @param data data da realização da compra.
-     * @param nomeProd nome do produto que será comprado.
-     * @param descProd descrição do produto que será comprado.
+     * @param data data da realizacao da compra.
+     * @param nomeProd nome do produto que sera comprado.
+     * @param descProd descricao do produto que sera comprado.
      */
     public static void validaEntradasAddCompra(String cpf, String fornecedor, String data, String nomeProd, String descProd) {
         validadorAuxiliar(cpf, "Erro ao cadastrar compra: cpf nao pode ser vazio ou nulo.");
@@ -231,7 +236,7 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar os parâmetros  do método "getDébito".
+     * Metodo responsavel por validar os parametros  do metodo "getDebito".
      *
      * @param cpf cpf do cliente.
      * @param fornecedor nome do fornecedor.
@@ -243,7 +248,7 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar os parâmetros  do método "exibeContas".
+     * Metodo responsavel por validar os parametros  do metodo "exibeContas".
      *
      * @param cpf cpf do cliente.
      * @param fornecedor nome do fornecedor.
@@ -258,7 +263,7 @@ public class ValidaEntradasDeMetodos {
     // Parte relacionada a Clientes
 
     /**
-     * Método que serve para validas as entradas do método "cadastraCliente".
+     * Metodo que serve para validas as entradas do metodo "cadastraCliente".
      *
      * @param cpf cpf do cliente.
      * @param nome nome do cliente.
@@ -274,7 +279,7 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar o parâmetro do método "dadosCliente".
+     * Metodo responsavel por validar o parametro do metodo "dadosCliente".
      *
      * @param cpf cpf do cliente.
      */
@@ -284,11 +289,11 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar os parâmetros do método "editaCliente".
+     * Metodo responsavel por validar os parametros do metodo "editaCliente".
      *
      * @param cpf nome do cliente.
-     * @param atributo atributo que será editado.
-     * @param novoValor valor que será atribuido ao atributo.
+     * @param atributo atributo que sera editado.
+     * @param novoValor valor que sera atribuido ao atributo.
      */
     public static void validaEntradasEditaCliente(String cpf, String atributo, String novoValor) {
         validadorAuxiliar(cpf, "Erro na edicao do cliente: cpf nao pode ser vazio ou nulo.");
@@ -299,7 +304,7 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar o parâmetro do método "removeCliente".
+     * Metodo responsavel por validar o parametro do metodo "removeCliente".
      *
      * @param cpf nome do cliente.
      */
@@ -308,7 +313,7 @@ public class ValidaEntradasDeMetodos {
     }
 
     /**
-     * Método responsável por validar o parâmetro do método "exibeContasCliente".
+     * Metodo responsavel por validar o parametro do metodo "exibeContasCliente".
      *
      * @param cpf cpf do cliente.
      */
@@ -317,16 +322,27 @@ public class ValidaEntradasDeMetodos {
         validaCPF(cpf, "Erro ao exibir contas do cliente: cpf invalido.");
     }
 
+    /**
+     * Metodo responsavel por validar o parametro do metodo "realizaPagamento".
+     *
+     * @param cpf cpf do cliente.
+     * @param fornecedor nome do fornecedor.
+     */
     public static void validaEntradasRealizaPagamento(String cpf, String fornecedor) {
         validadorAuxiliar(cpf, "Erro no pagamento de conta: cpf nao pode ser vazio ou nulo.");
         validaCPF(cpf, "Erro no pagamento de conta: cpf invalido.");
         validadorAuxiliar(fornecedor, "Erro no pagamento de conta: fornecedor nao pode ser vazio ou nulo.");
     }
 
-    public static void validaEntradaOrdenaPor(String criterio) {
+    /**
+     * Metodo responsavel por validar o parametro do metodo "ordenaPor".
+     *
+     * @param criterio criterio que determina o tipo de ordenacao que sera feito
+     */
+    public static void ValidaEntradasOrdenaPor(String criterio) {
         validadorAuxiliar(criterio, "Erro na listagem de compras: criterio nao pode ser vazio ou nulo.");
 
-        if (!"cliente".equals(criterio.toLowerCase()) && !"data".equals(criterio.toLowerCase()) && !"fornecedor".equals(criterio.toLowerCase())) {
+        if (!"cliente".equals(criterio.toLowerCase()) && !"fornecedor".equals(criterio.toLowerCase()) && !"data".equals(criterio.toLowerCase())) {
             throw new IllegalArgumentException("Erro na listagem de compras: criterio nao oferecido pelo sistema.");
         }
     }

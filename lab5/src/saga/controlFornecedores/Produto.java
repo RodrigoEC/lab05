@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- * Classe que representa a construção de um produto que possui nome, descrição e preco.
+ * Classe que representa a construcao de um produto que possui nome, descricao e preco.
  */
 public class Produto implements ProdutoInterface{
     /**
-     * descrição do produto
+     * descricao do produto
      */
     protected String descricao;
 
@@ -18,22 +18,17 @@ public class Produto implements ProdutoInterface{
     protected String nomeProduto;
 
     /**
-     * preço do produto.
+     * preco do produto.
      */
     protected double preco;
 
     /**
-     * Atributo que representa um array vazio de produtos, com o fim de que ficasse disponível
-     */
-    private String[] produtos;
-
-    /**
-     * Construtor responsável por construir um objeto do tipo "Produto" a partir de um nome, descrição e preço que são
-     * passados como parâmetro.
+     * Construtor responsavel por construir um objeto do tipo "Produto" a partir de um nome, descricao e preco que sao
+     * passados como parametro.
      *
      * @param nomeProduto nome do produto.
-     * @param descricao descrição.
-     * @param preco preço do produto.
+     * @param descricao descricao.
+     * @param preco preco do produto.
      */
     public Produto(String nomeProduto, String descricao, double preco) {
         this.nomeProduto = nomeProduto;
@@ -42,7 +37,7 @@ public class Produto implements ProdutoInterface{
     }
 
     /**
-     * Método que deixa dísponível para consulta o atributo "preco".
+     * Metodo que deixa disponivel para consulta o atributo "preco".
      *
      * @return o atributo "preco".
      */
@@ -51,9 +46,9 @@ public class Produto implements ProdutoInterface{
     }
 
     /**
-     * Método responsável por deixar disponível para modificação o atributo "preco".
+     * Metodo responsavel por deixar disponivel para modificacao o atributo "preco".
      *
-     * @param preco o preço que será atribuído ao atributo "preco".
+     * @param preco o preco que sera atribuido ao atributo "preco".
      */
     public void setPreco(double preco) {
         this.preco = preco;
@@ -61,17 +56,17 @@ public class Produto implements ProdutoInterface{
 
 
     /**
-     * Método reponsável por deixar disponível para consulta o atributo "produtos".
+     * Metodo reponsavel por deixar disponivel para consulta o atributo "produtos".
      *
      * @return Atributo produtos.
      */
     @Override
     public String[] getProdutos() {
-        return this.produtos;
+        return null;
     }
 
     /**
-     * Método reponsável por deixar disponível para consulta o atributo nomeProduto.
+     * Metodo reponsavel por deixar disponivel para consulta o atributo nomeProduto.
      *
      * @return Atributo nomeProduto.
      */
@@ -81,10 +76,10 @@ public class Produto implements ProdutoInterface{
     }
 
     /**
-     * Método que produz uma representação texutal do objeto, baseado no nome do produto, descrição e no
-     * preço do produto.
+     * Metodo que produz uma representacao texutal do objeto, baseado no nome do produto, descricao e no
+     * preco do produto.
      *
-     * @return A representação textual do objeto.
+     * @return A representacao textual do objeto.
      */
     @Override
     public String toString()     {
@@ -92,11 +87,11 @@ public class Produto implements ProdutoInterface{
     }
 
     /**
-     * Metodo que serve para comparar dois objetos do tipo Cliente baseado no seus identificadores, a descrição do
+     * Metodo que serve para comparar dois objetos do tipo Cliente baseado no seus identificadores, a descricao do
      * produto e no seu nome.
      *
      * @param o Objeto a ser comparado.
-     * @return True se for igual e false se não for igual.
+     * @return True se for igual e false se nao for igual.
      */
     @Override
     public boolean equals(Object o) {
@@ -108,7 +103,7 @@ public class Produto implements ProdutoInterface{
     }
 
     /**
-     * Método que cria um novo hashCode para o objeto
+     * Metodo que cria um novo hashCode para o objeto
      *
      * @return O novo HashCode.
      */
@@ -119,10 +114,10 @@ public class Produto implements ProdutoInterface{
 
 
     /**
-     * Método que determina o que será comparável entre dois objetos do tipo Cliente.
+     * Metodo que determina o que sera comparavel entre dois objetos do tipo Cliente.
      *
      * @param produtoInterface interface de objetos do tipo Produto.
-     * @return um inteiro que representa a comparação dos dois objetos.
+     * @return um inteiro que representa a comparacao dos dois objetos.
      */
     @Override
     public int compareTo(ProdutoInterface produtoInterface) {

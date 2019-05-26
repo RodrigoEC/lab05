@@ -7,25 +7,25 @@ import java.util.Collections;
 import java.util.HashMap;
 
 /**
- * Classe responsável por criar um controller responsável por fazer operações sobre objetos do tipo Cliente.
+ * Classe responsavel por criar um controller responsavel por fazer operacões sobre objetos do tipo Cliente.
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
 public class ControllerClientes {
     /**
-     * Atributo que representa um mapa de clientes, onde a chave é o cpf do cliente.
+     * Atributo que representa um mapa de clientes, onde a chave e o cpf do cliente.
      */
     private HashMap<String, Cliente> clientes;
 
     /**
-     * Construtor responsável por inicializar os atributos da classe.
+     * Construtor responsavel por inicializar os atributos da classe.
      */
     public ControllerClientes() {
         this.clientes = new HashMap<>();
     }
 
     /**
-     * Método que deixa acessível o atributo clientes.
+     * Metodo que deixa acessvel o atributo clientes.
      *
      * @return o atributo clientes.
      */
@@ -34,10 +34,10 @@ public class ControllerClientes {
     }
 
     /**
-     * Método que mostra se um determinado cpf está cadastrado no mapa de clientes.
+     * Metodo que mostra se um determinado cpf esta cadastrado no mapa de clientes.
      *s
      * @param cpf numero de cpf do cliente
-     * @return true se o cliente estiver cadastrado e false se não estiver.
+     * @return true se o cliente estiver cadastrado e false se nao estiver.
      */
     public boolean containsClient(String cpf) {
         if (this.clientes.containsKey(cpf)) {
@@ -47,9 +47,9 @@ public class ControllerClientes {
     }
 
     /**
-     * Método responsável por criar e cadastrar um novo cliente, cujo atributos são passados como parâmetros do método.
-     * Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
-     * será lançada.
+     * Metodo responsavel por criar e cadastrar um novo cliente, cujo atributos sao passados como parametros do metodo.
+     * Caso algum dos parametros passados seja uma string vazia, apenas de espacos ou um valor null uma excecao
+     * sera lancada.
      *
      * @param cpf cpf do cliente.
      * @param nome nome do cliente.
@@ -70,11 +70,11 @@ public class ControllerClientes {
     }
 
     /**
-     * Método responsável por retornar a representacao textual do cliente, cujo cpf é passado como parâmetro. Caso
-     * o parâmetro seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Metodo responsavel por retornar a representacao textual do cliente, cujo cpf e passado como parametro. Caso
+     * o parametro seja uma string vazia, apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param cpf cpf do cliente.
-     * @return representação textual do cliente.
+     * @return representacao textual do cliente.
      */
     public String dadosCliente(String cpf) {
         ValidaEntradasDeMetodos.validaEntradasDadosCliente(cpf);
@@ -86,9 +86,9 @@ public class ControllerClientes {
     }
 
     /**
-     * Método responsável por retornar as representações textuais de todos os clientes cadastrados.
+     * Metodo responsavel por retornar as representacões textuais de todos os clientes cadastrados.
      *
-     * @return as representações textuais dos clientes.
+     * @return as representacões textuais dos clientes.
      */
     public String dadosTodosClientes() {
         ArrayList<Cliente> clientes = new ArrayList<>();
@@ -111,12 +111,12 @@ public class ControllerClientes {
     }
 
     /**
-     * Método responsável por alterar o atributo que é passado como parâmetro novo valor que foi passado como parâmetro.
-     * Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma exceção será lançada.
+     * Metodo responsavel por alterar o atributo que e passado como parametro novo valor que foi passado como parametro.
+     * Caso algum dos parametros seja uma string vazia, apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param cpf cpf do cliente
      * @param atributo atributo que sera alterado
-     * @param novoValor valor que será colocado no atributo
+     * @param novoValor valor que sera colocado no atributo
      */
     public void editaCliente(String cpf, String atributo, String novoValor) {
         ValidaEntradasDeMetodos.validaEntradasEditaCliente(cpf, atributo, novoValor);
@@ -143,11 +143,11 @@ public class ControllerClientes {
 
 
     /**
-     * Método responsável por remover o cliente, cujo cpf é passado como parâmetro, do hashMap de clientes. Caso o
-     * parâmetro seja uma string vazia, apenas de espaços, um valor null  ou um cpf não cadastrado uma exceção será
-     * lançada.
+     * Metodo responsavel por remover o cliente, cujo cpf e passado como parametro, do hashMap de clientes. Caso o
+     * parametro seja uma string vazia, apenas de espacos, um valor null  ou um cpf nao cadastrado uma excecao sera
+     * lancada.
      *
-     * @param cpf cpf do cliente que será removido.
+     * @param cpf cpf do cliente que sera removido.
      */
     public void removeCliente(String cpf) {
         ValidaEntradasDeMetodos.validaEntradasRemoveCliente(cpf);
@@ -162,10 +162,10 @@ public class ControllerClientes {
     }
 
     /**
-     * Método que retorna o nome do cliente baseado em seu cpf
+     * Metodo que retorna o nome do cliente baseado em seu cpf
      *
      * @param cpf cpf do cliente.
-     * @return o nome do cliente cujo cpf foi passado como parâmetro.
+     * @return o nome do cliente cujo cpf foi passado como parametro.
      */
     public String getNomeCliente(String cpf) {
         if (!this.clientes.containsKey(cpf)) {

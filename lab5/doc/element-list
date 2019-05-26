@@ -1,4 +1,6 @@
 saga
+saga.comparators
 saga.contasControl
 saga.controlClientes
 saga.controlFornecedores
+saga.pacoteDeOrdenacoes

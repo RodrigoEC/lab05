@@ -3,7 +3,7 @@ package saga.controlClientes;
 import java.util.Objects;
 
 /**
- * Classe responsável por criar e alterar um objeto que representa um cliente.
+ * Classe responsavel por criar e alterar um objeto que representa um cliente.
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
@@ -124,7 +124,7 @@ public class Cliente implements Comparable<Cliente> {
     }
 
     /**
-     * Método que cria um novo hashCode para o objeto
+     * Metodo que cria um novo hashCode para o objeto
      *
      * @return O novo HashCode.
      */
@@ -134,10 +134,10 @@ public class Cliente implements Comparable<Cliente> {
     }
 
     /**
-     * Método que determina o que será comparável entre dois objetos do tipo Cliente.
+     * Metodo que determina o que sera comparavel entre dois objetos do tipo Cliente.
      *
      * @param cliente objeto do tipo Cliente.
-     * @return um inteiro que representa a comparação dos dois objetos.
+     * @return um inteiro que representa a comparacao dos dois objetos.
      */
     @Override
     public int compareTo(Cliente cliente) {

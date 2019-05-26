@@ -1,7 +1,7 @@
 package saga.contasControl;
 
 /**
- * Classe que representa uma compra realizado com nome, descrição, data e preço.
+ * Classe que representa uma compra realizado com nome, descricao, data e preco.
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
@@ -18,22 +18,22 @@ public class Compra implements Comparable<Compra>{
     private String produto;
 
     /**
-     * Descrição do produto.
+     * Descricao do produto.
      */
     private String descrProduto;
 
     /**
-     * Preço da compra realizada.
+     * Preco da compra realizada.
      */
     private double preco;
 
     /**
-     * Construtor responsável por construir um objeto baseado na data, no nome do produto, descriçao e preço.
+     * Construtor responsavel por construir um objeto baseado na data, no nome do produto, descricao e preco.
      *
      * @param data data da compra.
      * @param produto nome do produto comprado.
-     * @param descrProduto descrição do produto comprado.
-     * @param preco preço da compra.
+     * @param descrProduto descricao do produto comprado.
+     * @param preco preco da compra.
      */
     public Compra(String data, String produto, String descrProduto, double preco) {
         this.data = data;
@@ -43,7 +43,7 @@ public class Compra implements Comparable<Compra>{
     }
 
     /**
-     * Método responsável por retornar o atributo "preco";
+     * Metodo responsavel por retornar o atributo "preco";
      *
      * @return atributo preco;
      */
@@ -64,9 +64,9 @@ public class Compra implements Comparable<Compra>{
     }
 
     /**
-     * Método que eh a representação textual de uma compra.
+     * Metodo que eh a representacao textual de uma compra.
      *
-     * @return representação textual de uma compra.
+     * @return representacao textual de uma compra.
      */
     @Override
     public String toString() {
@@ -74,10 +74,10 @@ public class Compra implements Comparable<Compra>{
     }
 
     /**
-     * Método que determina o que será comparável entre dois objetos do tipo Compra.
+     * Metodo que determina o que sera comparavel entre dois objetos do tipo Compra.
      *
      * @param compra objeto do tipo Compra.
-     * @return um inteiro que representa a comparação dos dois objetos.
+     * @return um inteiro que representa a comparacao dos dois objetos.
      */
     @Override
     public int compareTo(Compra compra) {

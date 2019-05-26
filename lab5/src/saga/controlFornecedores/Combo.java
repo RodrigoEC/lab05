@@ -13,12 +13,12 @@ public class Combo extends Produto {
     private String[] produtos;
 
     /**
-     * Construtor responsável por construiu um objeto "Combo" baseado no seu nome, descrição, preco e um array do nome e descrição
+     * Construtor responsável por construiu um objeto "Combo" baseado no seu nome, descricao, preco e um array do nome e descricao
      * dos produtos que compoem o combo.
      *
      * @param nomeCombo nome do combo.
-     * @param descricaoCombo descrição do combo.
-     * @param preco preço do combo.
+     * @param descricaoCombo descricao do combo.
+     * @param preco preco do combo.
      * @param produtos array de nomes dos produtos que compoem o combo.
      */
     public Combo(String nomeCombo, String descricaoCombo, double preco, String[] produtos) {
@@ -27,7 +27,7 @@ public class Combo extends Produto {
     }
 
     /**
-     * Método que deixa disponível o atributo "produtos".
+     * Método que deixa disponivel o atributo "produtos".
      *
      * @return o array de nomes dos produtos que compoem o combo.
      */

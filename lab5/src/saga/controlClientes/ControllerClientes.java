@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 /**
- * Classe responsavel por criar um controller responsavel por fazer operacões sobre objetos do tipo Cliente.
+ * Classe responsavel por criar um controller responsavel por fazer operacoes sobre objetos do tipo Cliente.
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */

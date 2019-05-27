@@ -11,7 +11,7 @@ import java.util.Map;
 public interface Ordenacao {
 
     /**
-     * Método que deve existir em todas as classes que implementem essa interface.
+     * Metodo que deve existir em todas as classes que implementem essa interface.
      *
      * @param contas mapa das contas
      * @return String com as compras ordenadas baseado em um criterio definido.

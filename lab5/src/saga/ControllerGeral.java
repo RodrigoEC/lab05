@@ -44,9 +44,9 @@ public class ControllerGeral {
     // PARTE DO CONTROLLER DOS CLIENTES
 
     /**
-     * Metodo responsavel por criar e cadastrar um novo cliente, cujo atributos são passados como parâmetros do metodo.
-     * Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
-     * sera lançada.
+     * Metodo responsavel por criar e cadastrar um novo cliente, cujo atributos são passados como parametros do metodo.
+     * Caso algum dos parametros passados seja uma string vazia, apenas de espacos ou um valor null uma excecao
+     * sera lancada.
      *
      * @param cpf cpf do cliente.
      * @param nome nome do cliente.
@@ -59,8 +59,8 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo responsavel por retornar a representacao textual do cliente, cujo cpf e passado como parâmetro. Caso
-     * o parâmetro seja uma string vazia, apenas de espaços ou um valor null uma exceção sera lançada.
+     * Metodo responsavel por retornar a representacao textual do cliente, cujo cpf e passado como parametro. Caso
+     * o parametro seja uma string vazia, apenas de espaços ou um valor null uma excecao sera lancada.
      *
      * @param cpf cpf do cliente.
      * @return representação textual do cliente.
@@ -70,9 +70,9 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo responsavel por retornar as representações textuais de todos os clientes cadastrados.
+     * Metodo responsavel por retornar as representacoes textuais de todos os clientes cadastrados.
      *
-     * @return as representações textuais dos clientes.
+     * @return as representacoes textuais dos clientes.
      */
     public String exibeClientes() {
         return controlaClientes.dadosTodosClientes();
@@ -93,9 +93,9 @@ public class ControllerGeral {
 
 
     /**
-     * Metodo responsavel por remover o cliente, cujo cpf e passado como parâmetro, do hashMap de clientes. Caso o
-     * parâmetro seja uma string vazia, apenas de espaços, um valor null  ou um cpf não cadastrado uma exceção sera
-     * lançada.
+     * Metodo responsavel por remover o cliente, cujo cpf e passado como parametro, do hashMap de clientes. Caso o
+     * parametro seja uma string vazia, apenas de espaços, um valor null  ou um cpf nao cadastrado uma excecao sera
+     * lancada.
      *
      * @param cpf cpf do cliente que sera removido.
      */
@@ -108,8 +108,8 @@ public class ControllerGeral {
 
     /**
      * Metodo responsavel por criar e cadastrar um objeto do tipo Fornecedor e adiciona-lo ao mapa de Fornecedores.
-     * Caso algum dos parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção
-     * sera lançada.
+     * Caso algum dos parâmetros passados seja uma string vazia, apenas de espacos ou um valor null uma excecao
+     * sera lancada.
      *
      * @param nome Nome do fornecedor.
      * @param email E-mail do fornecedor.
@@ -121,11 +121,11 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo responsavel por retornar a representacao textual do fornecedor, cujo nome e passado como parâmetro. Caso
-     * o parâmetro seja uma string vazia, apenas de espaços ou um valor null uma exceção sera lançada.
+     * Metodo responsavel por retornar a representacao textual do fornecedor, cujo nome e passado como parametro. Caso
+     * o parametro seja uma string vazia, apenas de espaços ou um valor null uma excecao sera lancada.
      *
      * @param nome nome do fornecedor.
-     * @return A representação textual do fornecedor.
+     * @return A representacao textual do fornecedor.
      */
     public String exibeFornecedor(String nome) {
         return this.controlaFornecedores.dadosFornecedor(nome);
@@ -134,7 +134,7 @@ public class ControllerGeral {
     /**
      * Metodo responsavel por retornar as representações textuais de todos os fornecedores cadastrados.
      *
-     * @return A representação textual de todos os fornecedores.
+     * @return A representacao textual de todos os fornecedores.
      */
     public String exibeFornecedores() {
         return this.controlaFornecedores.dadosTodosFornecedores();
@@ -142,8 +142,8 @@ public class ControllerGeral {
 
 
     /**
-     * Metodo responsavel por alterar o atributo que e passado como parâmetro novo valor que foi passado como parâmetro.
-     * Caso algum dos parâmetros seja uma string vazia, apenas de espaços ou um valor null uma exceção sera lançada.
+     * Metodo responsavel por alterar o atributo que e passado como parametro novo valor que foi passado como parametro.
+     * Caso algum dos parametros seja uma string vazia, apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param nome nome do fornecedor
      * @param atributo atributo a ser modificado
@@ -155,9 +155,9 @@ public class ControllerGeral {
 
 
     /**
-     * Metodo responsavel por remover um fornecedor, cujo nome e passado como parâmetro, do hashMap de clientes. Caso o
-     * parâmetro seja uma string vazia, apenas de espaços, um valor null  ou um nome não cadastrado uma exceção sera
-     * lançada.
+     * Metodo responsavel por remover um fornecedor, cujo nome e passado como parametro, do hashMap de clientes. Caso o
+     * parametro seja uma string vazia, apenas de espacos, um valor null  ou um nome nao cadastrado uma excecao sera
+     * lancada.
      *
      * @param fornecedor Nome do fornecedor.
      */
@@ -166,9 +166,9 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo que cria um novo produto baseado no preço, no nome do produto e na sua descrição e o adiciona no mapa de
+     * Metodo que cria um novo produto baseado no preco, no nome do produto e na sua descricao e o adiciona no mapa de
      * produtos de determinado fornecedor, cujo nome foi passado como o parâmetro "fornecedor". Caso algum dos
-     * parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção sera lançada.
+     * parametros passados seja uma string vazia, apenas de espaços ou um valor null uma excecao sera lancada.
      *
      * @param fornecedor nome do fornecedor.
      * @param preco preço do produto.
@@ -180,9 +180,9 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo que retorna a representacao textual do produto, baseando-se no nome e na descrição, de determinado
-     * fornecedor, cujo nome foi passado como parâmetro. Caso algum dos parâmetros passados seja uma string vazia,
-     * apenas de espaços ou um valor null uma exceção sera lançada.
+     * Metodo que retorna a representacao textual do produto, baseando-se no nome e na descricao, de determinado
+     * fornecedor, cujo nome foi passado como parametro. Caso algum dos parametros passados seja uma string vazia,
+     * apenas de espacos ou um valor null uma excecao sera lancada.
      *
      * @param fornecedor Nome do fornecedor.
      * @param nomeProduto Nome do produto.
@@ -195,8 +195,8 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo que retorna a representação textual de todos os produtos que foram adicionados ao fornecedor, cujo nome
-     * foi passado como parâmetro.
+     * Metodo que retorna a representacao textual de todos os produtos que foram adicionados ao fornecedor, cujo nome
+     * foi passado como parametro.
      *
      * @param fornecedor nome do fornecedor.
      * @return A representação textual de todos os produtos.
@@ -206,19 +206,19 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo responsavel por criar uma representação texutal de todos os produtos cadastrados de todos os fornecedores
+     * Metodo responsavel por criar uma representacao texutal de todos os produtos cadastrados de todos os fornecedores
      * cadastrados.
      *
-     * @return uma string com todas as representações textuais de todos os produtos cadastrados em todos os fornecedores.
+     * @return uma string com todas as representacoes textuais de todos os produtos cadastrados em todos os fornecedores.
      */
     public String exibeProdutos() {
         return this.controlaFornecedores.dadosTodosProdutos();
     }
 
     /**
-     * Metodo responsavel por alterar o preço do produto, cujo nome e descrição sao iguais aos parametros, produto esse
-     * de um determinado forncedor cujo no e passado como parâmetro.Caso algum dos parâmetros passados seja uma string
-     * vazia, apenas de espaços ou um valor null uma exceção sera lançada.
+     * Metodo responsavel por alterar o preco do produto, cujo nome e descricao sao iguais aos parametros, produto esse
+     * de um determinado forncedor cujo no e passado como parâmetro.Caso algum dos parametros passados seja uma string
+     * vazia, apenas de espacos ou um valor null uma exceção sera lançada.
      *
      * @param fornecedor Nome do fornecedor.
      * @param novoPreco novo preço a ser alterado.
@@ -231,8 +231,8 @@ public class ControllerGeral {
 
     /**
      * Metodo responsavel por remover um produto ja cadastrados de um fornecedor tambem ja cadastrado.Caso algum dos
-     * parâmetros passados seja uma string vazia, apenas de espaços ou um valor null uma exceção sera lançada.
-     * Alem disso, se a key não existir no mapa, uma exceção tambem sera lançada.
+     * parametros passados seja uma string vazia, apenas de espacos ou um valor null uma excecao sera lancada.
+     * Alem disso, se a key nao existir no mapa, uma excecao tambem sera lancada.
      *
      * @param fornecedor Nome do fornecedor
      * @param nomeProduto Nome do produto.
@@ -247,7 +247,7 @@ public class ControllerGeral {
      *
      * @param fornecedor nome do fornecedor
      * @param nomeCombo nome do combo.
-     * @param descricaoCombo descrição do combo.
+     * @param descricaoCombo descricao do combo.
      * @param fator fator responsavel por alterar o preço do combo baseado nos produtos
      * @param produtos string com os produtos.
      */
@@ -256,10 +256,10 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo que edita o fator de um combo, alterando assim o seu preço.
+     * Metodo que edita o fator de um combo, alterando assim o seu preco.
      *
      * @param nome nome do combo.
-     * @param descricao descrição do combo.
+     * @param descricao descricao do combo.
      * @param nomeFornecedor nome do fornecedor.
      * @param fator novo fator.
      */
@@ -274,7 +274,7 @@ public class ControllerGeral {
      * @param fornecedor nome do fornecedor.
      * @param data data da compra.
      * @param nomeProd nome do produto.
-     * @param descProd descrição do produto.
+     * @param descProd descricao do produto.
      */
     public void adicionaCompra(String cpf, String fornecedor, String data, String nomeProd, String descProd) {
         ValidaEntradasDeMetodos.validaEntradasAddCompra(cpf, fornecedor, data, nomeProd, descProd);
@@ -293,7 +293,7 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo responsavel por retornar o número double que representa o debito de um cliente para um fornecedor.
+     * Metodo responsavel por retornar o numero double que representa o debito de um cliente para um fornecedor.
      *
      * @param cpf cpf do cliente.
      * @param fornecedor nome do fornecedor.
@@ -318,11 +318,11 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo reponsavel por retornar a representação textual de um determinado cpf em determinado fornecedor.
+     * Metodo reponsavel por retornar a representacao textual de um determinado cpf em determinado fornecedor.
      *
      * @param cpf cpf do cliente.
      * @param fornecedor nome do fornecedor.
-     * @return representação textual de um cliente em determinado fornecedor.
+     * @return representacao textual de um cliente em determinado fornecedor.
      */
     public String exibeContas(String cpf, String fornecedor) {
         ValidaEntradasDeMetodos.validaEntradasExibeContas(cpf, fornecedor);
@@ -343,10 +343,10 @@ public class ControllerGeral {
     }
 
     /**
-     * Metodo responsavel por exibir a representação textual de todas as contas de um determinado cliente.
+     * Metodo responsavel por exibir a representacao textual de todas as contas de um determinado cliente.
      *
      * @param cpf cpf do cliente.
-     * @return a representação textual das contas de determinado cliente.
+     * @return a representacao textual das contas de determinado cliente.
      */
     public String exibeContasClientes(String cpf) {
         ValidaEntradasDeMetodos.validaEntradaExibeContasCliente(cpf);

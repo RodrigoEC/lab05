@@ -1,7 +1,7 @@
 package saga.controlFornecedores;
 
 /**
- * Método que representa um Objeto do tipo Combo que tambem eh um objeto do tipo Produto.
+ * Metodo que representa um Objeto do tipo Combo que tambem eh um objeto do tipo Produto.
  *
  * @author Rodrigo Eloy Cavalcanti - 118210111
  */
@@ -13,7 +13,7 @@ public class Combo extends Produto {
     private String[] produtos;
 
     /**
-     * Construtor responsável por construiu um objeto "Combo" baseado no seu nome, descricao, preco e um array do nome e descricao
+     * Construtor responsavel por construiu um objeto "Combo" baseado no seu nome, descricao, preco e um array do nome e descricao
      * dos produtos que compoem o combo.
      *
      * @param nomeCombo nome do combo.
@@ -27,7 +27,7 @@ public class Combo extends Produto {
     }
 
     /**
-     * Método que deixa disponivel o atributo "produtos".
+     * Metodo que deixa disponivel o atributo "produtos".
      *
      * @return o array de nomes dos produtos que compoem o combo.
      */

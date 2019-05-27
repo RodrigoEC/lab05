@@ -13,8 +13,8 @@ import java.util.Map;
  */
 public class OrdenaNome implements Ordenacao {
     /**
-     * Metodo responsável por ordenar o mapa de contas e retornar uma string que representa todos as contas ordenadas de
-     * acorddo com o nome do cliente.
+     * Metodo responsavel por ordenar o mapa de contas e retornar uma string que representa todos as contas ordenadas de
+     * acordo com o nome do cliente.
      *
      *
      * @param contas mapa de contas.
@@ -47,7 +47,7 @@ public class OrdenaNome implements Ordenacao {
         return stringSaida;
     }
     /**
-     * Método que auxilia a ordenacao, sendo responsavel por ordenar a lista a partir do nome do cliente.
+     * Metodo que auxilia a ordenacao, sendo responsavel por ordenar a lista a partir do nome do cliente.
      *
      * @param listaDeContas lista com todas as contas.
      * @return lista de contas ordenada.

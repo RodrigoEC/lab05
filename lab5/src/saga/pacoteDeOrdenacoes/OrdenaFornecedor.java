@@ -48,7 +48,7 @@ public class OrdenaFornecedor implements Ordenacao {
     }
 
     /**
-     * Método que auxilia a ordenacao, sendo responsavel por ordenar a lista a partir do nome do fornecedor.
+     * Metodo que auxilia a ordenacao, sendo responsavel por ordenar a lista a partir do nome do fornecedor.
      *
      * @param listaDeContas lista com todas as contas.
      * @return lista de contas ordenada.
